@@ -1,0 +1,349 @@
+So, so far we looked at
+the page length formulation,
+we looked at the linear
+algebra formulation, and
+we now looked at the random walk
+kind of intuition of PageRank.
+And we in the, in the last slide
+of previous lecture, we just said
+the that under certain conditions,
+these PageRank vector will be weak.
+So now the question is, what are these
+certain conditions that matrix M has to
+satisfy in order for
+the PageRank to exist and to be unique?
+And now what we will learn is
+basically we will learn the,
+the real, the Google formulation of the,
+of the PageRank algorithm.
+So, what we know so far is that
+the importance of a page j in, in,
+in a web graph is simply the sum of the
+importances of pages i that point to it,
+and when,
+when you sum these things together,
+we divide them by the out degree of,
+of the, of the source page.
+And we, what we established is that
+this equation that I have here is,
+simply can be written
+as a matrix equation.
+So now there are three
+questions we need to answer.
+First, does this M equal r equals
+M times r, does this converge?
+Second, does it converge to what we want?
+And third, are our results reasonable?
+So what we'll do next is we'll
+answer these questions one by one.
+So here is the first question,
+does this converge?
+Imagine a very simple graph,
+only two nodes.
+And node a points to node b,
+and b points back to a.
+And now imagine we want to
+run our power iteration.
+And as I, as I showed in the,
+in the last slide we said that
+the PageRank vector is unique and it,
+the stationary distribution will always be
+reached regardless of how we
+initialize our initial vector.
+So now imagine I,
+we initialize our, our vector r,
+r of, r of times 0 to be simply,
+to have, to have two values,
+to have one value 1 on the coordinate
+a and have value 0 on coordinate b.
+Now when we are multiplying M times r,
+what will
+happen is the score of a gets passed to b,
+and score of b gets passed to a.
+So the next time step
+the coordinates will flip.
+And now when we mul, multiply again,
+the coordinates will flip again.
+Right, so what we see here is
+that we will never converge.
+All, all that is happening here is that
+the score of one gets passed between a and
+b and
+score of 0 gets passed between b and a.
+So it seems that our, our PageRank
+computation will never converge.
+This problem is called
+the spider trap problem.
+I will explain it a bit more later.
+So, so far it seems that our method for
+computing PageRank the way defined it so
+far, doesn't really work.
+So we looked at the spider trap problem
+that I'll talk more about later.
+And here is another problem with
+the current formulation of PageRank, and
+this is called the Dead end problem.
+And here, the, the, the,
+thing is, even a simpler graph than
+what we had before breaks our algorithm.
+So lets consider a very simple graph.
+Two nodes, one edge, kind of,
+couldn't be simpler.
+And let's think of the same
+initialization vector as we had before.
+So a starts with score 1 and
+b starts with score 0.
+So what, what happens in this case is in
+the first multiplication with matrix m
+the score, the scores gets flipped.
+But now what happens in the second step of
+multiplication is basically the score of
+one gets lost, right?
+The, a, b is not able to pass the score
+to anyone else so the score get lost, and
+we converge to this vector of 0.
+Which is, which is a problem.
+So, what we will do now is actually
+talk about these two problems of
+spider traps and dead ends in, in more
+detail and develop solutions for them.
+So to summarize, there are two problems
+with how we defined PageRank so far.
+The first problem is
+the problem of dead-ends.
+So basically the idea is that dead-ends
+are these web pages that have no
+outgoing links.
+So what will happen is that the importance
+of these pages will link up, right?
+The idea is that basically whenever our
+web page receives its PageRank score and
+there is no way for our to pass this
+PageRank score to anyone else because it
+has no out-links, this PageRank
+score will leak out from our system.
+And at the end, the PageRank scores
+of all of the web pages will be
+0 as we saw in the previous example.
+So that's why this called
+the dead end problem.
+And then the spider trap problem,
+basically the idea is that here out-links
+from webpages can form a small group.
+So the idea is that the, the,
+if you think of a random walk
+interpretation of PageRank,
+basically the random walker would get
+trapped in a small part of the web graph,
+and then, the random walker will get
+kind of indefinitely stuck in that part.
+And at the end, those pages in,
+in that in that part of
+the graph will get very high weight, and
+every other page will get very low weight.
+So this is called
+the problem of spider traps.
+So what we will do next is we'll actually
+develop our solutions to both of
+these problems.
+So let's look at the two
+of the problems that we,
+that we just discussed
+in a bit more detail.
+So first is the problem of spider
+traps on a bit more complicated graph.
+So here is a variant of the graph we,
+we have from our initial investigation
+of PageRank with three nodes y, a and m,
+and in this case m is a spider trap
+which means m has this self loop.
+So whenever a random walker gets to know
+them, it basically gets stuck to this
+in this infinite loop because there
+is no other way out out of node m and
+all that m, the walker can do is
+infinitely walk the self loop from m.
+So now, think of the, the stochastic
+matrix m that we have here on the right.
+And the question is, what happens
+to the power iteration as, as, as,
+as we run it and
+multiply our r with the matrix m?
+So, here is the example.
+I have my vector r.
+I initialize it as we, as we said
+to 1 over the size of the graph.
+So, one third on every component and
+I start multiplying with matrix M.
+What will happen, is at the end,
+here is the result that we looked at.
+Basically the importance of node n will be
+1 and the importance of both other nodes.
+Will be zero.
+If you think about the, the random
+walk interpretation of PageRank,
+this result is,
+is very much expected, right?
+If we think of a random walker
+browsing this string node graph, and
+we ask after lots and lots of time, where
+do with think the random walker will be?
+Basically the random walker
+will be stuck at, at, no-,
+at node n with probably 1.
+What this means is basically wherever
+the random walker starts, for
+some time then the random walker will
+be able to walk between nodes y,
+nodes y and a, but as soon as the walker
+crosses the edge to m it will be
+stuck in this infinite loop and it will
+never be able to move anywhere else.
+So this means that basically all
+the PageRank scores will be,
+will be concentrated at node m,
+which is what, exactly what happens.
+So, in some sense in this case,
+the PageRank's, the page rank very
+nicely converged to some actor, but
+it converged to something that
+doesn't make much sense, right?
+So all the, all the importance gets
+concentrated in, into this single node,
+and both nodes y and
+a have importance of 0.
+So, this is the problem of spider traps,
+is that they lead to results that
+are intuitive or not what we want.
+So now how to solve the problem
+of spider traps is to slightly
+modify our random walk way of
+thinking about PageRank, right?
+So the way Google solves the solution
+to the spider traps is to
+say that each step the random
+walker has two choices.
+With some para with some parameter beta,
+with some probability beta,
+the random walker will follow the,
+the outgoing link at random.
+So the same as the random
+walker was doing before, but
+with some remaining probability,
+the random walker will randomly
+jump to some other random web page.
+Right?
+So the way we can think of this now
+is that we have a random surfer,
+that whenever the random surfer arrives
+to a new page, flips a coin, with, and
+if the coin, this coin says yes, the
+random walker will pick another link at
+random and walk that link, and if
+the coin says no, the random walker will
+randomly teleport, basically jump to some
+other random page on the web, right?
+So this means that the tele, the, the
+random surfer will be able to jump out, or
+teleport out, from a spider trap within
+only a few time steps, all right?
+After a few time steps, the, the coin
+will say, yes, let's teleport, and
+the random surfer will be able to
+jump up out of the, out of the trap.
+So, if we think about this
+in terms of the graph,
+here is our graph from before
+we node m being the spider trap.
+So what we can think of it, of,
+of this now, is that now we
+have this additional links that
+basically have with small probability,
+the random surfer can teleport out of,
+of any node a, any given time.
+So this means spider traps are no good
+problem anymore, so everything is good.
+The problem,
+we still have is the dead ends.
+So let's understand the dead,
+dead ends problem a bit better.
+So, the problem with dead
+ends was the following.
+Was basically that these are the pages
+that have 0 out degrees.
+So, their PageRank score
+does not get distributed to
+any other paging the graph because
+they don't point to anyone else.
+So going back to our 3,
+3 node graph example in,
+in this case node n is the dead end
+because the out degree of n is 0.
+Okay?
+So now what we see if we look at
+the structure of our matrix m,
+the first thing we notice is that our
+matrix m is not stochastic anymore.
+Right?
+So our columns don't sum to 1.
+In particular, the, the columns of,
+for node m do not sum to 1.
+The, the reason for that is,
+because node m has 0 out degree, so
+it will be all 0's in
+that column of matrix m.
+So if we look at our set of
+equations what we used to
+have before was now is that basically the,
+the m does not r of m does not cor,
+does not appear in any of the equations.
+And now if we start, if we would go and
+run our Power Iteration.
+Here is, here is basically what happens.
+We again start with
+the vector of one-thirds.
+Keep, keep multiplying with m in
+the first iteration, second iteration,
+third iteration.
+And after a while all our, the, our
+vector basically converges towards 0's.
+So basically it would say that all web
+pages in this graph have importance of 0.
+Which is, again, not what,
+not what we want.
+And basically the problem is that whatever
+is the PageRank score of, of node m,
+node m is not able to pass this PageRank
+score to any other node in the network so
+that PageRank score kind
+of leaks out of our system.
+So the question is,
+how do we solve, the, the problem we just
+observed with dead-end, with dead-ends?
+So, the, the way we solve the problem
+is to basically say the following.
+What we say is that if a node
+has no outgoing links,
+then when we reach that node,
+we will teleport with probability 1.
+So this basically means that for example
+whenever, whenever we reach node m we will
+always jump out of it random uniformly at
+random and tele, teleport somewhere else.
+So if you think,
+what do this to our stochastic matrix m
+and the column corresponding to node m.
+What happens is that basically
+now column 1 will have,
+will have values of 1 over 3 for
+all, all the, all its entries.
+What does this mean?
+It's basically whenever a random surf,
+surfer comes to m, it teleports out, and
+with probability one-third, lands to any,
+any other node in the graph.
+So this is,
+again the way using the random jumps or
+random teleports,
+how we solve the problem of dead ends.
+

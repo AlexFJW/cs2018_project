@@ -1,0 +1,338 @@
+So, now the question is why, why, why do,
+why do teleports solve all our problems,
+right?
+So before, here is the,
+the equation we had from before and
+in order to understand why the teleport
+solve all our problems, we have to
+go back to the theory of Markov chains
+that I alluded to in the previous lecture.
+So the way we define a Markov
+chain is the following.
+So Markov chain is this abstract
+mathematical object that has
+the following ingredients or parts to it.
+So first we think that we
+have set of states X, okay.
+Then we have a transition matrix P,
+where Pij simply measures
+what is the probability that if,
+if we were at state i,
+how likely are we to transition
+to state j in a given time stamp.
+Right so Pij means given that I was
+at j in previous step how likely am I
+transition to node to, to state i okay?
+And then pi is is a stationary
+probability distribution of
+being at any of the states x,
+and our goal right
+is to compute the value of this equation,
+that pi equals P times pi, right?
+So this would be a stationary probability
+distribution of this Markov chain that is
+defined over a set of states and
+with the transition matrix P.
+And again, you immed,
+immediately see the, the,
+the correspondence of our
+initial page link equation.
+Here we have pi equals P times pi,
+and we have r equals M times r.
+So, Theory of Markov
+chains says the following.
+It says that for any start vector
+the power iteration applied to this Markov
+transition matrix P will converge to a,
+to a unique positive, stationary vector.
+As long as this matrix
+P has three properties.
+It has to be stochastic,
+it has to be irreducible,and aperiodic.
+So now, what I will show is that for each
+of these three conditions, stochastic,
+irreducible, and aperiodic, actually
+adding random teleports gives us a, gives
+us a, in some sense stochastic transition
+matrix that has these properties.
+So what we will do now is,
+convince ourselves that our matrix M
+together with this random teleports, has
+all the three properties that we need for
+the for the PageRank r to exist.
+So the first question is,
+why do teleports make m stochastic?
+So a matrix is stochastic
+if its columns sum to 1.
+So in our case or in case of the dams when
+we have this node m that has no out-links,
+the column for node m did not sum to 1,
+it sums to and
+the specificity condition for
+the matrix was violated.
+So now if we add this random
+teleportation, we can that occurs with
+probability 1, we can basically think
+of this as adding, add, the green
+address from node m, to any other node in
+the network, including the [INAUDIBLE].
+Right, this means that our matrix m now
+got transformed and our column for m,
+for node m now has these values of 1 over
+3 in each so the column sums to one and
+we get the stochastic stochasicity
+property of matrix m.
+The way we can think about this in terms
+of equations is that basically we say our,
+we define a new matrix A where
+we take our previous matrix M,
+and now we,
+we introduce two pieces of notations here.
+First I have this vector A where
+the i-th component of vector A equals 1
+if node I has out degree 0, if node I is a
+dead end, and otherwise if it has value 0.
+And then this vector E is
+just vector of all ones, so
+it's a vector where every
+component has a value of 1.
+So what we basic, what this basically
+means is we take matrix M and
+wherever there is a column with
+in the matrix M that has all 0's,
+we replace that with 1 over the out
+degree of, of that given node.
+Exactly what we,
+what we need in the case of m.
+So this is what we did now, is basically
+a random, a random teleportations.
+What they do, they take our matrix m that
+cannot be stochastic in the graph because
+it dead ends and transform into a new
+matrix A that is now stochastic.
+By, by taking the teleportation with
+probability 1 out of the nodes with 0
+out degree.
+So that's the first property.
+The second property is that
+m has to be a periodic.
+So we say that a chain is periodic if
+there exists some value k such that
+the interval between two visits to some
+state s is always a multiple of k.
+So for example, if we were to have a graph
+on three nodes with with a directed cycle,
+as I have it here, then for example, this
+a, this would, this would be a periodic,
+periodic chain, because the, the random
+lock here is deterministic and every,
+every two steps we return back to the,
+to the same node.
+So by adding teleports what this
+basically means is that that at any
+time we will be able to jump out of,
+of this kind of infinite, infinite loop.
+And we can even think that what we
+have is we have this self loop so
+that the, the random walker can,
+can get the,
+can spend some time at the given node and
+this way the periodicity is broken.
+And this is how basically random
+teleports solve the periodicity problem.
+Now the last property we need to
+talk about is irreducibly, and
+we say that m is irreducible when from,
+from any state
+there is a non-zero probability of going
+to any other state in the, in the network.
+This means that, basically,
+we can never get stuck in a given state.
+So the way, for example,
+we would make our given graph here
+irreducible is to add all these other,
+other possible links, which basically
+means we would add a random jumps.
+So this would mean that the, that there is
+a non-zero probability of going from any
+state to any other state in our graph.
+So putting all this together this is,
+this is exactly what random jumps do.
+So basically Google's solution to,
+to PageRank and
+to random server interpretation of
+PageRank was to introduce random jumps.
+So the idea is that we
+state we want to take.
+Th, matrix M, make it, make it stochastic,
+aperiodic, in irreducible.
+All this is achieved by
+slightly modifying the,
+our random walking process, where at each
+step a random surfer has two options.
+With probability beta, the random surfer
+goes and follows a random outlink.
+And with probability 1 minus beta.
+The random surfer jumps to
+some other page at random.
+So now what this basically means is that
+this now changes our PageRank equation.
+So if you think about the PageRank
+equation now, it's a bit different.
+So here for example, the score of node
+j can be computed as follows, right?
+So basically what this is
+saying is the following.
+The importance of node j is first.
+The sum of the importances of all
+the nodes i that point to it.
+Where r sub j, r sub i is the probability
+that random walker is at node i.
+Then we divide that by the outdegree
+of i as the probability that
+the random walker actually
+traverse the link towards j.
+And, this only happens with probability
+beta because the random walker,
+when they are at node I,
+has to decide to actually follow a link,
+and this happens with probability beta.
+And then of course, how likely is
+the random walker to visit node J?
+It either does it by by,
+by following a link.
+Or with probability one minus beta
+the random walker decides to jump.
+And if the random walker decides to
+jump then it will land at a given node J
+with probability one over N where N is
+the number of nodes in the network.
+Right?
+So basically we
+took our initial
+formulation of PageRank and
+now we change it a bit where
+we have the random walk part.
+This is the part where we
+kind of multiply with beta.
+And we have the random jump part.
+Where we have the 1 minus beta.
+So now the question is given this
+new random walk formulation.
+Is, is the power iteration
+still going to work right?
+Now we have a different more
+complicated recursive equation.
+So the question is how,
+how do we compute this?
+And the way we compute this
+is basically to, to run,
+to run our eigenvector finding method,
+our power iteration again.
+The way, the way we see that basically
+we have the same problem as before is to
+notice the following.
+So we have this, what we will call
+Google matrix, we will call it A.
+And we will express A as a matrix
+M plus some other matrices.
+So we take our matrix M and
+multiply it with beta.
+This is the,
+the part that comes due to random jumps.
+And then what we want to do is we
+have this other part, 1 minus beta,
+that basically this is the probabilities
+or transitions due to random jumps.
+And simply the expression you get here
+is that this is 1 minus beta, 1 over n,
+where n is the nodes in the graph, times
+the outer product of this vector of all,
+of all 1's called e, okay?
+So what this means is that
+even with these random jumps
+the PageRank solution can be expressed
+exactly as we had it before.
+That r equals A,
+now this is the Google matrix not
+the matrix M anymore time, times r.
+Of course one question that we need
+to answer is what is a good value of
+beta right?
+How often should the random worker jump?
+For example is beta would be 0,
+then what would that mean is that
+the random walker jumps all the time, so
+all the nodes in the network have exactly
+the same prob the same PageRank score.
+Because the random walker is not
+really walking over the graph,
+it's just randomly jumping all the time.
+If we set beta to be equal to 1,
+then basically there is no random jumps.
+And this means that our Matrix A wouldn't
+be stochastic anymore, and, and so on.
+And we would have no random jumps and
+PageRank wouldn't, wouldn't really work.
+So what turns out is
+that the good value for
+beta is to set beta between 0.8 and 0.9.
+And usually people set beta to be 0.85.
+Which basically means for
+every five steps you do a random jump.
+So a random walker, in some sense, in, on
+the average would do five steps and jump,
+another five steps and a jump, and so on.
+So that's basically the the idea.
+So, let's now see how this PageRank
+formulation would work in,
+in the real world.
+So imagine we have our old graph
+as we had it before, three nodes.
+And in this case, node M is a,
+is a spider trap right?
+That is the self loop.
+What I also have on this graph is,
+I have these green edges.
+In these green edges,
+you can think of them as edges that
+are there due to, due to random jumps.
+So we have our matrix M,
+as we had it before.
+With matrix M everything is fine,
+it's still,
+it's still stochastic, the only problem
+is that node n is a, is a dead end.
+Oh, sorry, is a spider trap.
+And now what I also did in
+this graph is I labeled every,
+every edge with with it's
+transition probability.
+So the way, the way we do now
+is we take this matrix M,
+we take this other matrix of one-thirds
+and multiply it with 1 minus beta, so
+in this case we are assuming beta is 0.8,
+and this gives us the mat, the matrix A.
+And now if we do the ma,
+multiply our r with matrix A,
+this is how the using power iteration,
+these are the different versions of
+vector r as we keep multiplying, and
+at the end the PageRank scores we
+would converge to are given here.
+So basically the score for
+node y would be 7 over 33.
+For node A would be 5 over 33.
+And for node M would be 20, 21 over 33.
+So what do we see?
+We see that m is still the most
+important node in the graph,
+because of this spider trap.
+But we see that nodes y and
+a have also non-zero score.
+And actually node a is more
+important than node y.
+So it seems everything works and
+everything is fine.
+

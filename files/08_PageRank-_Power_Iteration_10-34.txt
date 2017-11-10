@@ -1,0 +1,291 @@
+And now the question is how do we compute,
+how do we compute the eigenvector to the,
+to the, or the solution to this
+problem r equal N times r.
+So the way we, we proceed is the,
+is the following.
+So the method is called
+the power iteration method and
+it assumes that on the input we
+are given a big web graph on N nodes.
+Where nodes are red pages and directed
+links correspond to hyper, hyperlinks.
+And then we think we, the power iteration
+is a very simple iterative scheme.
+The way the,
+the whole thing works is the following.
+We will start with our vector r, I, I,
+I have this subscript r of 0, which simply
+means that this is the, this is measuring
+the time, how the iterations proceed.
+So r our initial guess of our ranking
+vector r is simply that all
+the components of it are 1 over N.
+So, where N is the number of nodes.
+So naturally the compo, the comp,
+the entries of r sum to 1.
+So now all we do is we iterate our,
+our recursive equation.
+So we say that values of r at time
+t plus 1 is the matrix M, the,
+the stochastic adjacency matrix,
+times our previous vector r, r, r t.
+And we keep iterating this.
+And basically all we are doing is we
+are iterating this r equals M times r.
+And we keep iterating this
+until r stops changing.
+So this means we keep iterating this
+until this sum of the, let's say,
+coordinate wise sum of the differences
+between the r of the current time step and
+r of the previous time
+step is less than epsilon.
+Right?
+So, and this is really, really all there
+is to the, to the page rank algorithm.
+We start with some guess of how
+our vector rank vector r is,
+then we multiply it with M
+usually around 50 or 100 times.
+And we keep monitoring how much does r
+change from one iteration to another, and
+when it stops changing, we stop.
+And, what we get is the page rank scores.
+So, of course if we have if
+we have this this algorithm,
+the question is how, how is this working?
+So let me just give you, give you
+an example using our old web graph idea.
+So, we have the three node web graph.
+We have, we have our matrix M here.
+We have the algorithm here on the left,
+a simple iteration as I mention before.
+And let me show how this would work.
+So, for example we start with r0 which is
+where the components of it are one-third,
+one-third, one-third.
+We multiply it with them and
+in the next time snap, so
+this will be r1,
+we would get the new vector.
+And then we could, we now compute r of,
+r, r of time 1 times M,
+we obtain r at time 2, and then again
+we would go multiply that again with M,
+would get r at time 3, and
+we would keep doing this.
+And at the end, r would actually
+converge to, to a vector that I will
+show you here where A and y nodes would
+have the importance of 6 over 15 and
+y would have the importance 3 over 15.
+Which is exactly the same values as we got
+before when we were actually trying to
+explicitly solve our system
+of flow equations, right?
+6 over 15 is the same as 3 3 over 3
+over 2 over 5 and 3 over 15 is 1 over 5.
+All right?
+So we got to the same solution as we had,
+as we got before when we were trying
+to solve a system of equation.
+But now we didn't really kind of solve
+the system of equations explicitly,
+we simply did this vector matrix
+multiplication multiple times.
+And the thing converge,
+converged somehow mira,
+miraculously to the values we wanted.
+So, so far we looked at page rank
+in terms of a matrix formulation.
+So we, we express the set of flow
+equations as a vector matrix product, and
+then we saw that, instead of solving the
+flow equations, we can kind of find the,
+the eigenvector of a matrix M,
+in this way find the page rank scores.
+So what we will do next is we will look at
+an interpretation of what
+the page rank scores mean.
+And this is called a random
+walk interpretation.
+So basically we will see that page
+rank scores are equivalent to
+a probability distribution of
+our random walker in a graph.
+So, before I tell you the details, here
+is, here is a way how to think about this.
+We are thinking about the web
+graph as a giant graph and
+we are thinking about the, the the surfer.
+So a surfer is simply a person who is
+basically randomly surfing this graph.
+Which means that a, a surfer comes to
+a given web pages, web page, looks at all
+the outgoing links, peaks one at random
+and, and moves to the next web page.
+And the server is kind of browsing
+these graph indefinitely.
+So the idea is that at some given time t,
+surfer is at some node i, and
+what the surfer will do in the next
+time step at time t plus 1,
+basically the surfer will
+follow an out-link from i, and
+choose this out-link uniformly at random
+out of all the out-links at of node i.
+Okay?
+And then, now the surfer is at node j.
+So what time t plus 1 surfer is at node j,
+and
+again looks at all the outgoing links of
+node j and follows one of them at random.
+So now what we can also think about is,
+we can think of this vector p of t.
+And this p of t can, we can, we, we think
+of this as a probability distribution over
+the nodes of the graph, which basically
+tells us with what probability is a given,
+is a walker at time t at the given node.
+Okay.
+So we
+can see that we every node in a graph
+has a value associated with it.
+And this value corresponds to
+the probability that at a given time t,
+the, the random walker
+is at that given node.
+Okay.
+So now that we have defined the process
+and we have defined the notion of p of t.
+Now the next question is to ask,
+where is the random walker
+going to be at time t plus 1?
+Okay?
+So given, given the probability
+distribution where the random walker is at
+time t, that is called p of t,
+the question is, where is the random
+walker going to be at the next time step?
+And the answer to this is actually very,
+very intuitive.
+So, we can ask,
+what is the probability that the random
+walker will be at node j at time t plus 1?
+So if we want to compute this,
+then all that for
+node j what we have to look at is what
+are all the nodes that point to j.
+What is the probability that the random
+walker was at any of these nodes i,
+that point to j?
+And at every node i,
+the random walker basically has to go and
+take, take this link that
+points towards node j.
+So this means that whatever is the,
+was the, was the,
+was the probability that a given node that
+the random walker was at a given node.
+Now the random walker has to pick
+the out-link that points to node j.
+So which means that,
+that what we are basically getting is,
+is exactly our page rank equation if you,
+if you want to think about it this way.
+Right so, so the probability that
+the random walker is at the given node.
+Is simply the sum of the probabilities
+that the random walker in previous time
+step was at the neighbors
+that point to given node.
+And from every given node, the, the random
+walker transitions to the node j
+with probability of 1 over the,
+1 over the out degree of that given node.
+Which is exactly the page rank
+the page rank formulation.
+Right?
+So this means that the probability
+distribution of where the random walker is
+either time t plus 1 is simply our matrix
+M times the probability distribution
+where the random walker was at time t.
+So now let's suppose the following.
+Let's suppose that the,
+that the random walk reaches
+what is called the steady state.
+Which means the probability
+distribution at time t is,
+equals the probability
+distribution of time t plus 1.
+This means that probability,
+p of t is a stationary distribution.
+So, probability solution at time t plus 1
+equals M times p of t equals back p of t.
+Okay?
+So what we, what we observe
+now is that this stationary,
+stationary probability
+distribution p of t is,
+is exactly what was our, our original
+formulation of a of a random walk.
+What before we had r equals M times r.
+Now we have p of,
+p of t equals M times p of t.
+Right?
+So this means that our rank vector r
+is a stationary distribution for
+this random walk process, okay?
+So, this about this a bit.
+So basically what page
+rank score corresponds to?
+They correspond to the probability
+that this random surfer,
+that infinitely long kind of walks the,
+walks the web graph at a given, at a,
+at some given time t
+resides at the given node.
+So this is what is called the page rank,
+the random walk interpretation of page
+rank, where we can think of a score or a
+rank of a given node to be the probability
+that the random walker is at that given
+node at some, at some fixed time t.
+So, another important consequence of
+this random walk interpretation is that
+there is a rich literature
+on random walks.
+And random walks are really called Markov
+processes, or first order Mark, order
+Markov processes, because basically they
+have very little, very little history.
+And the central,
+the result from the Markov processes or
+random walk literature is that
+under certain conditions,
+basically conditions under matrix M,
+the stationary distribution is unique,
+and it will eventually be
+reached no matter what is the,
+the initial probability dis,
+distribution at the time t equal 0.
+So, what does this mean?
+This means that there are certain
+conditions on the structure of our graph.
+On the structure of our matrix M.
+And if our matrix M
+satisfies these assumptions,
+then the stationary distribution we,
+is unique.
+Which means there is only one unique
+rank vec, page rank vector r.
+And this unique page
+rank vector r will be,
+will be achieved regardless
+of how we initialize it.
+Which means that our pay power iteration
+will always converge to the same vector,
+regardless of how we initialize it.
+

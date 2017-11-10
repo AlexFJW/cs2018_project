@@ -1,0 +1,303 @@
+Welcome back to Mining
+of Massive Datasets.
+In the previous lectures we studied
+the Basic Map-Reduce model, and
+then we looked at how it's
+actually implemented.
+In this lecture, we're going to look
+at a tuples of refinements to the basic
+Map-Reduce model,
+that can make it run a bit faster.
+[SOUND] The first refinement we're
+going to look at is combiners.
+Now, one of the things that you may have
+noticed in the previous examples, was that
+the map task will produce many pairs
+of key value pairs with the same key.
+For example popular word, like the,
+will occur in millions and
+millions of key value pairs.
+Now, remember that the map
+tasks are actually happening in
+parallel on multiple worker nodes.
+And the, the key value pairs
+from each map node have to
+be shipped to to, to reducer nodes.
+If you sort of imagine a word like the,
+the on, on node 1,
+map task 1, it's probably going to see a
+few thousand occurrences of the word the.
+And map task 2 is going to see
+a few thousand occurrences of
+the word the, and so on.
+So the output of map task 1,
+will have let's say 1000 tuples,
+with the key the and value of one.
+Now all these,
+tuples will have to be shipped over
+to let's say to the new task 1.
+.
+Now, by shipping a thousand tuples over
+all of whose you know, keys are the,
+all of whose values are one
+it's a lot of network overhead.
+And, you can save some of this network
+overhead by doing an intermediate sum
+in the, in the map worker.
+For example, if we're sending
+thousand tuples that each say, that,
+that each have the key the and
+the value of one.
+You can send a single tuple that has
+the key the and the value of 1000, right?
+And so, you can save a lot of network
+bandwidth by doing a little bit of
+pre-aggregation in the map worker.
+Here's a mapper and the mapper is
+this is about code example again.
+The mapper the we,
+has b occurring once, c occurring once,
+d occurring once, e occurring once.
+D occurring once and
+b occurring, once again.
+And now the, the tuple b occurs two times
+here having in the output of this mapper.
+So, l,
+the combiner which is another function
+that is provided by the programmer.
+Combines the two occurrences of B,
+and produce a single tuple,
+B comma two which is then shipped,
+shipped over to the reducer.
+Since, we have two tuples of the form
+B1 being shipped over to the reducer,
+a single tuple of the form B2
+gets shipped over to the reducer.
+And this way much less data needs
+to be copied and, and shuffled.
+So the, the combiner is actually
+also supplied by the programmer.
+The programmer provides
+a function combine.
+The input to the combiner is is,
+is a key and a list of values.
+And the output is a single value.
+So, instead of a whole bunch
+of tuples with the key k
+being shipped off to a reducer.
+Just a single tuple with key k and
+v2 is shipped off,
+to the reducer now usually the combiner
+is the same function as the reducer.
+So, if for example,
+if a reducer adds up its input values
+the combiner does the same thing as well.
+Further, we have to be careful,
+because this trick of using the combiner
+works only if the reduce function
+is commutative and associative.
+Let's look at a couple of examples
+to see what what I'm saying here.
+So for example, let's say the,
+the reduce function is a sum function.
+You want to add up all the input values,
+as in the count example.
+Now the, the sum function
+actually is commutative and
+associative; by which we mean,
+that, a plus b.
+Is b is the same as b plus a.
+And a plus b plus c is
+the same as a plus b plus c.
+This is the first property
+is the commutative property.
+And the second property
+the associative property.
+And because sum satisfies both
+these properties sum can be used as
+a combiner as well as a reducer.
+What that really means,
+is that if you have a lot of
+values that need to be summed.
+All these values need to be added up.
+We can break it up into two pieces.
+You you can sum up the first piece.
+You can sum up the second piece.
+And then you can sum up the, the two
+intermediate results and you'll get the,
+you'll get the proper,
+you'll get the same, same answer.
+Okay, right, so, and so this is the first
+combiner sums up the, the, the, the first,
+set of output with the second, combiner
+sums up the second set of outputs.
+Then you sum up the two
+intermediate values, and you
+get the same result as if you had summed
+up all the original values to begin with.
+So, that trick works, because the sum
+is commutative and associative.
+However, there are some functions
+that are not commutative and
+associative, an example.
+Might be average, right?
+Let's say the reducer needs to compute the
+average of the, of its setup input value.
+So this is, so
+the setup input values consist of a,
+a key, followed by a bunch of values.
+And the combiner the reducer needs to
+find the average of this set of values.
+Now, lets say, we divide this
+set of values into two sets.
+Compute the average of the set.
+Compute the average of this set,
+let's say that's average 2.
+And now we take the average
+of average 1 and average 2.
+That's the average of average 1 and
+average 2.
+Now, it turns out that
+this is actually not.
+The same as the average of all
+the values that are out there.
+So, the average function that we've
+seen is not commutative and associative.
+And so, you can't use it as a combiner.
+But it's turn out you can still
+use the combiner trick if you
+are a little bit careful instead of
+using average as your reduced function.
+If the reduce function
+instead outputs you know,
+outputs a pair, which consists of sum and
+count, okay?
+Then the average can be
+computed in 1x plus trap,
+it's just the sum divided by the count.
+So if, if the combiner ends up
+sending the average of all its values.
+Let's say the key [SOUND] and
+values and here are the chunks.
+Now the combiner, the first combiner,
+compute the sum of this piece,
+and the count of this piece.
+The second combiner, compute the sum of
+this piece, and the count of this piece.
+And the third combiner, compute the sum of
+this piece and the count of this piece.
+And the,
+finally all these all these values,
+the sums of the counts get
+shipped to the reducer.
+And the reducer computes the final sum.
+Which is sum of the, the,
+the intermediate sums it has received.
+[SOUND] The final count, which is the sum
+of all the counts that it has received.
+[SOUND] And divides the sum by the count,
+the final sum by the final count.
+That, in fact,
+turns out to be the correct average.
+So, using this using this
+trick of using sums and counts
+it's sometimes possible to turn a function
+that's not commutative or associative.
+Break it down into functions that are
+communicative or associative like sum and
+count and still use a combiner
+trick to save some foot traffic.
+Unfortunately it turns out that while
+while most functions are amenable to
+the combiner trick.
+There are some functions that don't
+work with the combiner trick at all.
+One example is is median.
+Right?
+The median of a set of values is obtained
+by sorting you know,
+[INAUDIBLE] sorting that set of values.
+And then finding the middle, the middle
+value in that, in that sought it list.
+It turns out and it can be prov
+minuen mathematically that there is no
+way to split the median competition.
+Into a bunch of commutative and
+associative computations.
+So you can't actually use
+the combiner trick if your goal is to
+come through the median
+of a set of values.
+You just have to ship all
+the values to the reducer and
+compute the median at the reducer.
+The next refinement we are going to
+look at is the partition function.
+Now, remember that the map
+reduced infrastructure
+uses a hash function on each key
+in the intermediate key value set,
+and this hash function decides which
+reduced node that key gets shipped to.
+The map reduce system uses a default
+partition function which consists of
+hashing the key using
+a pre-defined hash function.
+And then taking the result modular R.
+Now, this gives a number
+from zero to R minus 1 which
+decides which reducer the key is sent to.
+Sometimes you may want to override
+this partition function with a custom
+partition function.
+For example.
+For example, you might want to ensure
+that all the URLs from a given host
+that say end up in the same output file.
+And are therefore sent
+to the same reducer.
+So instead, of hashing by key, you might
+want to hash by the host name of the URL
+and the map reduce framework allows you
+to specify the custom partition
+function that can do things like this.
+The initial implementation of
+MapReduce was done at Google.
+And Google first implemented a file system
+called the Google File System which is
+a distributed file system that provides
+table storage on top of its cluster.
+And then implemented
+the MapReduce framework on top of
+the Google File System.
+Google's implementation MapReduce
+is not available outside of Google.
+Hadoop is an open-source project that's
+a reimplementation of Google's MapReduce.
+It uses a file system called HDFS for
+stable storage.
+And it's implemented in Java.
+Hadoop is an Apache project.
+And you can freely download
+it from the Apache website.
+It turns out that many use
+cases of Hadoop involve doing
+SQL-like manipulations on data.
+And so there are open-source
+implementations called Hive and
+Pig that provide SQL-like
+abstractions of top of the Hadoop and
+MapReduce layer, so that you don't have to
+rewrite those as map and deduce functions.
+That finally wrap up by looking
+at Map Reduce in the Cloud.
+Amazon's Elastic Computer Cloud, for
+example, is one example of a service
+where you can rent computing by the hour.
+And Amazon also has an implementation
+of Map Reduce called
+Elastic Map Reduce that
+you can run in the Cloud.
+This concludes our
+discussion of Map Reduce.
+

@@ -1,0 +1,230 @@
+So, in order to come up with
+a different mathematical formulation of
+this basic idea of modelling the flow,
+we will first define what we will call
+our stochastic adjacency matrix M.
+And then we will express everything
+in terms of linear algebra.
+In terms of basically the ranks and this
+matrix M as vector matrix multiplications.
+And we will later why this
+is good because we will be
+able to start using the linear algebra
+tools to implicitly solve the system of
+equations that I showed
+on the previous slide.
+So here is how we proceed.
+Our goal is to define
+the stochastic matrix M,
+that will basically be
+an adjacency matrix.
+Which basically means,
+we want to take the graph and
+represent it as a big matrix of values.
+And the idea is that if a page
+i points to page j then
+we will have a non-zero entry in the cell
+ji, and if there is, if the page,
+page j does not point point to page i
+then we, we will have a 0 entry there.
+So now the question is what is
+the value of the non-zero entry in,
+in the cell of the matrix.
+So the idea is if i points to j
+then the corresponding entry ji in
+the matrix M will be o over the f the out
+degree of the, of the source node.
+So out degree of node i.
+Here you will already seen what
+kind of where we are going right?
+Before we said that whatever
+is the importance of a node,
+this importance gets evenly split
+along all of its out-links.
+So this means that, that the,
+all the out-links of node i,
+will have the weight 1 over di.
+So this means that our matrix
+is called column stochastic.
+This means that every column,
+every column in our matrix, sums to 1.
+Okay, so now that we have the whole
+graph represented as a matrix you
+can also take all the page rank scores
+of nodes and represent that as a vector.
+Okay.
+So the way we do this is that we
+think that we have one entry in
+our vector per page, we can think
+that our pages are numbered 1,
+2, 3, 4, 5 up to N so
+we have a vector length N.
+And every entry in this vector
+basically corresponds to
+the page rank score of a given,
+of a given page.
+Okay?
+So that is all good and the other thing we
+know from before is that the sum of
+the entries of our vector equals to 1.
+That was the constraint of
+the flow equations we had,
+we had on the previous slide.
+So now what is interesting is that
+we can take our flow equations,
+kind of our basic equation.
+And write it as a in terms of
+the matrix M and the vector r.
+So we can write it as rank vector r equals
+the matrix M times the vector r again.
+So now we basically have a big
+system of equations, right?
+M is fixed and we want to figure
+out what are the values of r.
+So just to convince you or demonstrate
+why, why, why we can take our initial fl,
+flow equations and express them
+into this vector matrix product.
+This may not be obvious, so here is how,
+how we can understand that what we
+are doing is actually true and correct.
+So the idea is the following, right?
+Imagine that I have my matrix M here
+at the bottom, and I have my vector r.
+And now I am multiplying M times r.
+And just for the sake of the example,
+let's assume that page I has the,
+has the degree,
+out degree of i equals 3, and
+it also points, which means it points
+to three other pages, including j.
+This means that for a page i,
+the col, the i-th column of matrix M
+will have three non-zero elements.
+Here are indicated by squares,
+and each of these,
+each of these three non-zero cells
+will have a value of one-third right?
+1 over the out degree of node i.
+So now imagine what happens
+when I take the j throw and
+multiply it with the vector r.
+When I'm,
+when I'm scanning across the row here and
+I'm scanning down the vector,
+the vector, the vector r.
+I'm basically computing the page
+rank score of node j, right?
+The page rank score of the node j is the
+sum of the importances that are stored in
+r, times the out degree of
+that node that points to j.
+So this way basically we take
+this initial equation that we,
+that we had before and
+we express it as a vector matrix product.
+So now we basically took our flow
+formulation of the problem and expressed
+it as this recursive, in a sense,
+matrix equation of r equals M times r.
+Now, what we observe is that this
+looks very much like an kind of
+Eigenvalue or problem.
+So let me just remind you
+what are Eigenvalues and
+eigenvectors of a given matrix.
+Right?
+So if I have a matrix A then x
+is called an eigenvector with
+the corresponding eigenvalue lambda.
+If x is a solution to the equation,
+A times x equals lambda x.
+Okay?
+So, just saying it again.
+A is a matrix that we, that we are given.
+X is something that we'd like
+to compute and it's a vector.
+And lambda is also something that we'd
+like to compute, and is a scalar.
+Is a, is a real number,
+or a complex number.
+So, the point being is
+that x is an eigenvector,
+y is a eigenvalue, if they are solution
+to this equation Ax equals lambda x.
+So in,
+in our equation looks very much similar.
+Like, at least have M times r which
+is the same as kind of A times x.
+And then we say equals r, and
+before we had equals lambda x.
+So what this means,
+is that a rank vector is an eigenvector
+of the stochastic web matrix M.
+And another important fact is that
+it is a principal eigenvector.
+Which means that it corresponds
+to the eigenvalue with value 1.
+Right, so, here I can see that
+I implicitly multiply by 1 and
+my lambda is 1.
+Right?
+In fact the large,
+largest eigenvalue of M is once, is,
+is 1 exactly because M
+is column stochastic.
+Why is that the case?
+That's the case because
+vector r has a unit length.
+Meaning its coordinate sum are non, are
+non, are non-negative and they sum to 1.
+And each column of M also sums to 1.
+So M times r will be the, the value
+of that product, of that dot product,
+will be at most at most 1.
+So this means that the that
+the corresponding eigenvalue the largest
+eigenvalue of our matrix is 1, okay.
+So why did, why did we do now.
+So far we took our graph represented
+it represented it as this big matrix,
+and we reformulated our flow equations
+into this matrix formulation and
+now we establish the connection
+between the matrix formulation and
+the eigenvalues and
+eigenvectors of matrix M.
+So, what, what this now means
+is basically instead of
+thinking of this as solving a system
+of equations, we can think of,
+of our problem as finding
+the eigenvector of, of matrix M.
+And actually there is
+a very efficient method for
+finding eigenvectors of a given matrix.
+And this method is called power iteration.
+So now we actually know
+how to compute page rank.
+The way to compute page rank is to
+find the, the eigenvector of matrix M
+that corresponds to
+the eigenvalue of value of 1.
+So that's what we learn so far.
+So now the,
+we can actually go an compute the thing.
+So let me show you what we have so far.
+We have our little graph
+web graph on three nodes.
+We have our flow equations.
+And we also now can write what
+the structure of our matrix-m.
+Here is the structure or our matrix-m.
+Notice that the matrix is
+really column stochastic.
+So now, what we can, what,
+how we can think of our flow equations,
+we can think of them as this
+vector matrix product, right?
+So r, r equals M times r.
+

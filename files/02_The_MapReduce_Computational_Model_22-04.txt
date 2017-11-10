@@ -1,0 +1,602 @@
+Welcome back to Mining
+of Massive Datasets.
+We're going to continue our
+lecture on MapReduce, and
+take a look on the MapReduce
+computational model.
+So before we look at the actual
+MapReduce Programming Model,
+let's do a warm up task.
+Now imagine you have a huge text document
+you know maybe tera, terabytes long and
+you want to count, the number of times
+each distinct word appears in the file.
+For example, we want to find out that
+the word the appears 10 million times and
+the word you know apple appears 433 times.
+Right?
+And some sample applications of
+this kind of toy example in real
+life are you know if you have a big
+depth of a log and you want to find out,
+how often each URL is accessed that
+could be a sample application.
+Or it maybe building terms,
+such as text for a search engine.
+Right?
+So, but for
+now let's just imagine that
+we have this one big file.
+That's a huge text document and
+our task is to count, the number of times
+each distinct word appears in that file.
+So, let's look at two cases,
+the first case is that the file
+itself is too large for memory.
+Because remember we said it's a,
+it's a, big, big file.
+But imagine that there are,
+is few enough words in it so
+that all the word count pairs
+actually fit in memory, right?
+How do you solve the problem in this case?
+Well it turns out, that in this
+case a very simple approach works.
+You can just build a, a Hash Table.
+I'll, build the, the index by word.
+And and the Hash Table for
+each word will of course,
+will restore the count,
+of the number of times, that word appears.
+So you the first time you see
+a word you initialize you know,
+you add an entry to the Hash Table,
+with that word, and set the count to 1.
+And every subsequent time you see the
+word, you, you increment the count by one.
+And you,
+you make a single sweep through the file.
+And at the end of that,
+you have the word count pairs for
+every unique word that
+appears in the file.
+So this is a simple program,
+that all of us have written, you know,
+many many times in some context or
+the other.
+Now, let's make it a little
+bit more complicated.
+Let's let's imagine that even the word,
+count pairs don't fit in memory.
+Right, the file's too big it doesn't
+fit in memory, but, there's so
+many words,
+distinct words in the file that even,
+you can't even hold all
+the distinct words in memory.
+Right?
+Now how do
+you go about solving
+the problem in this case?
+Well you can try to write some kind
+of complicated code but you know,
+I'm lazy so I like to use Unix
+file system commands to do this.
+And so
+here's how I would go about doing this
+So this is a a Unix command line way of,
+of doing this.
+You know here the the command
+you know words is,
+is, is a little script that goes
+through doc.txt which is the,
+which is the big text file.
+And it outputs the words
+in it one per line.
+And once once those words are output
+I can pipe them to to a sort.
+And the sort sorts the you know,
+sorts the output of that.
+And once you sort it
+all of the all occurrences of
+the same word come together.
+And once you do that you can pipe it to
+another little handy utility called uniq
+and one of the one of the nifty features
+of uniq is the, my, is the dash c option.
+And when you do uniq dash c
+what uniq dash c does is it takes a run
+of the occurrence of the same word.
+And then just counts
+the occurrences of the same word.
+So the output of this is going
+to be word count pairs, right?
+So and you know I, I'm sure many of
+you have done something like this.
+And if you've done something like this,
+you've actually done something
+that's like MapReduce.
+Right?
+So this case actually captures the essence
+of MapReduce.
+And the nice thing about this kind of
+implementation is that it's, it's very,
+very naturally paralle, light,
+parallelizable as we'll see in a,
+in a moment.
+So so let's look at an old view of
+MapReduce using this example, right?
+So the the first step that we did.
+What we,
+we took the document which was our input.
+And we wrote a script called words,
+that output one word to a line, right?
+And this is what's called a Map
+function in in, in, in MapReduce.
+The Map function scans the input
+file record-at-a-time.
+And for each record, it, it pulls
+out something that you care about.
+In this case, it was words.
+and, and the thing that the you output for
+each record you can, you, you cannot one
+or multiple things for each records.
+And the things that you output,
+are called keys, okay?
+The second step is is to group by key.
+And this is the what the,
+the sort step was doing.
+It grouped all the keys with
+the same value together.
+Right?
+And the the third step the is the,
+the unique minus c step.
+That's the reduce piece of MapReduce.
+And once the reducer looks
+at all the key you know, all
+the keys with the same value, and then it,
+then it ru, runs some kind of function.
+In this case it counted the number of
+times the each key occurred but, but
+it could be something
+much more complicated.
+And once it does that kind of analysis it,
+it has an answer which,
+which it then writes up.
+Okay, so this is MapReduce in a,
+in a nutshell.
+Now the, the outline of this computation
+actually stays the stame, same for
+any MapReduce computation.
+What changes is it that it
+change the Map function,
+the Reduce function, to the fit
+the problem that you're actually solving.
+Right?
+In this case for the word count the Map
+and the Reduce function were quite simple.
+In some other problems the Map and
+the Reduce functions might
+be more complicated.
+Here's here's,
+here's another way of looking at it.
+You start with a,
+with a bunch of key value pairs.
+And so here's k k v k stands for
+key and v stands for value.
+And the, the, the, the, the, the Map step.
+Takes the key-value pairs and
+maps them to intermediate key-value pairs.
+Okay?
+So for example, you run the Map on the
+first key-value pair pair here at k v and
+it it actually outputs two
+intermediate key-value pairs.
+And the, the intermediate key-value
+pairs need not have the same key,
+as input key value-pairs.
+They could be different keys.
+And there could be multiple of them.
+And the values although they look
+the same here, they, they both say v,
+the values could be different as well.
+And and notice in this case we started
+with the one input key-value pair,
+and the Map function produced multiple
+intermediate key-value pairs.
+So there can be zero, one, or
+multiple intermediate key-value pairs,
+for each, input key-value pair.
+Now let's do it again, for
+the second key-value pair.
+Let's apply the Map function and
+it turns out that in this case we
+have the one key-value pair in the,
+the in the intermediate key-value pair,
+in the output.
+And so on.
+So,
+so, we,
+we run through the entire input file.
+Apply the Map function
+to each input record.
+And create intermediate key-value pairs.
+Now the next step, is to take these
+intermediate key-value pairs,
+and group them by key.
+Right?
+So,
+all the intermediate key-value pairs that
+have the same key, are grouped together.
+So it turns out that
+there are three values.
+With the, with the first key,
+two values for the second key and so on.
+And they all get grouped together,
+and this is done by sorting by key and
+then by grouping together the value of,
+you know the values for the same key.
+And these are all different values,
+although I use the same
+same symbol v here.
+Now, once you have once you have these
+key value groups then the final step is
+the reducer.
+The reducer takes a look at a,
+a single a single key-value
+group as input and.
+It produces produces an output
+that has the sa, you know,
+that has the same key but
+it combines the the, the, the,
+the values or the values for
+a given key, into a single value.
+For example,
+it could add up all the values.
+In the, or, or it could or
+it could multiply them, or
+it could do, it could take the average.
+Or it can do something more complicated.
+But with all of the values for
+a given key.
+And finally you, the output,
+it outputs a single value for the key.
+Right?
+And so, when you,
+when you apply the reducer to
+the second key-value group.
+You get, you get another output and so on.
+And once you apply the reducer to all
+the intermediate key-value groups.
+You get the final output.
+So more formally the input to
+MapReduce is a set of key-value pairs.
+And the programmer has
+to specify two methods.
+The first method is a Map method.
+And the Map method takes
+an input key-value pair.
+And produces an int, an set of
+intermediate key-value pair, zero or
+more intermediate key-value pairs.
+and, there is one Map call, for
+every input key-value pairs.
+The Reduce function, takes an intermediate
+key-value group the intermediate key-value
+group consists of a key, and
+a set of values for that key.
+and, the output can consist of one,
+zero, one, or
+multiple key-value pairs once again.
+The key is the same as the as
+the input key but the value is, is,
+is is obtained by combining,
+the input values in some manner.
+For example, you might add up the you
+know, add up the input values and
+that could be the output
+v double prime here.
+So let's look at the the word
+count example and
+run that through
+the MapReduce process again.
+Here's our big document.
+And I hope you can see the text of
+this you know, the document but
+it doesn't matter,
+you can see that there are words in there.
+And so
+we're going to take this big document.
+And we're going to take the Map function
+that's provided by the programmer.
+The Map function reads the input,
+and produces a, produces a set of
+key-value pairs, and the key-value pairs
+in this case are going to be the key.
+Each word is going to be a key, and
+the value is going to be the number 1.
+Right?
+so, for example,
+the word the and 1 crew and
+1 and so on, and
+the word the appears again.
+And so there, there's another the,
+1 here and so on.
+So these are the intermediate
+key-value pairs,
+that are produced by the Map function.
+[SOUND] Now the next step is
+the group by key step which
+collects together all
+pairs with the same key.
+So we can see that the, there are two
+tuples two intermediate tuples with the,
+with the key crew and
+then those are collected together here.
+There's one with you know,
+with the word space, there are three
+with the word the, and so on.
+And they're all sorted and
+collected together.
+In this yeah, in, in this place here.
+And the,
+the final step is the Reduce step.
+The Reduce, the Reduce step
+collects together all the values so
+the Reduce step adds,
+adds together the 2, 1 from crew.
+and, and
+figures out that there are two you know,
+two occurrences of the word crew.
+Space has 1.
+There are 3 tuples with the 1 for
+the there all added together.
+And the output is 3, and so on.
+Right, so this is a schematic, of
+the the MapReduce word counting example.
+now, of course this, this whole
+example doesn't run on a single node.
+The data is actually distributed
+across multiple input nodes.
+So let's take that into account.
+And see here's here's the data.
+The data's actually divided here into,
+into multiple nodes.
+Let's say the, the red the, the,
+the first portion of, of the file is
+it's chunk one, and it's on one node.
+The second portion of the file here is
+chunk two, which is on a different node.
+The third portion is chunk three, and
+the fourth portion is chunk four, and
+each of these is on a different node.
+Now the Map tasks are going to be run
+on each of these four different nodes.
+There going to be a Map task that's run on
+chunk one that just looks at this portion,
+the first portion of the file.
+Map task is run on chunk two that,
+that, that just looks at the second
+portion of the file and so on.
+And the the outputs of those Map
+tasks will therefore be produced,
+on on four different nodes.
+li, like so so here are the,
+here are the first chunk of Map output.
+The second chunk of Map output,
+which is on another node.
+The third chunk of Map output,
+which is on a third node.
+And the fourth chunk of Map output,
+which is on yet another node.
+Right.
+Now the output of the of,
+of the Map functions,
+are therefore spread
+across multiple nodes.
+And what the system then does,
+is that it it,
+it copies the, the Map outputs,
+onto a single node.
+And then so
+you can see the data from all these four
+nodes flowing into this single node here.
+And once the data has,
+has flowed to the single node,
+it can then sort it by key and
+then do the final radial step.
+Now it's a little bit trickier
+than this unfortunately.
+Because you know,
+you may not want to use you know,
+to, to move all the data
+from all the Map nodes,
+going to be a lot of it, into a single
+Reduce node, and sort it there.
+That might be a lot of you know,
+a lot of sorting.
+So in practice you use
+multiple Reduce nodes as well.
+And you, you know, when you run
+a MapReduce job, you can say you know,
+you can tell the system to use
+a certain number of Reduce nodes.
+Let's say you tell the system in this
+case, to use three Reduce nodes.
+So if you use three reduce
+nodes then the then
+the MapReduce system is smart
+enough to split the the, the,
+the output of the Map into, into three,
+three into three Reduce nodes.
+And it makes sure, that for
+any given key in this case the,
+all instances of the, regardless of
+which Map node they start out from,
+always end up at the same Reduce node,
+right?
+So all instances of the,
+whether it started from Map node one or
+Map node two ended up at Reduce node two,
+in this case.
+And all instances of the word crew
+regardless of whether they started from
+Map node one or Map node four,
+ended up at Reduce node one.
+And this is done by using a hash function,
+right?
+So the system uses a hash function
+that hashes each Map key and
+determines a single Reduce
+node to shift that tuple two.
+And this ensures that all
+tuples with the same key,
+end up with the same Reduce node.
+And once once tuples end up at a Reduce
+node, they get sorted as before.
+in, on each Reduce node and and, and
+the result is created now,
+on multiple Reduce nodes.
+For example the result for
+crew is now on is now on Reduce node one.
+The result for the is now on,
+on the Reduce node two and the result for
+shuttle and
+recently are on Reduce node three.
+So the final result is actually now
+spread across three nodes in the system.
+Which is perfectly fine because you're
+dealing with a distributed file system,
+which know, knows that your file is
+spread across three nodes of the system.
+So you can still access it as
+a single file in your client.
+And the system knows to access the data
+from those three three independent nodes.
+One final point before we move
+on from the slide is that
+all this magic in the MapReduce
+magic is implemented to use
+as far as possible, only sequential scans
+of disk as opposed to a random access is.
+If you think a little bit carefully,
+what all the steps that I mentioned
+about how the Map function is applied
+on the input file record by record.
+How the sorting is done and so on.
+A moment's thought will make it apparent
+that you can actually implement,
+all of this by using only
+sequential reads of disk, and
+never using random accesses of disk.
+Now this is super important
+because sequential reads are much,
+much more efficient than
+random accesses to disk.
+If you don't learn your basics of
+of database systems, it takes much,
+much longer to do random seeks.
+Than to do a single
+sequential axis of a file.
+And that's why the, the MapReduce,
+the whole MapReduce system,
+is built around doing only sequential
+reads of files and never random accesses.
+So here is the actual pseudocode for
+for the word count using MapReduce.
+Remember, the programmer is required to
+provide two functions, a Map function,
+a Reduce function.
+And this is the the Map
+function right here.
+The Map function takes a key and
+a value and its output has to be int,
+an intermi,
+a set of intermediate key-value pairs.
+Now the key in this case is,
+is a document name and
+the value is the text of the document.
+And the Map the Map function itself
+is very simple in this case.
+It scans the the input document.
+And for each word in the input document
+[INAUDIBLE] the input document.
+For each word in the input document
+it emits that word and the number 1.
+So, so it's, it's a tuple,
+whose key is the, is the word.
+And whose value is the number 1.
+And here's the reduced function.
+The reduced function, remember,
+takes a key and a set of values.
+The set of values all correspond
+to the same key and in this case,
+they just iterate through all
+the values and and, and sums them up.
+And the output has the same key and
+the value is the, is the sum.
+We looked at a very simple example
+of bullet count using MapReduce.
+Now let's look at a couple more examples.
+Here's here's here's another example.
+Suppose we have a large web
+corpus that we've called and, for
+each and we have a metadata file for
+a, for [INAUDIBLE] and
+each record in the metadata file lo,
+looks like this.
+It has a URL the size of the file,
+the date and
+then various other pieces of data.
+Now the problem, is for each host we
+want to find the total number of bytes.
+And not for each URL, but for each host.
+Remember, there can be multiple
+many URLs with the same host name,
+in the crawl and you want to find the
+number of bytes associated with each host,
+not with each URL, right?
+Clearly the the number of bytes
+associated with the host,
+is just the sum of the number of bytes
+associated with all the URLs for a,
+for the host and this is very easy
+to implement in in, in MapReduce.
+The mapper in this case, the Map
+function just looks at each record and
+it looks at the URL of, of the record and
+outputs the hostname of the URL.
+and, and, and the size, right?
+And the the Reduce function just
+sums the sizes for each host, right?
+And at the end of it, you will have
+this the, the, the size of each host.
+Here's another example.
+Let's say you're building
+a language model by year.
+You have a large collection of documents.
+And you want to build a language model and
+and this language model for
+some reason requires the count
+of every 5-word sequence.
+Every unique 5-word sequence that
+occurs in a large corpus of document.
+Earlier we looked at accounting,
+each unique word.
+This example ask for each 5-word sequence.
+It turns out that the solution
+is not very different.
+the, just the Map function differs.
+The Map function extracts you know,
+goes through each document and outputs
+every 5-word sequence in the document.
+And the the Reduce function
+just combines those counts and
+adds them up and then you have the output.
+So I hope these simple examples
+illustrate how MapReduce works.
+In the next section, we are going to
+understand how the underlying system,
+actually implements some of
+the magic that makes MapReduce work.
+

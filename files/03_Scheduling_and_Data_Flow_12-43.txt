@@ -1,0 +1,340 @@
+Welcome back to Mining
+of Massive Datasets.
+In, the previous section will be
+studied the Map-Reduce model and
+how to solve some simple
+problems using Map-Reduce.
+In this section, we're going to go under
+the hood of a Map-Reduce system and
+understand how it actually works.
+Just to refresh your
+memory a Map-Reduce system
+has simple Map-Reduce
+system has three steps.
+In the Map step,
+you take a Big a document which is
+divided into chunks and
+you run a Map process on each chunk.
+And the map process go through
+each record in that chunk and
+it outputs an intermediate key value pairs
+for each vector in that, in that chunk.
+In the second set step which is
+a group by step you group by key.
+You you bring together all the values for,
+for the same key.
+And in the third step, is a reduce step.
+You apply a reducer to each
+intermediate key value pair set.
+And you create a final output.
+Now, here's a schematic of how it actually
+works in in a distributed system.
+The previous schematic was how it
+worked in a, in a centralized system.
+In a distributed system, you actually,
+have multiple nodes and map and
+reduced tasks are running in
+pattern on multiple nodes.
+So the here are the few chunks of the
+file, input file might be on on node 1.
+Few chunks on node 2 and
+a few chunks on node 3.
+And you have map tasks running on,
+on each of those nodes.
+And and producing producing it to be
+intermediate key value pairs on each of
+those nodes.
+And once the,
+once the intermediate key value pairs
+are produced, the underlying system
+the Map-Reduce system uses a partitioning
+function which is just a hash function.
+So the the the Map-Reduce system
+applies a hash function to
+each intermediate key value.
+And the has function will tell
+the Map-Reduce system which,
+reduce node to send
+that key value pair to.
+Right, this ensures that all all the,
+the same key values,
+whether they are map task 1, 2, or 3 end
+up being sent to the same reduce task.
+Right?
+So, in this case the key key 4.
+Regardless of where it started from,
+whether at 1, 2, or 3.
+Always end up at reduce task 1.
+And the key,
+key 1 always ends up at reduce task 2.
+Now, once once the reduce
+task has a reduce task has
+received input from all
+from all the map tasks.
+All the map tasks have completed,
+then you can start the reduced tasks.
+And the, the reduced tasks first job is,
+is to sort, it's input, and
+group it together by key.
+And so in this case, there are three
+values associated with the key key, key 4,
+they're all grouped together.
+And once that is done, the reduce task
+then, works the reduce function which is
+provided by the programmer on each each
+such group and creates the final output.
+Okay.
+So remember, the programmer provides
+two functions, Map and Reduce, and
+specifies the input file.
+The Map-Reduce environment take,
+has to take care of a bunch of things.
+It takes care of
+Partitioning the input data.
+Scheduling the program's
+execution on a set of machines.
+Figuring out where the map tasks run,
+where the reduce tasks run, and so on.
+It performs a gr,
+the intermediate group by step.
+And while all this is going
+on some nodes may fail.
+And the environment make sure
+that the node failures are hidden
+from the from the program.
+And finally the Map-Reduced Environment
+also Manages all
+the required inter-machine communication.
+[SOUND] So, we're going to take,
+take a look at exactly how what's,
+what's going on in a.
+So, let's look at the data flow that's
+associated with with, with map reduce.
+Now the the input and
+the final output of a Map-Reduced program
+are stored on the distributed file system.
+And the scheduler tries
+to schedule the map task
+close to the physical storage
+location of the import data.
+What that means is that recall
+the input data is, is a file.
+And the file is divided into chunks.
+And there are replicas of the chunks
+on different chunk servers.
+The Map-Reduce system try to schedule each
+map task on a chunk server that holds
+a copy of the corresponding chunk.
+So, there's no actual copy.
+A data copy associated with the map
+step of the Map-Reduce program.
+Now, the intermediate results are, are at
+least not stored in the distributed file
+system but stored in the local file
+system of the map and reduce workers.
+what, what are intermediate results?
+Intermediate results, intermediate results
+could be the output of a map step.
+An intermediate result
+could be something that,
+that limited why, why in the process
+of computing the reduce.
+Now why, why are such debated results not
+stored in the distributed file system?
+It turns out that there's some
+overhead to storing data in
+the distributed file system.
+Remember there are multiple replicas
+of the data that need to be made.
+And so there's a lot of copying.
+And network shuffling involved in,
+in storing new data in
+the distributed file system.
+So, whenever possible, intermediate
+results are actually stored in
+the local file system of the Map and
+Reduced workers,
+ended up being stored in the distributed
+file system to avoid more network traffic.
+And finally, as you'll see in
+future examples the output
+of a Map-Reduce task is often being
+the input to another Map-Reduce task.
+Now, the master node takes care of all the
+coordination aspects of a Map-Reduce job.
+The master node keeps, you know,
+associates a task status with each task.
+A task to see the map tasker reduce task.
+And each task has has a status flag.
+And the status flag can either be idle,
+in progress, or completed.
+The master schedules idle tasks
+whenever workers become available.
+Whenever, there is a free a node that
+is tha, that's available for, for
+scheduling tasks.
+The master goes through it's queue of idle
+tasks, and schedules an idle task on that,
+on that worker.
+When the, when a map task completes,
+it sends the the master the location and
+sizes of it's the R intermediate
+files that it, that creates.
+Now, why, R intermediate files?
+There's one intermediate file
+that's created for each reducer.
+Because the data, the output of the mapper
+has to be shipped to each of the reducers,
+depending on the, on the key value.
+And so there R intermediate files,
+one for each reducer.
+So, whenever, a map task completes,
+it let it's, it's,
+it's stores the R intermediate files.
+On it's local file system,
+and it let's the master know what
+the names of those files are.
+The master pushes this inf,
+information to the reducers.
+Once the reducers know that all
+the mappers map tasks are completed,
+then they copy the intermediate
+file from each of the map tasks.
+And then they can proceed with their work.
+Now, the master also per,
+periodically pings the workers,
+to detect whether a worker has failed.
+And if a worker has failed,
+the master has to do something.
+And we're going to,
+see what that something is.
+If a map worker fails, then the,
+all the map tasks that were scheduled.
+On that on that map
+worker may have failed.
+So, the the tricky thing is that
+the output of a map task is written to
+the local file system of the,
+of the map worker.
+So, if a map worker fails,
+then the node fails.
+Then all intermediate output created
+by all the map tasks that have
+ran on that worker, are lost.
+And so the, what the master does,
+is that it resets to idle,
+the status of every task that was either
+completed or in progress on that worker.
+Right, and so all those tasks need to be,
+eventually be done, and
+they will eventually be rescheduled
+on other workers in the course.
+If a reduced worker
+fails on the other hand,
+only the in progress
+tasks are set to idle.
+The tasks that are actually been
+completed by the reduced worker,
+don't need to be set to idle.
+Because, the output of the reduced
+worker is a final output, and
+it's written to
+the distribute file system.
+And not to the local file
+system of the reduced worker.
+Since, the output is written to
+the distributed file system.
+The output is not lost even
+if the reduce worker fails.
+So, only in-progress tasks
+need to be set to idle.
+While completed tasks
+don't need to be redone.
+Right?
+And so, the and
+once again the Idle reduce tasks will be
+restarted on other workers eventually.
+What happens if the master fails?
+If the master node fails,
+then the map reduce tas, task is aborted.
+The client is notified, and
+the client can then do something
+like restarting the map reduce task.
+So, this is the one scenario
+where the task will have to be
+restarted from scratch.
+Because, the master is typically not
+applicated in the Map-Reduce system.
+So, you might think that, this is
+a big deal, that that the, the master
+failure means the the map-reduce task is
+aborted, and the task has to be restarted.
+But remember,
+node failures are actually, rather rare.
+A node fails actually recall once every
+three years, or once every 1,000 days.
+And the master is, is a single node,
+and therefore, the chance of the master
+failing is actually quite, you know, it,
+it, it's quite an uncommon occurrence.
+the, the,
+the problem that you have with if,
+you have a multiple workers associated in,
+in a map reduce task.
+It's much more likely that,
+one of many workers failed,
+rather than the master failing.
+So, the final question to think about is,
+how many map and
+how many reduced jobs do we need?
+[NOISE] Supposed you know, they're both
+throughout M map tasks and R reduce tasks.
+Our goal is to determine M and R.
+The, this is part of the input that
+given to the map reduce system to let it
+know how many tasks tasks
+it needs to schedule.
+The Rule of thumb is to make M much larger
+than the number of nodes in the cluster.
+You might think, that it's sufficient how
+one map task per node to the cluster.
+But, in fact, it the rule of thumb is
+to have one map task per DFS chunk.
+The reason for this is simple.
+Imagine, that there is one map
+task per node in the cluster and
+during you know during
+processing the node fails.
+If a node fails then that map
+task needs to be rescheduled.
+On another node in,
+in the cluster when it becomes available.
+Now in, some, since all the other
+nodes are processing, you know,
+one of the map tasks has to, one of those
+nodes has to complete before this map task
+can be scheduled on that node and so,
+the entire computation is slowed down.
+By the time it takes to com,
+you know, complete this map task.
+The failed redo the failed map task.
+So, if instead of one map task on a given
+node, there are many small map tasks on
+a given node, and that node fails, then
+those map tasks can then be spread across
+all the available nodes and so
+the entire task will complete much faster.
+On the other hand, the number produces
+R is usually smaller than M and
+is usually even smaller than the total
+number of nodes in the system.
+And this because the the output file is,
+is spread across spread across R
+node where R the number of reducers.
+And if it's usually convenient
+to have the output spread across
+a small number of nodes rather than
+across a large number of nodes.
+And so usually R is set to
+a smaller value than M.
+

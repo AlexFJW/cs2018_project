@@ -1,0 +1,311 @@
+So, today we will start
+with with a new topic and
+we will start looking at
+the Analysis of Large Graphs.
+And in particular, we will talk
+about Link Analysis and PageRank.
+So here is the idea.
+So, so far,
+this is how the class fits together and
+we are starting with a new topic with
+a new set of data that is the Graph data.
+And in this module of the class.
+We will look at link analysis methods,
+like PageRank and SimRank.
+We will look at Community Detection with,
+where the idea is that we want to find
+clusters of nodes in the network.
+And then we will also look at
+Spam Detection, where the idea is that we
+want to identify nodes that are spam,
+spam nodes in the graph.
+So those are the three modules for
+the Graph data section.
+If we think about graphs,
+graph, graphs are everywhere.
+In a sense that for example,
+social networks Facebook Twitter and
+things like that.
+Can very naturally be
+represented as graphs.
+Graphs in a sense of as a set of nodes and
+a set of edges or connections or
+intersections between them.
+Another set of data points that
+also can be represented as
+graphs are social media networks.
+For example here, in this graph.
+What, what I'm showing you is is
+an illustration of the structure of
+the United States blogosphere around
+the Presidential Election in 2004.
+And what you see is basically
+these two clumps in this network.
+These two communities and
+they basically correspond to the two
+political parties in
+the United States system.
+And you see how this class,
+the nodes in one cluster then link
+into the other cluster and there is some
+number of cross-linking between the two.
+So there is some amount of
+polarization in a sense.
+Another word,
+another set of data that can actually be
+represented as networks
+are the networks of information.
+So for example, in this, in this case,
+what we are seeing here
+is a map of science.
+So here every node is a, is a different
+journal and or a different conference.
+And now the edges between these
+journals are publication menus I mean,
+that one journal is
+citing the other journal.
+So based on this citation
+network between journals,
+we can basically visualize how
+different disciplines of science and
+sub fields of science,
+how they're relating to each other.
+Of course, internet is another case where
+that can be studied as a, as a graph.
+So here, we have computers or
+routers talking to each other.
+And again, this can be represented
+as a dynamic network of nodes which
+represent computers or routers.
+And then let's say, physical links or
+between, between these machines and
+those are the edges of the network.
+Of course, kind of the technological
+networks are also the,
+the oldest example of graphs
+people have been studying.
+So for example, the, the field of
+graph theory goes, goes back to 1700s
+when Euler posed this problem about
+the seven bridges of, of Konigsberg where
+the idea is that we want to cross at some
+point and travel each bridge only once.
+And the question is can that be done?
+And this can be formulated as a,
+as a graph problem.
+And examples of other
+technological networks, for
+example are power grids, road networks
+water distribution networks and so on.
+And it's, it's important for us to
+understand the structure of these networks
+to detect failures to, to detect disease
+outbreaks or contaminations and so on.
+Another example of a big part of
+kind of networks is, is the web.
+Right.
+So web itself,
+can be represented as a graph.
+And what we will do today,
+we will kind of focus on the structure
+of the web graph and we will
+develop methods that allow us to learn
+something about the, the pages on the web.
+So the first question is how do
+we represent web as a graph?
+We will represent web as a directed graph.
+So we now will graph nodes will be,
+will correspond to web pages.
+So every web page will be,
+will be a node in this graph.
+And now we will have directed
+links between these web pages that
+correspond to hyperlinks.
+Right?
+So if I have my example here,
+I have a set of four web pages.
+And now these web pages
+contain hyperlinks.
+So in this case, a particular,
+a particular webpage points to another,
+another page via a hyperlink.
+So we can use now this hyperlink
+relationships to create a network.
+All right.
+So here is a small example,
+if I show you a bigger example.
+You could, think of the university
+website as a big giant graph of
+web pages citing or referring to each
+other via the use of hyperlinks.
+Right.
+So we
+just represented the web as this network.
+The question is how is the web organized?
+The, the way people tried to
+approach organizing the web was to
+human naturally created by humans.
+So for example, Yahoo back in 1996.
+Their original idea was to take
+all the web pages on the web and
+manually categorize them
+into a set of categories.
+So for example here,
+I have a screen shot of the web page and
+you see that the top category was for
+example arts.
+There was business.
+There was education.
+And each of these categories
+had further subcategories.
+So the idea was to take every web page and
+categorize it into,
+into this giant hierarchy.
+Of course, time showed that the web
+was growing far, far to quickly so
+this, this did not scale.
+So the next way how to
+organize the web and
+how to kind of find things on
+the web is the web search.
+And this is what kind
+of what we use today.
+And what is interesting in terms of
+the web search is that there is lit,
+literature in particular the field
+of information retrieval.
+That covers the problem of how do we find
+a document in a large set of documents.
+Right?
+So in our case of the web,
+we can think of every
+web page as a document.
+The whole, the whole web is one
+giant corpus of documents and
+our goal is to find a relevant document
+to a given query in this huge set.
+However, traditionally the information
+retrieval field was interested in finding
+these documents in relatively small,
+small collections of trusted documents.
+So for example, like newspaper collections
+or pap patent collections and so on.
+However, the web is very different.
+The, the difference is first,
+that the web is huge.
+And the second thing is the web is full
+of untrusted documents, random things,
+spam, unrelated things and so on.
+So the,
+the big question on the web is which,
+which web pages on
+the web should we trust?
+Which web pages are kind of legitimate?
+And which are,
+which are fake and irrelevant?
+And this is what we will
+be looking at today.
+Is how do we identify set of relevant or
+trustworthy web page,
+web pages in this huge web graph.
+So, when you are doing the web search,
+there are two that,
+that there are two challenges.
+Right?
+So as I mentioned, the first challenge
+is who do we trust on the web?
+Right?
+How do we know which are, which web pages
+are legitimate and which web pages are,
+for example, spam or
+somehow fabricated on the web?
+The idea here is that we will use
+the structure of the link web graph
+to understand these things.
+So the idea is kind of that trust,
+trustworthy web pages
+will link to each other.
+And we will build on this idea
+to exploit it to be able to
+identify the page rank algorithm.
+And then, the other problem
+that happens on the web is that
+sometimes queries can be rather ambiguous.
+For example, you can ask, what is
+the best answer to a query newspaper?
+And there is really kind of no,
+no good answer to this query.
+And the, the, the,
+goal here if you want to identify
+all the good newspapers on the web.
+Is to again, look at the,
+at the web structure of the of,
+of the structure of the web graph in order
+to identify the we, the set of pages.
+Or a set of newspapers that
+are linking to each other.
+And again, get, get the result out
+of the structure of the web graph.
+So these are the two challenges we
+will address in today's lecture.
+The way we can address both of these
+challenges is to basically realize that
+the web as a graph has
+very reach structure.
+So one thing that we can do is we
+can try to think of this problem
+abstractly as a way to rank
+nodes of forbidden graph.
+So basically,
+we would like to compute a score or
+an importance score of every
+node in this web graph.
+And the idea is that some nodes
+will collect lots of links, so
+they will have high importance and
+some other nodes will have a small number
+of links or links from untrusted sources.
+So they will have low importance.
+So that's the,
+that's the thing we want to compute.
+So, in order to compute the importances
+of the nodes in a graph.
+There are several approaches to this.
+Broadly, these approaches
+are called link analysis.
+Because you're analyzing
+the links on the web graph to in,
+to compute an important
+score of a node in a graph.
+So the b, the first approach we will
+look at, it's called Page Rank.
+And this is really the algorithm that was,
+that was invented in that
+behind the initial implementation
+of the Google Search engine.
+Then we will take a look at
+also at another algorithm that
+is called Hubs and Authorities.
+Here the idea is that we
+have two types of web pages.
+In our web graph, we have the web
+pages that are called Hubs.
+And we have web pages that
+are kind of called Authorities.
+That are good authorities for
+given topics.
+And then, we will look at some
+extensions of these algorithms.
+First, in terms of topic-specific or what
+is also called as Personalized Page Rank.
+And we will also use these ideas and
+apply them to web spam, spam detection.
+Where basically spammers may want
+to manipulate the structure of
+the web graph in such a way to,
+to make some web pages to,
+to seem important even
+though they are not.
+So basically,
+boost importance of some of the web pages.
+

@@ -1,0 +1,280 @@
+So, the first approach to
+computing importances of the web
+pages in a big web graph,
+is called PageRank.
+So what we will do now is we will
+come up with the first mathematical
+formulation of PageRank.
+We will first talk about it intuitively,
+then we'll mathematically formalize it.
+We will then talk also
+about how to compute,
+actually compute the important scores.
+And we will see that our initial
+formulation is broken, so
+we will then later fix it.
+But for now, we will, we will just come
+up with the initial formulation and
+this is called the flow formulation for
+the PageRank item so here is the idea.
+The idea is we think of links
+on a web graph as votes, right?
+So the idea is that the page
+quote on noting a graph is as
+important as the number of links it gets.
+Of course, the first question is what
+kind of links are we talking about?
+Are we talking about in-links?
+Are we talking about outgoing links?
+For example, we will look at in-links.
+In-links because in-links are kind
+of harder to fake than out-links.
+It's very easy to have a page
+with lots of out-links.
+It's harder to have a page that lots
+of other pages on the web point to.
+So that's the first question.
+The second thing is that, it's not
+enough just to consider in-links, but
+we also have to consider where
+this link is coming from.
+So for example a link from a given web
+page maybe from stanford.edu is more
+important than a link from some other web
+page that only receives very few in-links.
+Right?
+So the idea is that not
+all in-links are equal.
+Kind of links coming from
+important pages are worth more.
+And here, here is basically the idea.
+The idea is that an importance
+of a page is, is the,
+in some sense, depends on the importances
+of other pages that point to it.
+So it kind of, we have this recursive
+definition where importance of your given
+page depends on
+the importances of the others.
+And this importance then kind of gets po,
+passed on further through the graph.
+So this is the first idea and
+just to give you how an intuition,
+how PageRank scores of a graph look like.
+Here in this slide I'm showing you a,
+a small, a small graph with
+a set of directed edges.
+And here in this graph, the size of
+the nodes is proportional to it's
+PageRank scores and here I normalize the
+PageRank score so that they sum to 100.
+And what do we see is the following.
+We see for example that, that node
+B has a very high PageRank score.
+The reason why it has high PageRank
+score is because it has lots of,
+lots of other pages point to it.
+For example, node C also has
+relatively high PageRank score,
+even though it receives only
+a single incoming link.
+The reason why C has a high PageRank score
+is because this very important node B
+is pointing to it.
+And then for example,
+you can see that this very small dark red
+links nodes have a relatively
+small PageRank scores.
+For example, the PageRank score of
+node D is higher than the PageRank of
+node A because D points to A.
+For example, we see that the node E has
+kind of intermediate PageRank score.
+And E points to B and so on.
+Right?
+So the results that we get
+from PageRank are kind of intuitive and
+they correspond to
+our intuitive notion of how important
+is a node, is a node in a graph.
+So now, what we look at this how do
+we compute this kind of scores or
+importances of nodes in a graph?
+So the idea is the following.
+The idea is that we will come up
+with a Simple Recursive Formulation.
+Where we sh, where we sh,
+think of each link as a vote.
+And we think of the importance of
+a given vote, to be proportional to
+the importance of the source web
+page that is casting this vote or
+that is creating a link
+to the destination.
+So the way we think about
+this is the following.
+Let's think we have a page j
+with an importance r sub j.
+And for
+this leg importance be some number.
+And think that n,
+that the page j has n outgoing links.
+Right?
+So then, the way we will do,
+say is that now this
+importance rj of page j.
+Basically, gets split on all
+of its outgoing links evenly.
+So, the each link gets r
+sub j divided by n votes or
+amount of importance to
+spread to the target.
+So, so now this is how the importance
+gets from j to the pages it points to.
+And in a similar way, we can define the,
+the importance of j as the sum of the
+votes that it receives on its in-links.
+So, if we look at the simple
+graph here at the bottom.
+The idea is that the importance
+r sub j of web page j
+is simply the importance
+of page i the green page.
+Divided by three because page
+i has three out-links plus
+importance of page k divided by 4.
+Why by four?
+Because page k has four out-links.
+One, two, three and four.
+So this is how we compute the pa,
+the score of of page j.
+And now that we have the score of page j,
+the score further gets propagated outside
+of j along the three outgoing links.
+So each of these links, gets
+the importance of, of node j divided by 3.
+And this is basically all
+that is to this formulation.
+As every node collect importances
+of the pages that points to it.
+[INAUDIBLE] has its own importance and
+then kind of propagate it through,
+through their neighbors.
+So the idea is that basically this vote
+flow through the, through the network.
+So that's why this is called the flow
+formulation of a flow model of PageRank.
+And just to give you an idea
+how this would work out.
+Here is a very small web graph, you know,
+from prehistoric times when the web only
+contained three websites a, m and y.
+And imagine that this is this
+is the structure, right?
+So y has a self link and then points to a.
+A points points to m.
+M points backwards and so on.
+And our initial idea as
+said before is the vote is,
+is from an important page is worth more.
+So, a page is more important if it's
+pointed to by other important pages.
+So as I,
+as I kind of, I hinted on the previous
+slide, we will assign an important score.
+R to a page j and
+we will call this important score rank.
+So this is where the PageRank
+terminology comes from.
+So we, we call this importance to be rank.
+And now, the, our formula that we have for
+computing PageRank is very simple.
+We simply do say that
+the importance score of page j
+is simply the sum of all the other pages,
+i that point to it.
+Importance of that page i divided
+by the out-degree of the page.
+Right?
+So now, what they can do
+is basically dismiss it for
+every node in the network,
+we obtain a separate equation.
+So, for example,
+the importance of node y in my network is
+simply the importance of y divided by 2.
+Plus importance of a divided by 2.
+So why is that?
+Because y has two outgoing links.
+One link points, points to itself so
+it's y divided by 2.
+And then similarly node
+a has two outgoing links.
+So, we take our a and divide it by 2.
+For example, if you say,
+what is the importance of node m?
+The importance of node m is
+importance of node a divided by 2.
+Again, why divided by 2?
+Because node a has two outgoing links and
+half of the,
+half of its importance goes to a.
+And half of its importance goes to,
+goes to y, as we saw here.
+Right?
+So now, it almost seems like we are done.
+Right?
+We have this set of equations that we
+would like to solve, right?
+We have three equations, three unknowns,
+no constraints and we want to solve this.
+The problem is that this
+has no unique solution.
+The reason is that the,
+the system is under constrained.
+So basically, all solutions will, will be,
+we can find an infinite set of
+solutions to these set of equations.
+And all,
+what these solutions will have in common?
+They will be equivalent
+up to the scaling factor.
+So we need,
+we need an additional constraint.
+So the constraint we will add
+to our system is to say that our
+paging scores half to sum to 1.
+So r, ry, ra plus rm has to be equal to 1.
+So now, we list additional equation.
+We can basically have now,
+three unknowns for equations.
+We can go solve this.
+For the small graphic,
+we can go solve this by hand.
+And we would come up with the, with the,
+with the solution which are our
+initial page, PageRank scores.
+Right.
+So for example y has score of 5 over 2.
+A has score of 5 over 2 and
+then m has score of one-fifth.
+Right?
+So, it seems like as, that we are done.
+Right?
+So we could use any kind of linear system
+equation solving method.
+For example, Gaussian elimination.
+And be able to compute the importances
+of nodes in the graph.
+You know, this approach would work well
+for very small graphs, but it won't,
+it wouldn't, it won't work for
+a, for a size of the web graph.
+So basically, for a graph where we
+have a billion web pages because it
+would mean that we have
+a billion of equations.
+A system of billion of equations
+that we would want to solve.
+So we need a different formulation.
+

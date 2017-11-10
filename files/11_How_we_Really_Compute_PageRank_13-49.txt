@@ -1,0 +1,396 @@
+So far we have been exploring PageRank and
+we have formulated it
+as this eigenvalue problem and we added
+the random walks and teleportation suite.
+So now the what we look next is actually
+how do we really compute PageRank for
+the web scale graphs?
+Basically how do we compute it for
+graphs that don't even fit into
+the main memory of a machine?
+So let's look at what we know so far.
+Right?
+What we know so far is that the key
+step in computing PageRank is
+this vector matrix multiplication
+where we are computing the new
+vector r by taking the the matrix M and
+multiplying it with the old vector r.
+right.
+This is very easy to do if we
+have enough main memory in the machine to,
+to store both a, the old version of r, and
+the new version of r.
+Now, let's look at that is
+the structure of matrix A.
+And we will notice one thing that,
+that is kind of striking.
+Right, so here I have an example from our
+previous, previous slide with the three,
+three node graph where our matrix
+A equals the, the matrix M times beta
+plus 1 minus beta times this matrix
+of 1 over N's, where N is the num,
+the size of the, size of the graph,
+and the size of this matrix is N by N.
+Right, so notice down here what happens.
+Right, we take our matrix M,
+multiply it with 0.8.
+We take this matrix of N by N
+where every entry is 1 over N.
+Multiply that with 0.2, and
+sum these to matrices these together.
+So what happens now it that
+our matrix A is this big,
+big matrix with non-negative entries.
+And what we notice is that every
+entry in this matrix is non-zero.
+So, initially our matrix N
+had a number of 0's, but
+not our matrix A has no non-zeros.
+So what is, what is important now is that
+the amount of memory we will need to
+store A will be actually huge, right?
+A is now what is called a dense matrix.
+Let me just give you, give you an example.
+So imagine we have graph
+on 1 billion nodes.
+So basically we have 1 billion web pages.
+And 1 billion web pages is a very
+tiny fraction of the web graph.
+So we use a small graph from
+the web size point of view.
+And lets assume that we need, lets say,
+4, 4 bytes to save,
+to save each entity of this graph.
+Right?
+So to save a node ID.
+So, this means that for example to
+store 1 billion pages and and address.
+This means that we will need around
+2 billion 2 billion entries.
+And this, this means that we will need,
+need around 8 GB of memory to
+store matrix M, for example.
+But for example, if you would have to,
+want to store all the entries of
+matrix A now the size of matrix
+A is N by N, which is N squared.
+Which means that we would have
+to store N squared entries.
+And the amount of memory that we
+would need would be like, 10 to 18,
+which is a huge number and we would
+never be able to store this in memory.
+I, I think there is not even.
+If you take all the computers
+in the world, that is not,
+they don't have enough memory to store 10
+to the 18 bytes or integers in memory.
+So the question is what, what can we do?
+Is there a way to get around this,
+and kind of preserve the,
+the sparsity of the matrix M, right?
+Basically the idea is that in a real
+matrices M will be extremely sparse.
+Meaning that on, on,
+on average page only points to ten
+other page in the graph, right.
+So this means that rather than
+storing the whole, the whole,
+the whole vector of 0's, and
+then only a few non-zero elements, we kind
+of only want to store non-zero elements.
+So here is,
+here is basically the idea and how we,
+how we now can solve the,
+the PageRank problem.
+So just to remind you, we, we right,
+we have the capital n number of pages or
+number of nodes in the graph.
+We are now define, we defined matrix M to
+that's in such a way that the entry Mij is
+1 over the degree of j, if node j points
+node i, and otherwise that entry is 0.
+And now let's think about, how do
+random teleports play with this, into
+this matrix and right, so basically the
+way we can think of teleport is basically,
+we take the our initial graph and, and
+all these additional transition edges.
+Right?
+So we can think that
+random teleport's basically
+take our graph and
+transform it into a completely connected
+graph where we have two types of edges.
+We have the edges that are that
+corresponds to the hyperlinks.
+And then we have the edges that
+correspond to random teleportations.
+Right?
+Whenever we can teleport from one node to
+another we add an edge.
+And we say that kind of a random
+surfer traverses this edge
+with a very small probability.
+And this is exactly what we will do now,
+right?
+So basically adding the teleport link from
+node j to every over page in the graph,
+and we want to set this teleportation
+probability of such teleport link to
+be 1 minus beta.
+Right, that's the probability
+of a teleport times 1 over n.
+Right?
+This is the number of,
+the number of web pages so that's the,
+that's the probability of traversing
+one individual teleportation link.
+Right?
+This also means that what we need to
+do is now that on the all the other links
+of the web graph we have to reduce their,
+their transition probabilities right?
+So the transition probabilities go
+from one over the out degree of node j
+to beta times 1 over
+the out degree of node J.
+Right?
+So now basically what, what, what we did,
+is we, we took our graph and
+we and we in some sense transformed
+it into this fully connected graph,
+with different position probabilities
+over the edges that correspond to
+the hyperlinks and
+edges that correspond to teleports.
+However, what we notice is that this
+transformation is actually equivalent to
+saying that we will text the PageRank of
+every page by a fraction of 1 minus beta.
+And then we will take this 1 minus beta
+fraction of the PageRank scores, and
+we distribute it the right?
+Meaning that this random teleportation
+part of the PageRank score,
+gets evenly distributed
+among the webpages.
+So this is the, this is the intuition.
+So let me now show you how
+the mathematics works out.
+We will start, again, by looking
+at our initial PageRank equation,
+r equals A times r, where the way we
+define M, just to remind you is to take
+every entry ij of matrix i, is simply
+beta times the, the corresponding entry
+of matrix M plus 1 minus beta over N,
+where N is the size of the graph, right?
+The way we think about this is basically
+we say the transition of a random walker
+from, from node j to node
+i is simply the beta times
+the transition due to the random walk,
+plus a small constant,
+constant factor that happens due to a
+random jump probability transition, right?
+So now that we have this,
+let's unpack our PageRank equation.
+If we unpack this PageRank equation,
+basically what we are saying N3i of
+the PageRank vector r is simply a,
+a summation over the,
+over the, over the j when j arranged for
+1 to N, Aij times rj.
+Right?
+What we will do now is we will take
+this A and expand it into the,
+into the equation we have above.
+So if we do this, what,
+what we notice is the following, right?
+This is simply a summation, here is,
+here I'm expanding the definition of
+A now into how we computed matrix A.
+And I have my entry
+from the rank vector r.
+So I can distribute the summation.
+And here is we, what, what happens, right?
+So we have now two summations
+both over the same range.
+And what we observe now is one
+thing that we know that vector r
+is is a probability distribution, which
+means that the entries vector r sum to 1.
+Which means that this
+second summation here,
+the entries the sum over
+j of rij sums to 1.
+So the second summation basically
+simplifies to just this
+constant of 1 minus beta over N.
+So notice what, what we did right now.
+What we did is basically we
+expressed our r equals A time
+r into a different sum, in,
+into a different expression.
+Where we say that our r equals beta times
+M times r plus some some, some constant.
+Right?
+What this means is
+now basically that we never really need
+to explicitly express matrix A, right?
+We never really need to
+materialize this big,
+dense matrix where every
+entry is non-zero.
+We can only work with matrix M because
+matrix M is full of 0 elements,
+which we don't need to explicitly store.
+So we can actually work with much,
+much smaller matrix.
+So this is basically the, the,
+the good thing that happened here.
+So, rather than working with a big
+n squared size, size matrix,
+we are now working on a,
+with a very small matrix.
+And let me just demonstrate how, how much
+difference this makes in practice, right?
+So what we did in the, in the few last
+slides, is basically we re-arranged out
+PageRank equation into a, into a different
+equation that doesn't depend on a,
+but only depends on our matrix M.
+Right?
+So now, what is important
+is that matrix M is sparse.
+Right, what do I mean by that?
+Is for example, in the matrix M,
+if you think of it as a,
+as a matrix, in every, in every row.
+Even though this matrix is let's
+say a billion times a billion,
+like 10 to the nine times
+10 to the 9 the individual,
+the number of non-zero entries in every
+row on average will be around 10.
+What this means is that an average page
+has around let's say 10 out-links or
+even 100 out-links.
+But the point being is that out
+of 1 billion entries in every,
+in every row of this matrix,
+there will be only 100 non-zero's.
+So this means that rather
+than storing the full and
+squared number of cells in this matrix,
+we will only store the non, the cells
+that actually have the non-zero value.
+So what, what this means is that in,
+in every iteration of our
+PageRank equation basically all we
+need to compute in some sense is the,
+is the product of our matrix,
+matrix M with the, the,
+with our old rank vector, and then add
+a constant value of to every rank,
+rank score, just because of
+the random of the random jumps.
+Of course, here I was assuming
+that our graph M has no dead ends.
+If our graph will have
+no will have dead ends,
+this means the vector r won't sum to 1,
+so after everything is done,
+we will have to kind of expand
+it back to normalize to 1.
+I'll talk about this a bit
+more in the next few slides.
+So, here is now the complete algorithm for
+PageRank, how one would go and
+actually implement it in practice.
+So, the way this works is on our input
+we are given a directed graph G,
+and we are given a parameter beta.
+This is the teleportation parameter beta.
+Right?
+And what we are assuming in
+the algorithm is that our graph
+has both spider traps and dead ends.
+Kind of,
+nothing will break the algorithms robust,
+regardless of whether this dead ends and
+spider traps actually happen.
+So, the output of our algorithm
+is now a page link vector r, and
+the way the algorithm
+operates is the following.
+At the beginning we set all the,
+all the PageRank scores to be 1 over N,
+to be equal.
+And we set time equals 1.
+And then we have this loop where we
+iterate until our PageRank vectors will
+converge, which means that the PageRank
+vector between ti, time step t minus 1 and
+time step t, the, the in the the
+individual entries do no, do not change
+much, but do not, do not change more
+than some, some small value epsilon.
+Which is, and this epsilon is
+again a user set parameter,
+something small but and
+depending on how small this value is,
+this is a number of iterations that
+are going, and we need to converge.
+Okay, so now we explained the outer loop.
+So now, now let's look what
+happens in the inner loop.
+So in the inner loop, first we have, we
+have another a full loop where basically
+we go and update the PageRank score of
+every node by simply taking the PageRank
+scores of every node i that points to it
+and then divide the by r degree of phi.
+This is the first part.
+Of course here we have to be careful
+if node j has gets the rank 0,
+if the n degree of it is 0, right?
+So, if a node has no n degree then
+we set its PageRank score to 0.
+And then of course what happens
+now is that if we have dead ends,
+the, the PageRank will leak out.
+So now we need to figure out how much
+of the PageRank has leaked out, and
+then reinsert the PageRank the missing
+PageRank scores into our rank vector.
+So, all we,
+what we do here is the following.
+We compute what is the sum of the
+components of our PageRank vector are so
+far, we call this s.
+We want this s will be less than 1, so
+what means is that 1 minus s amount
+of PageRank has kind of flicked out.
+So we want to now take this and, and
+evenly insert it into every entry of r.
+So this exactly what we, what we do.
+We say now we go over vector r again.
+We say the,
+the true value of the PageRank score is
+whatever we had before plus this
+missing part of the PageRank score.
+Right?
+1 minus S over N.
+Which means that every node N gets what,
+1 minus S times 1 over N fraction of the,
+of the leaked out score, so
+that now again our vector R will sum to 1.
+So with this, basically we obtained
+the new, new version of r, we check for
+convergence, and we keep we keep
+repeating until until we converge.
+
