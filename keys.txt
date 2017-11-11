@@ -1,0 +1,14 @@
+username  
+elastic
+
+Password   
+GuGs9GAnAYb83UA5kWl6H937
+
+Cloud ID   
+cs2108:dXMtZWFzdC0xLmF3cy5mb3VuZC5pbyRjM2RlNzRiMGE5YjEyMmY3Y2I1OTVmOTcyMGUyNmRmZSQ4NmEzY2JiYWQxODlmZjI5YmQ0MTkyOTFhZDEwMGFlOQ==
+
+HTTPS:
+https://c3de74b0a9b122f7cb595f9720e26dfe.us-east-1.aws.found.io:9243
+
+Kibana:  
+https://86a3cbbad189ff29bd419291ad100ae9.us-east-1.aws.found.io:9243
