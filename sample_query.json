@@ -28,7 +28,8 @@ GET /moocs/course/_search
               "highlight": {
                 "fields": {
                   "docs.name": {
-                    "no_match_size": 100
+                    "no_match_size": 100,
+                    "number_of_fragments" : 1
                   },
                   "docs.content": {}
                 }
