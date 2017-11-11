@@ -1,5 +1,9 @@
 GET /moocs/course/_search
 {
+  "_source": {
+    "includes": ["name", "url"],
+    "excludes": ["*.*"]
+  },
   "query": {
     "bool": {
       "should": [
@@ -20,8 +24,12 @@ GET /moocs/course/_search
               }
             },
             "inner_hits": {
+              "_source" : false,
               "highlight": {
                 "fields": {
+                  "docs.name": {
+                    "no_match_size": 100
+                  },
                   "docs.content": {}
                 }
               }

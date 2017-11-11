@@ -1,5 +1,5 @@
 {
-  "took": 61,
+  "took": 12,
   "timed_out": false,
   "_shards": {
     "total": 5,
@@ -8,7 +8,7 @@
     "failed": 0
   },
   "hits": {
-    "total": 2,
+    "total": 3,
     "max_score": 2.7497778,
     "hits": [
       {
@@ -18,25 +18,7 @@
         "_score": 2.7497778,
         "_source": {
           "name": "sample stanford",
-          "url": "htttpppxxx",
-          "docs": [
-            {
-              "name": "sample_stanford1.txt",
-              "content": """
-Here is some sample text
-More sample text
-Even more text here!
-"""
-            },
-            {
-              "name": "sample_stanford1.txt",
-              "content": """
-Here is some sample from stanford 1
-More sample text
-Even more text here!
-"""
-            }
-          ]
+          "url": "htttpppxxx"
         },
         "inner_hits": {
           "docs": {
@@ -50,15 +32,10 @@ Even more text here!
                     "offset": 1
                   },
                   "_score": 1.1888465,
-                  "_source": {
-                    "name": "sample_stanford1.txt",
-                    "content": """
-Here is some sample from stanford 1
-More sample text
-Even more text here!
-"""
-                  },
                   "highlight": {
+                    "docs.name": [
+                      "<em>sample</em>_stanford1.txt"
+                    ],
                     "docs.content": [
                       """
 Here is some <em>sample from stanford 1
@@ -74,15 +51,10 @@ Even more text here!
                     "offset": 0
                   },
                   "_score": 1.1888465,
-                  "_source": {
-                    "name": "sample_stanford1.txt",
-                    "content": """
-Here is some sample text
-More sample text
-Even more text here!
-"""
-                  },
                   "highlight": {
+                    "docs.name": [
+                      "<em>sample</em>_stanford1.txt"
+                    ],
                     "docs.content": [
                       """
 Here is some <em>sample text
@@ -100,29 +72,46 @@ Even more text here!
       {
         "_index": "moocs",
         "_type": "course",
+        "_id": "AV-qQCz5SziBxyoUnvHx",
+        "_score": 1.330277,
+        "_source": {
+          "name": "sample 3",
+          "url": "htttpppxxx"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 1,
+              "max_score": 0.7549128,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 0
+                  },
+                  "_score": 0.7549128,
+                  "highlight": {
+                    "docs.name": [
+                      "should match.txt"
+                    ],
+                    "docs.content": [
+                      "<em>sample</em>"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "moocs",
+        "_type": "course",
         "_id": "AV-qCEySSziBxyoUnvCB",
         "_score": 0.6703361,
         "_source": {
           "name": "sample harvard",
-          "url": "htttpppxxx",
-          "docs": [
-            {
-              "name": "harvard1.txt",
-              "content": """
-Here is some sample text
-More sample text
-Even more text here!
-"""
-            },
-            {
-              "name": "harvard2.txt",
-              "content": """
-Here is some sample from harvard 2
-More sample text
-Even more text here!
-"""
-            }
-          ]
+          "url": "htttpppxxx"
         },
         "inner_hits": {
           "docs": {
@@ -136,15 +125,10 @@ Even more text here!
                     "offset": 1
                   },
                   "_score": 0.14912565,
-                  "_source": {
-                    "name": "harvard2.txt",
-                    "content": """
-Here is some sample from harvard 2
-More sample text
-Even more text here!
-"""
-                  },
                   "highlight": {
+                    "docs.name": [
+                      "harvard2.txt"
+                    ],
                     "docs.content": [
                       """
 Here is some <em>sample from harvard 2
@@ -160,15 +144,10 @@ Even more text here!
                     "offset": 0
                   },
                   "_score": 0.14912565,
-                  "_source": {
-                    "name": "harvard1.txt",
-                    "content": """
-Here is some sample text
-More sample text
-Even more text here!
-"""
-                  },
                   "highlight": {
+                    "docs.name": [
+                      "harvard1.txt"
+                    ],
                     "docs.content": [
                       """
 Here is some <em>sample text
