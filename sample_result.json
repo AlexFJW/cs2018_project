@@ -1,59 +1,188 @@
-PUT moocs
 {
-  "settings": {
-    "similarity": {
-      "low_length_bm25": {
-        "type": "BM25",
-        "b": 0.25
-      }
-    },
-    "analysis": {
-      "filter": {
-        "length_2": {
-          "type": "length",
-          "min": 2
+  "took": 61,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 2,
+    "max_score": 2.7497778,
+    "hits": [
+      {
+        "_index": "moocs",
+        "_type": "course",
+        "_id": "AV-qB_JWSziBxyoUnvB9",
+        "_score": 2.7497778,
+        "_source": {
+          "name": "sample stanford",
+          "url": "htttpppxxx",
+          "docs": [
+            {
+              "name": "sample_stanford1.txt",
+              "content": """
+Here is some sample text
+More sample text
+Even more text here!
+"""
+            },
+            {
+              "name": "sample_stanford1.txt",
+              "content": """
+Here is some sample from stanford 1
+More sample text
+Even more text here!
+"""
+            }
+          ]
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 2,
+              "max_score": 1.1888465,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 1
+                  },
+                  "_score": 1.1888465,
+                  "_source": {
+                    "name": "sample_stanford1.txt",
+                    "content": """
+Here is some sample from stanford 1
+More sample text
+Even more text here!
+"""
+                  },
+                  "highlight": {
+                    "docs.content": [
+                      """
+Here is some <em>sample from stanford 1
+More sample</em> text
+Even more text here!
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 0
+                  },
+                  "_score": 1.1888465,
+                  "_source": {
+                    "name": "sample_stanford1.txt",
+                    "content": """
+Here is some sample text
+More sample text
+Even more text here!
+"""
+                  },
+                  "highlight": {
+                    "docs.content": [
+                      """
+Here is some <em>sample text
+More sample</em> text
+Even more text here!
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
         }
       },
-      "analyzer": {
-        "shingle_analyzer": {
-          "type": "custom",
-          "tokenizer": "lowercase",
-          "char_filter": ["html_strip"],
-          "filter": ["stop", "length_2", "shingle"]
-        }
-      }
-    }
-  },
-  "mappings": {
-    "course": {
-      "properties": {
-        "name": {
-          "type": "text",
-          "analyzer": "shingle_analyzer",
-          "boost": 2,
-          "similarity": "low_length_bm25"
-        },
-        "url": {
-          "type": "text",
-          "index": false
-        },
-        "docs": {
-          "type": "nested",
-          "properties": {
-            "name": {
-              "type": "text",
-              "analyzer": "shingle_analyzer",
-              "boost": 1.5,
-              "similarity": "low_length_bm25"
+      {
+        "_index": "moocs",
+        "_type": "course",
+        "_id": "AV-qCEySSziBxyoUnvCB",
+        "_score": 0.6703361,
+        "_source": {
+          "name": "sample harvard",
+          "url": "htttpppxxx",
+          "docs": [
+            {
+              "name": "harvard1.txt",
+              "content": """
+Here is some sample text
+More sample text
+Even more text here!
+"""
             },
-            "content": {
-              "type": "text",
-              "analyzer": "shingle_analyzer",
-              "similarity": "low_length_bm25"
+            {
+              "name": "harvard2.txt",
+              "content": """
+Here is some sample from harvard 2
+More sample text
+Even more text here!
+"""
+            }
+          ]
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 2,
+              "max_score": 0.14912565,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 1
+                  },
+                  "_score": 0.14912565,
+                  "_source": {
+                    "name": "harvard2.txt",
+                    "content": """
+Here is some sample from harvard 2
+More sample text
+Even more text here!
+"""
+                  },
+                  "highlight": {
+                    "docs.content": [
+                      """
+Here is some <em>sample from harvard 2
+More sample</em> text
+Even more text here!
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 0
+                  },
+                  "_score": 0.14912565,
+                  "_source": {
+                    "name": "harvard1.txt",
+                    "content": """
+Here is some sample text
+More sample text
+Even more text here!
+"""
+                  },
+                  "highlight": {
+                    "docs.content": [
+                      """
+Here is some <em>sample text
+More sample</em> text
+Even more text here!
+"""
+                    ]
+                  }
+                }
+              ]
             }
           }
         }
       }
-    }
+    ]
   }
 }
