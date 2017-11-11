@@ -26,12 +26,6 @@
 </html>                            
 </body>
 
-<script type="text/javascript">
-var address = window.location.href;
-var arr = address.split("?")
-
-document.getElementById("firstItem").innerHTML = arr[1];
-</script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <!-- Optional theme -->
@@ -41,6 +35,26 @@ document.getElementById("firstItem").innerHTML = arr[1];
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <!-- stylesheet -->
+<script src="node_modules/elasticsearch-browser/elasticsearch.js"></script>
+
+
+<script type="text/javascript">
+var address = window.location.href;
+var arr = address.split("?")
+
+document.getElementById("firstItem").innerHTML = arr[1];
+
+var elasticsearch = require('elasticsearch');
+var client = new elasticsearch.Client({
+    host: 'https://c3de74b0a9b122f7cb595f9720e26dfe.us-east-1.aws.found.io',
+    auth: 'elastic:GuGs9GAnAYb83UA5kWl6H937',
+    port: '9243',
+    protocol: 'https',
+});
+
+
+</script>
+
 <style type="text/css">
 body{
     margin: 0;     
