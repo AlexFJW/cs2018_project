@@ -1,0 +1,34 @@
+GET /moocs/course/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "match": {
+            "name": "sample"
+          }
+        },
+        {
+          "nested": {
+            "path": "docs",
+            "score_mode": "sum",
+            "query": {
+              "multi_match": {
+                "type": "most_fields",
+                "query": "sample",
+                "fields": ["docs.name", "docs.content"]
+              }
+            },
+            "inner_hits": {
+              "highlight": {
+                "fields": {
+                  "docs.content": {}
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
