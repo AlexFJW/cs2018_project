@@ -31,7 +31,7 @@ curl -XPOST -u elastic:'GuGs9GAnAYb83UA5kWl6H937' 'https://c3de74b0a9b122f7cb595
                     "no_match_size": 100
                   },
                   "docs.content": {
-                    "number_of_fragments" : 3
+                    "number_of_fragments" : 1
                   }
                 }
               }
