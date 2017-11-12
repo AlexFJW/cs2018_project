@@ -9,17 +9,17 @@ GET /moocs/course/_search
       "should": [
         {
           "match": {
-            "name": "sample"
+            "name": "QR decomposition"
           }
         },
         {
           "nested": {
             "path": "docs",
-            "score_mode": "avg",
+            "score_mode": "sum",
             "query": {
               "multi_match": {
                 "type": "most_fields",
-                "query": "sample",
+                "query": "QR decomposition",
                 "fields": ["docs.name", "docs.content"]
               }
             },
@@ -28,10 +28,11 @@ GET /moocs/course/_search
               "highlight": {
                 "fields": {
                   "docs.name": {
-                    "no_match_size": 100,
-                    "number_of_fragments" : 1
+                    "no_match_size": 100
                   },
-                  "docs.content": {}
+                  "docs.content": {
+                    "number_of_fragments" : 3
+                  }
                 }
               }
             }

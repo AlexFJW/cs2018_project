@@ -1,5 +1,5 @@
 {
-  "took": 12,
+  "took": 829,
   "timed_out": false,
   "_shards": {
     "total": 5,
@@ -8,39 +8,52 @@
     "failed": 0
   },
   "hits": {
-    "total": 3,
-    "max_score": 2.7497778,
+    "total": 34,
+    "max_score": 147.71547,
     "hits": [
       {
         "_index": "moocs",
         "_type": "course",
-        "_id": "AV-qB_JWSziBxyoUnvB9",
-        "_score": 2.7497778,
+        "_id": "AV-u04OVSziBxyoUnxFn",
+        "_score": 147.71547,
         "_source": {
-          "name": "sample stanford",
-          "url": "htttpppxxx"
+          "name": "[Coursera] Mining Massive Datasets (Stanford University) (mmds)",
+          "url": "http://academictorrents.com/details/91bc48e6c8341de198c970acccdc87199391ab46"
         },
         "inner_hits": {
           "docs": {
             "hits": {
-              "total": 2,
-              "max_score": 1.1888465,
+              "total": 18,
+              "max_score": 15.919006,
               "hits": [
                 {
                   "_nested": {
                     "field": "docs",
-                    "offset": 1
+                    "offset": 126
                   },
-                  "_score": 1.1888465,
+                  "_score": 15.919006,
                   "highlight": {
                     "docs.name": [
-                      "<em>sample</em>_stanford1.txt"
+                      "11_CUR_<em>Decomposition</em>_6-27_Advanced.txt"
                     ],
                     "docs.content": [
                       """
-Here is some <em>sample from stanford 1
-More sample</em> text
-Even more text here!
+So, so far we talked about
+singular value <em>decomposition</em>.
+We saw that it gives us the best
+""",
+                      """
+.
+So the CUR <em>Decomposition</em>
+is a different type
+of dimensionality reduction technique.
+We will talk
+""",
+                      """
+ about it next.
+And basically it tries to,
+alleviate some these,
+drawbacks of singular value <em>decomposition</em>
 """
                     ]
                   }
@@ -48,18 +61,70 @@ Even more text here!
                 {
                   "_nested": {
                     "field": "docs",
-                    "offset": 0
+                    "offset": 4
                   },
-                  "_score": 1.1888465,
+                  "_score": 15.552574,
                   "highlight": {
                     "docs.name": [
-                      "<em>sample</em>_stanford1.txt"
+                      "11_CUR_<em>Decomposition</em>_6-27_Advanced.pdf"
                     ],
                     "docs.content": [
                       """
-Here is some <em>sample text
-More sample</em> text
-Even more text here!
+ Datasets 53
+
+	Dimensionality Reduction: Introduction
+	Dimensionality Reduction
+	Dimensionality Reduction
+	Rank of a Matrix
+	Rank is “Dimensionality”
+	Dimensionality Reduction
+	Why Reduce Dimensions?
+	SVD - Definition
+	Singular Value <em>Decomposition</em>
+""",
+                      """
+?
+	Case study: How to query?
+	Relation to Eigen-<em>decomposition</em>
+	Relation to Eigen-<em>decomposition
+	SVD: Drawbacks
+	Dimensionality Reduction: CUR Decomposition
+	CUR Decomposition
+	CUR Decomposition</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 26
+                  },
+                  "_score": 15.526878,
+                  "highlight": {
+                    "docs.name": [
+                      "07_Singular-Value_<em>Decomposition</em>_13-39.txt"
+                    ],
+                    "docs.content": [
+                      """
+ data dimensionality reduction
+technique we will talk about.
+And this, this is called the SVD or
+the singular value <em>decomposition</em>
+""",
+                      """
+ matrices.
+I will call them U, sigma, and V.
+Okay?
+And
+this is called the singular
+value <em>decomposition</em>
+""",
+                      """
+ mean that it, it, for
+any possible matrix A we can find this
+<em>decomposition</em>, more over this
+<em>decomposition</em>
 """
                     ]
                   }
@@ -72,30 +137,79 @@ Even more text here!
       {
         "_index": "moocs",
         "_type": "course",
-        "_id": "AV-qQCz5SziBxyoUnvHx",
-        "_score": 1.330277,
+        "_id": "AV-u1m2SSziBxyoUnxGT",
+        "_score": 114.976715,
         "_source": {
-          "name": "sample 3",
-          "url": "htttpppxxx"
+          "name": "[Coursera] Computational Methods for Data Analysis (University of Washington) (compmethods)",
+          "url": "http://academictorrents.com/details/4281ef52a65d26489e686a0540d86abd4161b88e"
         },
         "inner_hits": {
           "docs": {
             "hits": {
-              "total": 1,
-              "max_score": 0.7549128,
+              "total": 26,
+              "max_score": 9.304912,
               "hits": [
                 {
                   "_nested": {
                     "field": "docs",
-                    "offset": 0
+                    "offset": 111
                   },
-                  "_score": 0.7549128,
+                  "_score": 9.304912,
                   "highlight": {
                     "docs.name": [
-                      "should match.txt"
+                      "03_W5_L12_P3_-_Matrix_<em>Decomposition</em>_9-54.txt"
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 102
+                  },
+                  "_score": 6.6136866,
+                  "highlight": {
+                    "docs.name": [
+                      "LectureNotePacketSciCompMeth.pdf"
                     ],
                     "docs.content": [
-                      "<em>sample</em>"
+                      " leap forward from Gaussian elimination and LU <em>decomposition</em> (O(N3)).\nThe key features of the FFT",
+                      " analysis. In particular, an excellent\n<em>decomposition</em> of a given signal into its",
+                      """
+ time frames. Figure 92
+shows the original signal S(t) considered but now decomposed into four smaller
+time windows. In this <em>decomposition</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 76
+                  },
+                  "_score": 6.1522202,
+                  "highlight": {
+                    "docs.name": [
+                      "04_W8_L20_P4-wavelet_transforming_dogs_cats_12-05.txt"
+                    ],
+                    "docs.content": [
+                      """
+ the <em>decomposition</em> in
+the horizontal H, vertical V, and diagonal
+D directions of these wavelets. So
+remember, it's
+""",
+                      """
+ back what I've said. I don't use this
+in a while, but this is your sort of one
+level of wavelet <em>decomposition</em>
+""",
+                      """
+. This is
+your second level of wavelet
+<em>decomposition</em>. So this is, if you look at
+it, so this is kind of like
+"""
                     ]
                   }
                 }
@@ -107,33 +221,46 @@ Even more text here!
       {
         "_index": "moocs",
         "_type": "course",
-        "_id": "AV-qCEySSziBxyoUnvCB",
-        "_score": 0.6703361,
+        "_id": "AV-u131vSziBxyoUnxGi",
+        "_score": 104.66088,
         "_source": {
-          "name": "sample harvard",
-          "url": "htttpppxxx"
+          "name": "[Coursera] Introduction to Computational Finance and Financial Econometrics (University of Washington) (compfinance)",
+          "url": "http://academictorrents.com/details/f07203f2eedb4792c351ba0e28406dab9ab54d7d"
         },
         "inner_hits": {
           "docs": {
             "hits": {
-              "total": 2,
-              "max_score": 0.14912565,
+              "total": 12,
+              "max_score": 16.47668,
               "hits": [
                 {
                   "_nested": {
                     "field": "docs",
-                    "offset": 1
+                    "offset": 123
                   },
-                  "_score": 0.14912565,
+                  "_score": 16.47668,
                   "highlight": {
                     "docs.name": [
-                      "harvard2.txt"
+                      "04_10.3_Risk_<em>Decomposition</em>_for_Portfolio_Volatility_9-12"
                     ],
                     "docs.content": [
                       """
-Here is some <em>sample from harvard 2
-More sample</em> text
-Even more text here!
+So now what we want to do is we want to
+apply this risk budgeting <em>decomposition</em>
+where the risk
+""",
+                      """
+
+portfolio standard deviation and it
+computes this additive risk <em>decomposition</em>
+for you.
+So, that's a very
+""",
+                      """
+.
+The performance analytics package, the, it
+also has a function called Var, and it
+will do the <em>decomposition</em>
 """
                     ]
                   }
@@ -141,18 +268,938 @@ Even more text here!
                 {
                   "_nested": {
                     "field": "docs",
-                    "offset": 0
+                    "offset": 103
                   },
-                  "_score": 0.14912565,
+                  "_score": 15.761309,
                   "highlight": {
                     "docs.name": [
-                      "harvard1.txt"
+                      "03_10.2_Eulers_Theorem_and_Risk_<em>Decomposition</em>_17-20"
                     ],
                     "docs.content": [
                       """
-Here is some <em>sample text
-More sample</em> text
-Even more text here!
+ weights.
+Then, Euler's theorem, gives additive
+<em>decomposition</em> into the asset
+""",
+                      """
+ do this
+<em>decomposition</em> It's all well and good to
+break something up additively, but the
+individual
+""",
+                      """
+ volatility,
+we'll see that this additive <em>decomposition</em>
+makes economic sense that we look at what
+these things actually are, then we
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 131
+                  },
+                  "_score": 14.481506,
+                  "highlight": {
+                    "docs.name": [
+                      "R-intro.pdf"
+                    ],
+                    "docs.content": [
+                      " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23\n5.7.5 Least squares fitting and the <em>QR decomposition</em>",
+                      """
+,
+determinant, to give the sign and modulus (optionally on log scale),
+
+5.7.5 Least squares fitting and the <em>QR decomposition</em>
+""",
+                      """
+-sample tests . . . . . . . . . . . . . . . . . . . . . . . . 36
+Ordered factors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16, 53
+Outer products of arrays . . . . . . . . . . . . . . . . . . . . . . . . . 21
+
+P
+Packages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2, 77
+Probability distributions . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+
+Q
+<em>QR decomposition</em>
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "moocs",
+        "_type": "course",
+        "_id": "AV-u0poSSziBxyoUnxFa",
+        "_score": 95.941666,
+        "_source": {
+          "name": "[Coursera] Artificial Intelligence Planning (The University of Edinburgh) (aiplan)",
+          "url": "http://academictorrents.com/details/560d07faaf09f640fea96b3650874e2903cbc639"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 16,
+              "max_score": 17.504015,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 36
+                  },
+                  "_score": 17.504015,
+                  "highlight": {
+                    "docs.name": [
+                      "15_3.10_<em>Decomposition</em>_6-38"
+                    ],
+                    "docs.content": [
+                      """
+ use methods to decompose tasks and
+that's what I'll be talking about next.
+Here is an example how <em>decomposition</em>
+""",
+                      """
+
+works in the Dock Worker Robots domain.
+And to do the <em>decomposition</em>
+""",
+                      """
+ I've already
+introduced the <em>decomposition</em> function
+delta that takes a task, a method
+instance, and substitution
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 39
+                  },
+                  "_score": 7.6409545,
+                  "highlight": {
+                    "docs.name": [
+                      "3.8-3.13-Hierarchical-Planning.pdf"
+                    ],
+                    "docs.content": [
+                      """
+Microsoft PowerPoint - 3.8-3.13-Hierarchical-Planning.ppt
+
+1
+
+Artificial Intelligence Planning
+
+Hierarchical Planning
+
+Artificial Intelligence Planning
+•Hierarchical Planning
+
+Example: <em>Decomposition</em>
+""",
+                      """
+(p1,p2)
+
+recursive-move(p1,p2,c3,pallet)take-and-put(…)
+
+take-and-put(…)
+
+3
+
+Overview
+
+• Tasks and Task Networks
+• Methods (Refinements)
+• <em>Decomposition</em>
+""",
+                      """
+: “tasks to do” vs. “goals to achieve”
+•Methods (Refinements)
+•<em>Decomposition</em> of Tasks
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 3
+                  },
+                  "_score": 7.6409545,
+                  "highlight": {
+                    "docs.name": [
+                      "11_3.8a_Task_Networks_9-18.pdf"
+                    ],
+                    "docs.content": [
+                      """
+Microsoft PowerPoint - 3.8-3.13-Hierarchical-Planning.ppt
+
+1
+
+Artificial Intelligence Planning
+
+Hierarchical Planning
+
+Artificial Intelligence Planning
+•Hierarchical Planning
+
+Example: <em>Decomposition</em>
+""",
+                      """
+(p1,p2)
+
+recursive-move(p1,p2,c3,pallet)take-and-put(…)
+
+take-and-put(…)
+
+3
+
+Overview
+
+• Tasks and Task Networks
+• Methods (Refinements)
+• <em>Decomposition</em>
+""",
+                      """
+: “tasks to do” vs. “goals to achieve”
+•Methods (Refinements)
+•<em>Decomposition</em> of Tasks
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "moocs",
+        "_type": "course",
+        "_id": "AV-u0h9dSziBxyoUnxFU",
+        "_score": 84.25631,
+        "_source": {
+          "name": "[Coursera] Mathematical Methods for Quantitative Finance (University of Washington) (mathematicalmethods)",
+          "url": "http://academictorrents.com/details/de1360e53beb1ee13c3285af9bb232109fa168a1"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 13,
+              "max_score": 13.673897,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 68
+                  },
+                  "_score": 13.673897,
+                  "highlight": {
+                    "docs.name": [
+                      "09_W6.8__Solving_Least_Squares_Problems"
+                    ],
+                    "docs.content": [
+                      """
+ in
+the eigen
+<em>decomposition, QR</em> function gives me back a
+list.
+So i'm going to save
+""",
+                      """
+ something called a <em>QR</em>
+Factorization to help me do this.
+And so if A is an m by n matrix with
+linearly
+""",
+                      """
+ independent columns,
+a full <em>QR</em> factorization of a, is just
+going to be a product of an m by
+m
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 30
+                  },
+                  "_score": 8.362735,
+                  "highlight": {
+                    "docs.name": [
+                      "mathematicalmethods%2Flecture_slides%2FWeek6-LinearAlgebraII.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ combination
+
+ỹ =
+
+
+ỹ1
+...
+
+ỹm
+
+ = α
+
+|
+e
+|
+
++ β
+
+
+x1
+...
+
+xm
+
+ =
+
+
+1 x1
+...
+
+...
+1 xm
+
+
+[
+α
+
+β
+
+]
+= Xβ
+
+Want to minimize
+m∑
+
+i=1
+
+[
+yi − ỹi
+
+]2
+= ‖y − ỹ‖2 = ‖y − Xβ‖2
+
+Kjell Konis (Copyright © 2013) 6. Linear Algebra II 47 / 53
+
+<em>QR</em>
+""",
+                      " × n matrix with linearly independent columns\nFull <em>QR</em>",
+                      """
+ × n upper triangular matrix R
+(upper triangular means rij = 0 when i > j)
+
+A = <em>QR</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 18
+                  },
+                  "_score": 8.362735,
+                  "highlight": {
+                    "docs.name": [
+                      "01_W6.0__Week_6_Overview_3-04_0_Week6-LinearAlgebraII.pdf.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ combination
+
+ỹ =
+
+
+ỹ1
+...
+
+ỹm
+
+ = α
+
+|
+e
+|
+
++ β
+
+
+x1
+...
+
+xm
+
+ =
+
+
+1 x1
+...
+
+...
+1 xm
+
+
+[
+α
+
+β
+
+]
+= Xβ
+
+Want to minimize
+m∑
+
+i=1
+
+[
+yi − ỹi
+
+]2
+= ‖y − ỹ‖2 = ‖y − Xβ‖2
+
+Kjell Konis (Copyright © 2013) 6. Linear Algebra II 47 / 53
+
+<em>QR</em>
+""",
+                      " × n matrix with linearly independent columns\nFull <em>QR</em>",
+                      """
+ × n upper triangular matrix R
+(upper triangular means rij = 0 when i > j)
+
+A = <em>QR</em>
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "moocs",
+        "_type": "course",
+        "_id": "AV-u1HzdSziBxyoUnxF2",
+        "_score": 57.80447,
+        "_source": {
+          "name": "[Coursera] Probabilistic Graphical Models",
+          "url": "http://academictorrents.com/details/e74f08f0fc699e84a9eb046309727d07d80171c5"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 8,
+              "max_score": 16.220934,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 101
+                  },
+                  "_score": 16.220934,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Dual_<em>Decomposition</em>_-_Algorithm_16-16.txt"
+                    ],
+                    "docs.content": [
+                      "We previously defined the intuition for\nthe dual <em>decomposition</em>",
+                      """
+ work quite well in practice. So for
+example, if we use a <em>decomposition</em> of the
+of the original problem into spanning
+""",
+                      """
+'m at the optimum but where I am I'm
+happy. So what are some of the important
+design choices in implementing dual
+<em>decomposition</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 41
+                  },
+                  "_score": 15.588211,
+                  "highlight": {
+                    "docs.name": [
+                      "02_Dual_<em>Decomposition</em>_-_Intuition_17-46.txt"
+                    ],
+                    "docs.content": [
+                      """
+ of methods that
+we're going to talk about is in, is called
+Dual <em>Decomposition</em>. And it's
+""",
+                      """
+'t that don't agree with each
+other. So, what dual <em>decomposition</em> does is
+it's going to try and do
+""",
+                      """
+ K. So, now
+how is this <em>decomposition</em> going to work
+here? Let's assume for the moment that
+we're going to decompose this over
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 20
+                  },
+                  "_score": 5.604319,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Maximum_Likelihood_for_Log-Linear_Models_28-47.txt"
+                    ],
+                    "docs.content": [
+                      """
+ involve one
+parameter, and a count of how many times
+the parameter is used. So, beautiful
+<em>decomposition</em>, and maybe
+""",
+                      """
+. And
+so, you don't get any <em>decomposition</em> of the
+parameters nicely into isolated
+""",
+                      """
+ no
+<em>decomposition</em> of the likelihood into
+separate independent pieces. There's part
+if it that decompose
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "moocs",
+        "_type": "course",
+        "_id": "AV-u0TYJSziBxyoUnxFF",
+        "_score": 48.142227,
+        "_source": {
+          "name": "[Coursera] Scientific Computing (University of Washington) (scientificcomp)",
+          "url": "http://academictorrents.com/details/6f7e43052129b95f470d3043cfce2bf5c15ae380"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 7,
+              "max_score": 14.581622,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 57
+                  },
+                  "_score": 14.581622,
+                  "highlight": {
+                    "docs.name": [
+                      "02_Week_3-_9.2_-_The_LU_<em>Decomposition</em>_12-25"
+                    ],
+                    "docs.content": [
+                      """
+ I'm going to talk to you about
+today is probably the most standard way to
+do this problem and it's called LU
+<em>decomposition</em>
+""",
+                      """
+?
+What if this matrix has a LU
+<em>decomposition</em>?
+Here is the big deal about it.
+Let's assume a now has a LU <em>decomposition</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 117
+                  },
+                  "_score": 8.134405,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Course_Introduction_9-18.pdf"
+                    ],
+                    "docs.content": [
+                      " in solving such a system. There are a variety of direct\nmethods for solving Ax = b: Gaussian elimination, LU <em>decomposition</em>",
+                      """
+
+substitution algorithm can similarly be calculated to give an O(N2) scheme.
+
+LU <em>Decomposition</em>
+""",
+                      """
+.
+The factorization itself is O(N3), but you only have to do this once. Note, you
+should always use LU <em>decomposition</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 41
+                  },
+                  "_score": 8.134405,
+                  "highlight": {
+                    "docs.name": [
+                      "LectureNotePacketSciComputing.pdf"
+                    ],
+                    "docs.content": [
+                      " in solving such a system. There are a variety of direct\nmethods for solving Ax = b: Gaussian elimination, LU <em>decomposition</em>",
+                      """
+
+substitution algorithm can similarly be calculated to give an O(N2) scheme.
+
+LU <em>Decomposition</em>
+""",
+                      """
+.
+The factorization itself is O(N3), but you only have to do this once. Note, you
+should always use LU <em>decomposition</em>
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "moocs",
+        "_type": "course",
+        "_id": "AV-u1g_FSziBxyoUnxGN",
+        "_score": 38.648464,
+        "_source": {
+          "name": "[Coursera] Galaxies and Cosmology (Caltech) (cosmo)",
+          "url": "http://academictorrents.com/details/b7d15931742718f330243dc0aeb110136c86359f"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 7,
+              "max_score": 7.5685024,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 141
+                  },
+                  "_score": 7.5685024,
+                  "highlight": {
+                    "docs.name": [
+                      "08_Module_5.3_-_Cosmology_With_the_Cosmic_Microwave_Background"
+                    ],
+                    "docs.content": [
+                      """
+.
+If you now remember Fourier <em>decomposition</em>
+and in density field.
+In any number of dimensions
+""",
+                      """
+
+spherical harmonics, which is essentially
+in equivalent of Fourier <em>decomposition</em> on
+a sphere, schematically this is how it
+works
+""",
+                      """
+,
+equivalent to Fourier <em>decomposition</em>, but
+on a sphere.
+And instead of fewer components, we are
+talking
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 163
+                  },
+                  "_score": 5.272865,
+                  "highlight": {
+                    "docs.name": [
+                      "04_Module_11.3_-_Spiral_Galaxies-_Photometric_Properties_8-06.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ in a central bulge.  Central surface brightness
+of disk must be estimated by extrapolating inward from larger radii
+
+lo
+g
+
+su
+rfa
+
+ce
+
+br
+ig
+
+ht
+ne
+
+ss
+
+radius
+
+Bulge-Disk <em>Decomposition</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 119
+                  },
+                  "_score": 5.272865,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Module_11.4_-_Spiral_Galaxies-_Gas_Content"
+                    ],
+                    "docs.content": [
+                      """
+ spiral galaxy
+rotation curve, with it's <em>decomposition</em>
+into the bulged disc, and dark
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "moocs",
+        "_type": "course",
+        "_id": "AV-u1JdcSziBxyoUnxF4",
+        "_score": 33.38521,
+        "_source": {
+          "name": "[Coursera] Recommender Systems (University of Minnesota) (recsys)",
+          "url": "http://academictorrents.com/details/42c3b47bf15a2a1aaadf92156f19315ad2d22967"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 7,
+              "max_score": 7.3832827,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 48
+                  },
+                  "_score": 7.3832827,
+                  "highlight": {
+                    "docs.name": [
+                      "02_Video_7.2_-_Diving_Deeper_with_SVD"
+                    ],
+                    "docs.content": [
+                      """
+In this video, we'll be talking more, more
+depth
+about how singular value <em>decomposition</em>, a
+matrix
+""",
+                      """
+ to generate
+predictions.
+one very common technique for doing this
+is called Singular Value <em>Decomposition</em>
+""",
+                      """
+.
+This video is going to go into more depth
+on
+how a Singular Value <em>Decomposition</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 89
+                  },
+                  "_score": 6.9781137,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Video_7.3_-_Training_SVDs"
+                    ],
+                    "docs.content": [
+                      """
+Welcome back.
+In this video we're going to talk
+about, ways of training singular value
+<em>decomposition</em>
+""",
+                      """
+,
+that don't have some of the problems in
+the methods we've seen so far.
+So, in the previous video we talked about
+how singular value
+<em>decomposition</em>
+""",
+                      """
+ function down,
+until finally we get pretty close to x
+min.
+And that's the basic idea of gradient
+descent.
+Now in this case, x is our full matrix
+<em>decomposition</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 60
+                  },
+                  "_score": 4.673056,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Video_8.3_-_What_wasnt_covered"
+                    ],
+                    "docs.content": [
+                      """
+ clusters.
+Another set of algorithms to be covered at
+another time.
+We did work with singular value
+<em>decomposition</em>
+""",
+                      """
+ enough number of dimensions to
+visualize, usually resulted in a not
+very meaningful <em>decomposition</em> of the
+product
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "moocs",
+        "_type": "course",
+        "_id": "AV-u1pJkSziBxyoUnxGV",
+        "_score": 31.328104,
+        "_source": {
+          "name": "[Coursera] VLSI CAD: Logic to Layout (University of Illinois at Urbana-Champaign) (vlsicad)",
+          "url": "http://academictorrents.com/details/ec1c86afefda42f4b36c34ae7b235ef0bfd6b9d3"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 7,
+              "max_score": 6.1288404,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 14
+                  },
+                  "_score": 6.1288404,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Lecture_2.5_Computational_Boolean_Algebra-_Recursive_Tautology"
+                    ],
+                    "docs.content": [
+                      """
+ expansion
+theorem that we can always represent the
+function in that nice little
+<em>decomposition</em>.
+Right, but we
+""",
+                      """
+ a
+great result, because it gives us a
+complication of <em>decomposition</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 45
+                  },
+                  "_score": 4.4007955,
+                  "highlight": {
+                    "docs.name": [
+                      "09_11.9_From_Detailed_Routing_to_Global_Routing"
+                    ],
+                    "docs.content": [
+                      """
+ of, over here.
+Think of this as a hierarchical
+<em>decomposition</em> of routing.
+Instead of decomposing
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 30
+                  },
+                  "_score": 4.4007955,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Lecture_2.1_Computational_Boolean_Algebra-_Basics"
+                    ],
+                    "docs.content": [
+                      """
+ three things, we're
+going to study <em>decomposition</em> strategies,
+because the way you do something that's
 """
                     ]
                   }
