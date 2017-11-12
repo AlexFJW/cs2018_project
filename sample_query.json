@@ -1,4 +1,4 @@
-GET /moocs/course/_search
+curl -XPOST -u elastic:'GuGs9GAnAYb83UA5kWl6H937' 'https://c3de74b0a9b122f7cb595f9720e26dfe.us-east-1.aws.found.io:9243/moocs/course/_search?pretty' -H 'Content-Type: application/json' -d'
 {
   "_source": {
     "includes": ["name", "url"],
@@ -41,4 +41,4 @@ GET /moocs/course/_search
       ]
     }
   }
-}
+}'
