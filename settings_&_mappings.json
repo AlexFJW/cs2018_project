@@ -19,7 +19,7 @@ PUT moocs
           "type": "custom",
           "tokenizer": "lowercase",
           "char_filter": ["html_strip"],
-          "filter": ["stop", "length_2", "shingle"]
+          "filter": ["stop", "shingle"]
         }
       }
     }
