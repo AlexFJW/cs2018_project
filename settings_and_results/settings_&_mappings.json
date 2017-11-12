@@ -1,4 +1,4 @@
-PUT moocs
+PUT moocs_l
 {
   "settings": {
     "similarity": {
@@ -19,7 +19,7 @@ PUT moocs
           "type": "custom",
           "tokenizer": "lowercase",
           "char_filter": ["html_strip"],
-          "filter": ["stop", "shingle"]
+          "filter": ["stop", "length_2", "shingle"]
         }
       }
     }

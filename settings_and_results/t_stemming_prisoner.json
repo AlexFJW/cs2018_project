@@ -1,0 +1,847 @@
+{
+  "took": 591,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 59,
+    "max_score": 826.1622,
+    "hits": [
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyDgFSziBxyoUnxi0",
+        "_score": 826.1622,
+        "_source": {
+          "name": "[Coursera] Computer Architecture (Princeton University) (comparch)",
+          "url": "http://academictorrents.com/details/10d1bf7161a1b3ea70697cd61834ceea6c3d1f87"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 291,
+              "max_score": 3.3853915,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 95
+                  },
+                  "_score": 3.3853915,
+                  "highlight": {
+                    "docs.name": [
+                      "05_L21<em>S</em>5-_Implementation_29-02.txt"
+                    ],
+                    "docs.content": [
+                      """
+ distributed shared memory machine
+looks like.
+Let'<em>s</em> talk about how to actually figure
+out where
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 251
+                  },
+                  "_score": 3.3818276,
+                  "highlight": {
+                    "docs.name": [
+                      "03_L15<em>S</em>3-_GPUs_20-02.txt"
+                    ],
+                    "docs.content": [
+                      """
+
+of the common places that you see
+something that'<em>s</em> like a vector processor,
+but isn't quite
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 42
+                  },
+                  "_score": 3.3810487,
+                  "highlight": {
+                    "docs.name": [
+                      "02_L20<em>S</em>2-_Topology_18-53.txt"
+                    ],
+                    "docs.content": [
+                      """
+ registers in along
+the way.
+And now you can have nearest neighbor
+communication.
+Let'<em>s</em> say one
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxGu6SziBxyoUnxh4",
+        "_score": 771.34973,
+        "_source": {
+          "name": "[Coursera] Compilers (Stanford University) (compilers)",
+          "url": "http://academictorrents.com/details/b7579be97c2f01e4efadb0b6b06f0d071afeaac9"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 286,
+              "max_score": 3.1255908,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 200
+                  },
+                  "_score": 3.1255908,
+                  "highlight": {
+                    "docs.name": [
+                      "04_05-04-_Ambiguity_17m35<em>s</em>.txt"
+                    ],
+                    "docs.content": [
+                      """
+ string and let'<em>s</em>
+write it down one more time, id  id + id.
+This string has two parse tree using
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 6
+                  },
+                  "_score": 3.1245039,
+                  "highlight": {
+                    "docs.name": [
+                      "07_09-07-_Subtyping_11m35<em>s</em>.txt"
+                    ],
+                    "docs.content": [
+                      """
+ oriented languages. Let'<em>s</em>
+begin by taking a look at the typing rule
+for let with initialization. So
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 166
+                  },
+                  "_score": 3.12047,
+                  "highlight": {
+                    "docs.name": [
+                      "03_16-03-_Spilling_14m50<em>s</em>.txt"
+                    ],
+                    "docs.content": [
+                      """
+. That'<em>s</em> the only other kind of
+stories that we have. And so we're going
+to pick some values and spill
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vx1kUSziBxyoUnxil",
+        "_score": 369.5281,
+        "_source": {
+          "name": "[Coursera] Game Theory (Stanford University & The University of British Columbia) (gametheory)",
+          "url": "http://academictorrents.com/details/7b96f8f76c4af7752f35c4fc26607cf50b6bb195"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 86,
+              "max_score": 17.810976,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 6
+                  },
+                  "_score": 17.810976,
+                  "highlight": {
+                    "docs.name": [
+                      "10_1-10_Pareto_Optimality_8-56.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ Outcomes in Example Games
+
+3.2 Games in normal form 57
+
+Incidentally, the name “<em>Prisoner</em>’<em>s</em> <em>Dilemma</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 82
+                  },
+                  "_score": 17.567982,
+                  "highlight": {
+                    "docs.name": [
+                      "08_1-8_Nash_Equilibrium_of_Example_Games_6-14.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ represents your colleague’<em>s</em>
+payoff.1TCP user’<em>s</em>
+
+game
+
+<em>Prisoner</em>’<em>s</em>
+<em>dilemma</em> game
+
+C D
+
+C −1,−1 −4, 0
+
+D
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 94
+                  },
+                  "_score": 16.415476,
+                  "highlight": {
+                    "docs.name": [
+                      "09_1-9_Dominant_Strategies_7-32.pdf"
+                    ],
+                    "docs.content": [
+                      """
+), and the second number represents your colleague’<em>s</em>
+payoff.1TCP user’<em>s</em>
+
+game
+
+<em>Prisoner</em>’<em>s</em>
+<em>dilemma</em> game
+
+C
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxmf-SziBxyoUnxiX",
+        "_score": 310.8709,
+        "_source": {
+          "name": "[Coursera] Model Thinking (University of Michigan) (modelthinking)",
+          "url": "http://academictorrents.com/details/05a8fe3f7e3420df6b83f40b0cbccd05e591d9f4"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 163,
+              "max_score": 32.371353,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 203
+                  },
+                  "_score": 32.371353,
+                  "highlight": {
+                    "docs.name": [
+                      "02_17.2_The_<em>Prisoners</em>_<em>Dilemma</em>_Game_13-45"
+                    ],
+                    "docs.content": [
+                      """
+ called the <em>prisoner</em>'<em>s</em>
+<em>dilemma</em>. The <em>prisoner</em>'<em>s</em> <em>dilemma</em> has been
+written about literally tens
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 1
+                  },
+                  "_score": 32.22059,
+                  "highlight": {
+                    "docs.name": [
+                      "01_17.1_Intro-_The_<em>Prisoners</em>_<em>Dilemma</em>_and_Collective_Action_3-44_0_Lecture_17.all-_<em>Prisoners</em>_<em>Dilemma</em>_and_Collective_Action_pdf.pdf"
+                    ],
+                    "docs.content": [
+                      """
+
+
+<em>Prisoners</em>’
+  <em>Dilemma</em>
+
+Cost
+  of
+  coopera1on:
+  c
+
+Benefit
+  to
+  other(<em>s</em>):
+  b
+
+  b
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 118
+                  },
+                  "_score": 31.229006,
+                  "highlight": {
+                    "docs.name": [
+                      "01_17.1_Intro-_The_<em>Prisoners</em>_<em>Dilemma</em>_and_Collective_Action_3-44"
+                    ],
+                    "docs.content": [
+                      """
+ called the <em>prisoner</em>'<em>s</em> <em>dilemma</em>.
+And the <em>prisoner</em>'<em>s</em> <em>dilemma</em> is a very
+simple model of the two by two
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxD4PSziBxyoUnxh0",
+        "_score": 243.62555,
+        "_source": {
+          "name": "[Coursera] Genes and the Human Condition (From Behavior to Biotechnology) (University of Maryland, College Park) (genes)",
+          "url": "http://academictorrents.com/details/5aecd4978d7be3568f454fa6384dcd5683564f63"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 74,
+              "max_score": 8.5505,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 65
+                  },
+                  "_score": 8.5505,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Week_5_-_Lecture_3_9m17<em>s</em>.txt"
+                    ],
+                    "docs.content": [
+                      """
+ fingerprinting,
+paternity test.
+Using your DNA fingerprint profile in
+court, and how this technology'<em>s</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 24
+                  },
+                  "_score": 8.548342,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Week_5_-_Lecture_3_9m17<em>s</em>.pdf"
+                    ],
+                    "docs.content": [
+                      """
+
+  profile
+  in
+
+court,
+  and
+  how
+  this
+  technology
+  is
+  impacting
+  laws.
+
+Since
+  it'<em>s</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 0
+                  },
+                  "_score": 8.242783,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Week_3_-_Lecture_1_14m12<em>s</em>.txt"
+                    ],
+                    "docs.content": [
+                      """
+[MUSIC]
+[MUSIC]
+[MUSIC]
+Welcome back.
+As I mentioned at the start of last
+week'<em>s</em> lectures, all
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyRQCSziBxyoUnxjC",
+        "_score": 239.74425,
+        "_source": {
+          "name": "Democratic Development by Larry Diamond",
+          "url": "http://academictorrents.com/details/1452d6a906d5d164c1adfc4b81a74a6690a8ec4b"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 151,
+              "max_score": 14.126001,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 19
+                  },
+                  "_score": 14.126001,
+                  "highlight": {
+                    "docs.name": [
+                      "03_<em>S</em>.3_Progress__Problems_13_min"
+                    ],
+                    "docs.content": [
+                      """
+ as in, judicial
+sentencing to <em>prison</em>.
+the data show that one in 10 black males
+who are in their 30<em>s</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 109
+                  },
+                  "_score": 12.988107,
+                  "highlight": {
+                    "docs.name": [
+                      "01_<em>S</em>.1_Looking_Inward__Outward_17_min.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ 37% of the US
+population
+
+n  One in ten black males in their 30<em>s</em> is in jail or <em>prison</em> on any
+given day
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 90
+                  },
+                  "_score": 12.431646,
+                  "highlight": {
+                    "docs.name": [
+                      "01_<em>S</em>.1_Looking_Inward__Outward_17_min_0_Lecture_21_Slides.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ 37% of the US
+population
+
+n  One in ten black males in their 30<em>s</em> is in jail or <em>prison</em> on any
+given day
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vx28USziBxyoUnxim",
+        "_score": 95.45125,
+        "_source": {
+          "name": "[Coursera] Genomic and Precision Medicine (University of California, San Francisco) (genomicmedicine)",
+          "url": "http://academictorrents.com/details/c4b2f1ba8fb0ee0b8e49609d2b9c86efae36dc36"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 79,
+              "max_score": 15.175006,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 18
+                  },
+                  "_score": 15.175006,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Week_3_-_Module_3-_Using_NGS_for_diagnostic_<em>dilemmas</em>_11-23.txt"
+                    ],
+                    "docs.content": [
+                      """
+ in the
+context of the diagnostic <em>dilemma</em>.
+What we mean by this is the following.
+You have a child or an adult
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 34
+                  },
+                  "_score": 15.042044,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Week_3_-_Module_3-_Using_NGS_for_diagnostic_<em>dilemmas</em>_11-23.pdf"
+                    ],
+                    "docs.content": [
+                      """
+PowerPoint Presentation
+
+Module 3: Using NGS for diagnostic
+
+<em>dilemmas</em>
+
+A typical diagnostic
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 35
+                  },
+                  "_score": 7.850875,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Week_3_-_Module_1-_Whole_Genome_Analysis_12-39.pdf"
+                    ],
+                    "docs.content": [
+                      """
+PowerPoint Presentation
+
+Week 3: Next-gen sequencing for solving
+diagnostic <em>dilemmas</em>
+
+Genomic
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxxCxSziBxyoUnxih",
+        "_score": 89.89277,
+        "_source": {
+          "name": "[Coursera] Greek and Roman Mythology (University of Pennsylvania)",
+          "url": "http://academictorrents.com/details/01212a89f842f5ad1364c7fa3a8c4c514e2b26ab"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 169,
+              "max_score": 6.071941,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 57
+                  },
+                  "_score": 6.071941,
+                  "highlight": {
+                    "docs.name": [
+                      "08_7-8-measuring-evil.en"
+                    ],
+                    "docs.content": [
+                      """
+ in the minds of what'<em>s</em>
+happening inside of the trial. There are some strange twists and turns.
+And, I
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 39
+                  },
+                  "_score": 4.950406,
+                  "highlight": {
+                    "docs.name": [
+                      "06_1-5-the-trojan-war-the-world-of-homer.en"
+                    ],
+                    "docs.content": [
+                      ". They look around and say, here is a human. Let'<em>s</em> make him solve the <em>dilemma</em> for us. Paris agrees"
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 151
+                  },
+                  "_score": 0.5769797,
+                  "highlight": {
+                    "docs.name": [
+                      "01_10-1-the-afterlife-and-the-underworld.en"
+                    ],
+                    "docs.content": [
+                      "In Book VI, we see one of the most\nwell-known parts of Virgil'<em>s</em> Aeneid, the trip to the underworld"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxArqSziBxyoUnxhx",
+        "_score": 89.43139,
+        "_source": {
+          "name": "[Coursera] Understanding Einstein: The Special Theory of Relativity (Stanford University) (einstein)",
+          "url": "http://academictorrents.com/details/be19083019ae3954680733d394e5e5b5b3572a15"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 276,
+              "max_score": 0.36247268,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 267
+                  },
+                  "_score": 0.36247268,
+                  "highlight": {
+                    "docs.name": [
+                      "03_The_pole_in_the_barn_paradox_22-26_high-def.txt"
+                    ],
+                    "docs.content": [
+                      """
+ understand where we start
+and where we end up and in between where
+we, we go with it.
+So here'<em>s</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 177
+                  },
+                  "_score": 0.36244428,
+                  "highlight": {
+                    "docs.name": [
+                      "14_The_pole_in_the_barn_paradox_22-26_low-def.txt"
+                    ],
+                    "docs.content": [
+                      """
+ understand where we start
+and where we end up, and in between where
+we, we go with it.
+So here'<em>s</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 254
+                  },
+                  "_score": 0.36212617,
+                  "highlight": {
+                    "docs.name": [
+                      "10_Leading_clocks_lag_revisited_alternate_version_29-57_high-def.txt"
+                    ],
+                    "docs.content": [
+                      """
+
+Alice is looking at Bob'<em>s</em>, a set of Bob'<em>s</em>
+clocks that are moving past her.
+Or the other way
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyT48SziBxyoUnxjG",
+        "_score": 67.768486,
+        "_source": {
+          "name": "[Coursera] Computational Methods for Data Analysis (University of Washington) (compmethods)",
+          "url": "http://academictorrents.com/details/4281ef52a65d26489e686a0540d86abd4161b88e"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 120,
+              "max_score": 0.5785731,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 45
+                  },
+                  "_score": 0.5785731,
+                  "highlight": {
+                    "docs.name": [
+                      "04_W10_L26_P4-The_2-soliton_breather_solution_17-58.txt"
+                    ],
+                    "docs.content": [
+                      """
+ be.
+Right? I mean, at the end of the day, I
+use Fourier, because.
+Pretty much, it'<em>s</em> a complete basis.
+I
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 19
+                  },
+                  "_score": 0.5785525,
+                  "highlight": {
+                    "docs.name": [
+                      "03_W3_L7_P3-Spectrograms_16-54.txt"
+                    ],
+                    "docs.content": [
+                      """
+, the damage you do. A nice smooth
+thing like this sometimes just works
+pretty nice. But, there'<em>s</em> people
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 40
+                  },
+                  "_score": 0.5781004,
+                  "highlight": {
+                    "docs.name": [
+                      "04_W01_L02_P04_-_Denoising_via_filtering_9-56.txt"
+                    ],
+                    "docs.content": [
+                      """
+. There'<em>s</em>
+nothing you can make out of that. And what
+you want to ask, is there something
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

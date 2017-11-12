@@ -1,0 +1,61 @@
+PUT fvh
+{
+  "settings": {
+    "similarity": {
+      "low_length_bm25": {
+        "type": "BM25",
+        "b": 0.25
+      }
+    },
+    "analysis": {
+      "filter": {
+        "length_2": {
+          "type": "length",
+          "min": 2
+        }
+      },
+      "analyzer": {
+        "shingle_analyzer": {
+          "type": "custom",
+          "tokenizer": "lowercase",
+          "char_filter": ["html_strip"],
+          "filter": ["stop", "shingle"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "course": {
+      "properties": {
+        "name": {
+          "type": "text",
+          "analyzer": "shingle_analyzer",
+          "boost": 2,
+          "similarity": "low_length_bm25"
+        },
+        "url": {
+          "type": "text",
+          "index": false
+        },
+        "docs": {
+          "type": "nested",
+          "properties": {
+            "name": {
+              "type": "text",
+              "analyzer": "shingle_analyzer",
+              "boost": 1.5,
+              "similarity": "low_length_bm25",
+              "term_vector" : "with_positions_offsets"
+            },
+            "content": {
+              "type": "text",
+              "analyzer": "shingle_analyzer",
+              "similarity": "low_length_bm25",
+              "term_vector" : "with_positions_offsets"
+            }
+          }
+        }
+      }
+    }
+  }
+}

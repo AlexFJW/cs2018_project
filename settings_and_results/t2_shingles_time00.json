@@ -1,0 +1,831 @@
+{
+  "took": 580,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 70,
+    "max_score": 709.0202,
+    "hits": [
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxArqSziBxyoUnxhx",
+        "_score": 709.0202,
+        "_source": {
+          "name": "[Coursera] Understanding Einstein: The Special Theory of Relativity (Stanford University) (einstein)",
+          "url": "http://academictorrents.com/details/be19083019ae3954680733d394e5e5b5b3572a15"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 260,
+              "max_score": 21.20185,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 303
+                  },
+                  "_score": 21.20185,
+                  "highlight": {
+                    "docs.name": [
+                      "09_<em>Time</em>_<em>dilation</em>_22-27_high-def.txt"
+                    ],
+                    "docs.content": [
+                      """
+ analysis of it, we came
+to this whole concept of <em>time</em> <em>dilations</em>.
+So, what we want to do is pull
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 10
+                  },
+                  "_score": 21.20185,
+                  "highlight": {
+                    "docs.name": [
+                      "23_<em>Time</em>_<em>dilation</em>_22-27_low-def.txt"
+                    ],
+                    "docs.content": [
+                      """
+ analysis of it we came
+towhole concept of <em>Time</em> <em>Dilations</em>.
+What I want to do is pull those pieces
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 137
+                  },
+                  "_score": 19.452684,
+                  "highlight": {
+                    "docs.name": [
+                      "19_Exploring_<em>time</em>_<em>dilation</em>_and_length_contraction_part_1_25-36_low-def.txt"
+                    ],
+                    "docs.content": [
+                      """
+In this video lecture, we want to spend a
+little <em>time</em> exploring <em>time</em> <em>dilation</em> and
+length
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyT48SziBxyoUnxjG",
+        "_score": 160.98848,
+        "_source": {
+          "name": "[Coursera] Computational Methods for Data Analysis (University of Washington) (compmethods)",
+          "url": "http://academictorrents.com/details/4281ef52a65d26489e686a0540d86abd4161b88e"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 110,
+              "max_score": 10.955441,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 104
+                  },
+                  "_score": 10.955441,
+                  "highlight": {
+                    "docs.name": [
+                      "05_W2_L5_P5-More_wavelet_properties_10-19.txt"
+                    ],
+                    "docs.content": [
+                      """
+
+the wavelet transform of some function.
+Where a, sorry, some constant <em>times</em> a
+function F plus some
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 114
+                  },
+                  "_score": 10.240599,
+                  "highlight": {
+                    "docs.name": [
+                      "01_W2_L6_P1-Wavelet_building_blocks-_Dialations_and_Translations_9-17.txt"
+                    ],
+                    "docs.content": [
+                      """
+ right, so wavelets here is the
+idea. We're doing <em>time</em> signal processing,
+right, <em>times</em>, <em>time</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 41
+                  },
+                  "_score": 8.983757,
+                  "highlight": {
+                    "docs.name": [
+                      "04_W2_L6_P4-Multi-resolution_analysis_8-53.txt"
+                    ],
+                    "docs.content": [
+                      """
+, the orthogonality that I put up
+there is related to translations and
+<em>dilations</em>. This is what those m
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyMK0SziBxyoUnxi-",
+        "_score": 148.7423,
+        "_source": {
+          "name": "[Coursera] High Performance Scientific Computing (University of Washington) (scicomp)",
+          "url": "http://academictorrents.com/details/cb91a3d7a4c4c086be240b54e83ed8d587b31ff5"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 162,
+              "max_score": 6.5120096,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 69
+                  },
+                  "_score": 6.5120096,
+                  "highlight": {
+                    "docs.name": [
+                      "01_W5-L15.1_-_<em>Timing</em>_Unix_commands_and_Fortran_code_3-24"
+                    ],
+                    "docs.content": [
+                      """
+Okay, so I want to say a little bit about
+<em>timing</em> Fortran codes.
+so as we started looking at OMP
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 100
+                  },
+                  "_score": 6.5105567,
+                  "highlight": {
+                    "docs.name": [
+                      "08_W2-L6.8_-_<em>Timing</em>_execution_of_Python_codes_13-10"
+                    ],
+                    "docs.content": [
+                      """
+ as
+it's running through a loop for example.
+So there's some, some utilities for
+<em>timing</em> things in Python
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 118
+                  },
+                  "_score": 6.410494,
+                  "highlight": {
+                    "docs.name": [
+                      "04_W4-L12.4_-_CPU_<em>time</em>_vs._throughput_4-19"
+                    ],
+                    "docs.content": [
+                      """
+ have 2000 by 1000 matrices,
+a and b.
+And let's compare the <em>time</em> of of
+multiplying them together
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxLuwSziBxyoUnxh9",
+        "_score": 140.18199,
+        "_source": {
+          "name": "[Coursera] Scientific Computing (University of Washington) (scientificcomp)",
+          "url": "http://academictorrents.com/details/6f7e43052129b95f470d3043cfce2bf5c15ae380"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 130,
+              "max_score": 6.7888846,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 136
+                  },
+                  "_score": 6.7888846,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Week_5-_14.1_-_Implementing_<em>time</em>-stepping_for_PDEs_18-21"
+                    ],
+                    "docs.content": [
+                      """
+
+equations.
+So things that have space and <em>time</em>.
+And we're going to start off with one
+dimension and .
+Here
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 52
+                  },
+                  "_score": 6.7844095,
+                  "highlight": {
+                    "docs.name": [
+                      "07_Week_1-_1.6_-_Adams_<em>Time</em>-stepping_Schemes_9-41"
+                    ],
+                    "docs.content": [
+                      """
+ the following.
+We will only use current <em>time</em> points and
+pass points to approximate that peak.
+You have
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 69
+                  },
+                  "_score": 6.747873,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Week_7-_21.3_-_The_<em>time</em>-evolution_of_advection-diffusion_13-15"
+                    ],
+                    "docs.content": [
+                      """
+Okay.
+So, everybody okay with that so far?
+I have an initial vorticity.
+I have my space and <em>time</em>
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyPavSziBxyoUnxjA",
+        "_score": 135.86145,
+        "_source": {
+          "name": "[Coursera] Galaxies and Cosmology (Caltech) (cosmo)",
+          "url": "http://academictorrents.com/details/b7d15931742718f330243dc0aeb110136c86359f"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 133,
+              "max_score": 8.516377,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 107
+                  },
+                  "_score": 8.516377,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Module_4.7_-_Tests_for_Expansion_of_the_Universe"
+                    ],
+                    "docs.content": [
+                      """
+.
+The second method uses <em>time</em> <em>dilation</em> of
+Supernova light curves.
+Recall that those can be standardized
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 116
+                  },
+                  "_score": 7.610562,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Module_4.7_-_Tests_for_Expansion_of_the_Universe_6-23.pdf"
+                    ],
+                    "docs.content": [
+                      """
+)-1
+
+•  <em>Time</em> <em>dilation</em> of Supernova light curves
+
+– <em>Time</em> stretches by a factor of (1+v/c) = (1+z
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 168
+                  },
+                  "_score": 6.8247375,
+                  "highlight": {
+                    "docs.name": [
+                      "cosmo%2FGalaxiesAndCosmologyWeek2.txt"
+                    ],
+                    "docs.content": [
+                      " for the relativistic <em>time</em> <em>dilation</em>. The clocks tick slower there by a factor of one plus z from our point of view"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyDgFSziBxyoUnxi0",
+        "_score": 124.76308,
+        "_source": {
+          "name": "[Coursera] Computer Architecture (Princeton University) (comparch)",
+          "url": "http://academictorrents.com/details/10d1bf7161a1b3ea70697cd61834ceea6c3d1f87"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 188,
+              "max_score": 0.875676,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 230
+                  },
+                  "_score": 0.875676,
+                  "highlight": {
+                    "docs.name": [
+                      "02_L2S2-_Pipeline_Basics_30-51.txt"
+                    ],
+                    "docs.content": [
+                      """
+, of all the different stages
+should be the same.
+So the <em>time</em> taken for stage one should be
+the same as two
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 217
+                  },
+                  "_score": 0.86688423,
+                  "highlight": {
+                    "docs.name": [
+                      "01_L12S1-_Multiporting_and_Banking_20-08.pdf"
+                    ],
+                    "docs.content": [
+                      """
+
+
+3
+
+Average Memory Access <em>Time</em>
+
+• Average Memory Access <em>Time</em> = Hit <em>Time</em> + ( Miss Rate  * Miss Penalty
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 189
+                  },
+                  "_score": 0.86688423,
+                  "highlight": {
+                    "docs.name": [
+                      "01_L11S1-_Basic_Cache_Optimizations_16-08.pdf"
+                    ],
+                    "docs.content": [
+                      """
+
+
+3
+
+Average Memory Access <em>Time</em>
+
+• Average Memory Access <em>Time</em> = Hit <em>Time</em> + ( Miss Rate  * Miss Penalty
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyiBiSziBxyoUnxjU",
+        "_score": 111.03103,
+        "_source": {
+          "name": "[Coursera] Introduction to Computational Finance and Financial Econometrics (University of Washington) (compfinance)",
+          "url": "http://academictorrents.com/details/f07203f2eedb4792c351ba0e28406dab9ab54d7d"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 127,
+              "max_score": 9.052418,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 11
+                  },
+                  "_score": 9.052418,
+                  "highlight": {
+                    "docs.name": [
+                      "01_4.3_<em>Time</em>_Series_Concepts_16-48"
+                    ],
+                    "docs.content": [
+                      """
+Alright.
+So, we're going to talk about <em>time</em> series
+concepts.
+This is it's, it's still about
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 28
+                  },
+                  "_score": 9.008876,
+                  "highlight": {
+                    "docs.name": [
+                      "03_9.14_Efficient_Portfolios_Over_<em>Time</em>_18-01"
+                    ],
+                    "docs.content": [
+                      """
+ <em>time</em>.
+So, this goes back to the constant
+expected return model, and, you know, we
+had seen evidence
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 133
+                  },
+                  "_score": 0.9024482,
+                  "highlight": {
+                    "docs.name": [
+                      "05_4.7_Moving_Average_Processes"
+                    ],
+                    "docs.content": [
+                      """
+ a particular type of <em>time</em>
+dependence.
+So, for example, there's <em>time</em> series
+process called the moving
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxGu6SziBxyoUnxh4",
+        "_score": 99.84212,
+        "_source": {
+          "name": "[Coursera] Compilers (Stanford University) (compilers)",
+          "url": "http://academictorrents.com/details/b7579be97c2f01e4efadb0b6b06f0d071afeaac9"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 130,
+              "max_score": 1.0993173,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 262
+                  },
+                  "_score": 1.0993173,
+                  "highlight": {
+                    "docs.name": [
+                      "02_11-02-_Activations_13m50s.txt"
+                    ],
+                    "docs.content": [
+                      """
+In this video, we're going to being our
+discussions of run <em>time</em> structures with
+the notion
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 77
+                  },
+                  "_score": 1.0978336,
+                  "highlight": {
+                    "docs.name": [
+                      "06_08-06-_SLR_Parsing_Example_6m42s.txt"
+                    ],
+                    "docs.content": [
+                      """
+. And this is
+just the deterministic version of the, non
+deterministic automaton we built last
+<em>time</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 200
+                  },
+                  "_score": 1.0953957,
+                  "highlight": {
+                    "docs.name": [
+                      "04_05-04-_Ambiguity_17m35s.txt"
+                    ],
+                    "docs.content": [
+                      """
+ string and let's
+write it down one more <em>time</em>, id  id + id.
+This string has two parse tree using
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyWVPSziBxyoUnxjI",
+        "_score": 99.33555,
+        "_source": {
+          "name": "[Coursera] VLSI CAD: Logic to Layout (University of Illinois at Urbana-Champaign) (vlsicad)",
+          "url": "http://academictorrents.com/details/ec1c86afefda42f4b36c34ae7b235ef0bfd6b9d3"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 77,
+              "max_score": 7.0330725,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 87
+                  },
+                  "_score": 7.0330725,
+                  "highlight": {
+                    "docs.name": [
+                      "12-vlsicad-<em>timing</em>-RED.pdf"
+                    ],
+                    "docs.content": [
+                      """
+12-vlsicad-<em>timing</em> v02 take8.1 bugfix.pptx
+
+VLSI CAD:
+Logic to Layout
+
+Rob A. Rutenbar
+University
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 65
+                  },
+                  "_score": 7.0330725,
+                  "highlight": {
+                    "docs.name": [
+                      "12-vlsicad-<em>timing</em>.pdf"
+                    ],
+                    "docs.content": [
+                      """
+12-vlsicad-<em>timing</em> v02 take8.1 bugfix.pptx
+
+VLSI CAD:
+Logic to Layout
+
+Rob A. Rutenbar
+University
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 82
+                  },
+                  "_score": 6.77104,
+                  "highlight": {
+                    "docs.name": [
+                      "08_12.8_Interconnect_<em>Timing</em>-_Elmore_Delay_Examples_14-56"
+                    ],
+                    "docs.content": [
+                      """
+[SOUND].
+So here in lecture 12.8, we're going to
+finish our exploration of <em>timing</em>.
+And we're
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxbcASziBxyoUnxiN",
+        "_score": 98.51782,
+        "_source": {
+          "name": "[Coursera] Computational Neuroscience (University of Washington) (compneuro)",
+          "url": "http://academictorrents.com/details/d180bcd510aeec3a20044a0946ac658b9ab30760"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 71,
+              "max_score": 9.609073,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 12
+                  },
+                  "_score": 9.609073,
+                  "highlight": {
+                    "docs.name": [
+                      "03_3-_Reinforcement_Learning-_<em>Time</em>_for_Action_19-49.txt"
+                    ],
+                    "docs.content": [
+                      """
+ future rewards.
+Now it's <em>time</em> for action.
+How does the brain use reward information
+to select actions
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 26
+                  },
+                  "_score": 9.190431,
+                  "highlight": {
+                    "docs.name": [
+                      "03_3-_Reinforcement_Learning-_<em>Time</em>_for_Action_19-49.pdf"
+                    ],
+                    "docs.content": [
+                      """
+CSE 599
+
+1
+
+Reinforcement Learning:
+
+<em>Time</em> for Action!
+
+Agent
+
+Environment
+
+State
+
+ut
+Reward
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 4
+                  },
+                  "_score": 8.86591,
+                  "highlight": {
+                    "docs.name": [
+                      "06_6-_<em>Time</em>_to_Network-_Brain_Areas_and_their_Function_17-06.txt"
+                    ],
+                    "docs.content": [
+                      """
+ at the
+spinal cord.
+Now remember the <em>time</em> that you were
+extremely hungry and you baked a pizza in
+your
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

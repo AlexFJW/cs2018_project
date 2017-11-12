@@ -1,0 +1,819 @@
+{
+  "took": 1213,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 70,
+    "max_score": 807.6604,
+    "hits": [
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vsqGlSziBxyoUnxdp",
+        "_score": 807.6604,
+        "_source": {
+          "name": "[Coursera] Understanding Einstein: The Special Theory of Relativity (Stanford University) (einstein)",
+          "url": "http://academictorrents.com/details/be19083019ae3954680733d394e5e5b5b3572a15"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 257,
+              "max_score": 22.173714,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 303
+                  },
+                  "_score": 22.173714,
+                  "highlight": {
+                    "docs.name": [
+                      "09_<em>Time</em>_<em>dilation</em>_22-27_high-def.txt"
+                    ],
+                    "docs.content": [
+                      """
+ about <em>time</em> <em>dilation</em>.
+How we might think about it, and then
+also consider, is this really real
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 10
+                  },
+                  "_score": 22.173714,
+                  "highlight": {
+                    "docs.name": [
+                      "23_<em>Time</em>_<em>dilation</em>_22-27_low-def.txt"
+                    ],
+                    "docs.content": [
+                      """
+, this is where we get <em>Time</em> <em>Dilation</em> as
+we mentioned previously.
+The moving clock here runs more slowly
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 137
+                  },
+                  "_score": 17.679066,
+                  "highlight": {
+                    "docs.name": [
+                      "19_Exploring_<em>time</em>_<em>dilation</em>_and_length_contraction_part_1_25-36_low-def.txt"
+                    ],
+                    "docs.content": [
+                      """
+In this video lecture, we want to spend a
+little <em>time</em> exploring <em>time</em> <em>dilation</em> and
+length
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vtm7rSziBxyoUnxfM",
+        "_score": 212.78812,
+        "_source": {
+          "name": "[Coursera] Computer Architecture (Princeton University) (comparch)",
+          "url": "http://academictorrents.com/details/10d1bf7161a1b3ea70697cd61834ceea6c3d1f87"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 185,
+              "max_score": 1.5042152,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 230
+                  },
+                  "_score": 1.5042152,
+                  "highlight": {
+                    "docs.name": [
+                      "02_L2S2-_Pipeline_Basics_30-51.txt"
+                    ],
+                    "docs.content": [
+                      """
+, of all the different stages
+should be the same.
+So the <em>time</em> taken for stage one should be
+the same as two
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 217
+                  },
+                  "_score": 1.4935676,
+                  "highlight": {
+                    "docs.name": [
+                      "01_L12S1-_Multiporting_and_Banking_20-08.pdf"
+                    ],
+                    "docs.content": [
+                      """
+
+
+3
+
+Average Memory Access <em>Time</em>
+
+• Average Memory Access <em>Time</em> = Hit <em>Time</em> + ( Miss Rate  * Miss Penalty
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 189
+                  },
+                  "_score": 1.4935676,
+                  "highlight": {
+                    "docs.name": [
+                      "01_L11S1-_Basic_Cache_Optimizations_16-08.pdf"
+                    ],
+                    "docs.content": [
+                      """
+
+
+3
+
+Average Memory Access <em>Time</em>
+
+• Average Memory Access <em>Time</em> = Hit <em>Time</em> + ( Miss Rate  * Miss Penalty
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vt7-uSziBxyoUnxfw",
+        "_score": 161.76454,
+        "_source": {
+          "name": "[Coursera] Computational Methods for Data Analysis (University of Washington) (compmethods)",
+          "url": "http://academictorrents.com/details/4281ef52a65d26489e686a0540d86abd4161b88e"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 103,
+              "max_score": 11.451179,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 104
+                  },
+                  "_score": 11.451179,
+                  "highlight": {
+                    "docs.name": [
+                      "05_W2_L5_P5-More_wavelet_properties_10-19.txt"
+                    ],
+                    "docs.content": [
+                      """
+
+all the <em>time</em>. Which is. The wavelet
+transform, there's some, let's define some
+operator T of C, which
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 114
+                  },
+                  "_score": 9.110629,
+                  "highlight": {
+                    "docs.name": [
+                      "01_W2_L6_P1-Wavelet_building_blocks-_Dialations_and_Translations_9-17.txt"
+                    ],
+                    "docs.content": [
+                      """
+ right, so wavelets here is the
+idea. We're doing <em>time</em> signal processing,
+right, times, <em>time</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 41
+                  },
+                  "_score": 8.93381,
+                  "highlight": {
+                    "docs.name": [
+                      "04_W2_L6_P4-Multi-resolution_analysis_8-53.txt"
+                    ],
+                    "docs.content": [
+                      """
+. This could totally fail,
+but we're going to go for it. I make jokes
+that fail all the <em>time</em>. I
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vt1M-SziBxyoUnxfg",
+        "_score": 161.42552,
+        "_source": {
+          "name": "[Coursera] Galaxies and Cosmology (Caltech) (cosmo)",
+          "url": "http://academictorrents.com/details/b7d15931742718f330243dc0aeb110136c86359f"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 126,
+              "max_score": 9.154324,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 107
+                  },
+                  "_score": 9.154324,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Module_4.7_-_Tests_for_Expansion_of_the_Universe"
+                    ],
+                    "docs.content": [
+                      """
+.
+The second method uses <em>time</em> <em>dilation</em> of
+Supernova light curves.
+Recall that those can be standardized
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 116
+                  },
+                  "_score": 8.92682,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Module_4.7_-_Tests_for_Expansion_of_the_Universe_6-23.pdf"
+                    ],
+                    "docs.content": [
+                      """
+)-1
+
+•  <em>Time</em> <em>dilation</em> of Supernova light curves
+
+– <em>Time</em> stretches by a factor of (1+v/c) = (1+z
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 104
+                  },
+                  "_score": 6.6928654,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Module_2.1_-_Relativistic_Cosmology_8-10.pdf"
+                    ],
+                    "docs.content": [
+                      """
+
+
+–  Lorentz contraction
+
+–  <em>Time</em> <em>dilation</em>
+
+–  Equivalence of mass and energy
+
+–  Explains
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vs2dGSziBxyoUnxd-",
+        "_score": 158.51193,
+        "_source": {
+          "name": "[Coursera] Scientific Computing (University of Washington) (scientificcomp)",
+          "url": "http://academictorrents.com/details/6f7e43052129b95f470d3043cfce2bf5c15ae380"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 120,
+              "max_score": 8.16149,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 52
+                  },
+                  "_score": 8.16149,
+                  "highlight": {
+                    "docs.name": [
+                      "07_Week_1-_1.6_-_Adams_<em>Time</em>-stepping_Schemes_9-41"
+                    ],
+                    "docs.content": [
+                      """
+ the following.
+We will only use current <em>time</em> points and
+pass points to approximate that peak.
+You have
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 136
+                  },
+                  "_score": 8.134896,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Week_5-_14.1_-_Implementing_<em>time</em>-stepping_for_PDEs_18-21"
+                    ],
+                    "docs.content": [
+                      """
+
+equations.
+So things that have space and <em>time</em>.
+And we're going to start off with one
+dimension and .
+Here
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 69
+                  },
+                  "_score": 8.09472,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Week_7-_21.3_-_The_<em>time</em>-evolution_of_advection-diffusion_13-15"
+                    ],
+                    "docs.content": [
+                      """
+Okay.
+So, everybody okay with that so far?
+I have an initial vorticity.
+I have my space and <em>time</em>
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vuKNBSziBxyoUnxgF",
+        "_score": 109.96726,
+        "_source": {
+          "name": "[Coursera] Introduction to Computational Finance and Financial Econometrics (University of Washington) (compfinance)",
+          "url": "http://academictorrents.com/details/f07203f2eedb4792c351ba0e28406dab9ab54d7d"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 93,
+              "max_score": 9.739981,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 11
+                  },
+                  "_score": 9.739981,
+                  "highlight": {
+                    "docs.name": [
+                      "01_4.3_<em>Time</em>_Series_Concepts_16-48"
+                    ],
+                    "docs.content": [
+                      """
+Alright.
+So, we're going to talk about <em>time</em> series
+concepts.
+This is it's, it's still about
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 28
+                  },
+                  "_score": 9.629358,
+                  "highlight": {
+                    "docs.name": [
+                      "03_9.14_Efficient_Portfolios_Over_<em>Time</em>_18-01"
+                    ],
+                    "docs.content": [
+                      """
+ <em>time</em>.
+So, this goes back to the constant
+expected return model, and, you know, we
+had seen evidence
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 23
+                  },
+                  "_score": 1.3822873,
+                  "highlight": {
+                    "docs.name": [
+                      "04_4.6_Nonstationary_Processes"
+                    ],
+                    "docs.content": [
+                      """
+So, Covariance stationary <em>time</em> series,
+common structure over <em>time</em>, nothing
+changes.
+Now, we often
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vtKa-SziBxyoUnxeh",
+        "_score": 104.83305,
+        "_source": {
+          "name": "[Coursera] Model Thinking (University of Michigan) (modelthinking)",
+          "url": "http://academictorrents.com/details/05a8fe3f7e3420df6b83f40b0cbccd05e591d9f4"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 93,
+              "max_score": 9.037026,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 103
+                  },
+                  "_score": 9.037026,
+                  "highlight": {
+                    "docs.name": [
+                      "04_11.4_<em>Time</em>_to_Convergence_and_Optimality_8-04"
+                    ],
+                    "docs.content": [
+                      """
+
+as you possibly can on the <em>time</em> it's
+going to take the Lyapunov process to converge,
+what you want
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 132
+                  },
+                  "_score": 8.343269,
+                  "highlight": {
+                    "docs.name": [
+                      "04_11.4_<em>Time</em>_to_Convergence_and_Optimality_8-04.pdf"
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 139
+                  },
+                  "_score": 1.3136955,
+                  "highlight": {
+                    "docs.name": [
+                      "06_11.6_Lyapunov_or_Markov"
+                    ],
+                    "docs.content": [
+                      """
+ assumptions
+were that the probability of moving between
+those states stayed fixed over <em>time</em>
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vtwEfSziBxyoUnxfb",
+        "_score": 92.50168,
+        "_source": {
+          "name": "[Coursera] High Performance Scientific Computing (University of Washington) (scicomp)",
+          "url": "http://academictorrents.com/details/cb91a3d7a4c4c086be240b54e83ed8d587b31ff5"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 149,
+              "max_score": 5.993563,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 118
+                  },
+                  "_score": 5.993563,
+                  "highlight": {
+                    "docs.name": [
+                      "04_W4-L12.4_-_CPU_<em>time</em>_vs._throughput_4-19"
+                    ],
+                    "docs.content": [
+                      """
+ have 2000 by 1000 matrices,
+a and b.
+And let's compare the <em>time</em> of of
+multiplying them together
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 176
+                  },
+                  "_score": 5.050156,
+                  "highlight": {
+                    "docs.name": [
+                      "01_W10-L28.1_-_Just-in-<em>time</em>_compilers_for_Python_example_numba_4-41"
+                    ],
+                    "docs.content": [
+                      """
+Welcome to the last lecture.
+You have reached the end, finally.
+so there's not much <em>time</em> for new
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 193
+                  },
+                  "_score": 4.9783826,
+                  "highlight": {
+                    "docs.name": [
+                      "01_W10-L28.1_-_Just-in-<em>time</em>_compilers_for_Python_example_numba_4-41.pdf"
+                    ],
+                    "docs.content": [
+                      """
+-in-<em>time</em> compilers for Python
+
+Standard implementation of Python as interpreted language.
+
+Importing
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vsltHSziBxyoUnxdj",
+        "_score": 90.44919,
+        "_source": {
+          "name": "[Coursera] Neural Networks for Machine Learning (University of Toronto) (neuralnets)",
+          "url": "http://academictorrents.com/details/3e6f1876bbd46780602e72f4b122329fb668bd2c"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 89,
+              "max_score": 1.3538712,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 43
+                  },
+                  "_score": 1.3538712,
+                  "highlight": {
+                    "docs.name": [
+                      "02_Training_RNNs_with_back_propagation.txt"
+                    ],
+                    "docs.content": [
+                      """
+In this video, I'm going to talk about the
+back propagation through <em>time</em> algorithm.
+It's
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 74
+                  },
+                  "_score": 1.3513589,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Modeling_sequences-_A_brief_overview.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ <em>time</em>.
+–  If the dynamics is noisy and the way it generates outputs from its
+
+hidden state
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 89
+                  },
+                  "_score": 1.3408263,
+                  "highlight": {
+                    "docs.name": [
+                      "raw_sentences.txt"
+                    ],
+                    "docs.content": [
+                      """
+ .
+But he made only the first .
+There 's still <em>time</em> for them to do it .
+But he should nt have .
+ They have
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "higher_b",
+        "_type": "course",
+        "_id": "AV-vsx_CSziBxyoUnxd1",
+        "_score": 88.21513,
+        "_source": {
+          "name": "[Coursera] Compilers (Stanford University) (compilers)",
+          "url": "http://academictorrents.com/details/b7579be97c2f01e4efadb0b6b06f0d071afeaac9"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 118,
+              "max_score": 1.0661678,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 262
+                  },
+                  "_score": 1.0661678,
+                  "highlight": {
+                    "docs.name": [
+                      "02_11-02-_Activations_13m50s.txt"
+                    ],
+                    "docs.content": [
+                      """
+In this video, we're going to being our
+discussions of run <em>time</em> structures with
+the notion
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 107
+                  },
+                  "_score": 1.0487278,
+                  "highlight": {
+                    "docs.name": [
+                      "01_10-01-_Static_vs._Dynamic_Typing_7m14s"
+                    ],
+                    "docs.content": [
+                      """
+ precisely at compile <em>time</em> about
+everything that could happen as the
+program runs. Now what this means
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 247
+                  },
+                  "_score": 1.0095996,
+                  "highlight": {
+                    "docs.name": [
+                      "01_11-01-_Runtime_Organization_6m44s_0_Slides_Original_PDF.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ that are widely used
+
+Alex Aiken
+
+Runtime Organization
+
+• Management of run-<em>time</em> resources
+
+• Correspondence
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

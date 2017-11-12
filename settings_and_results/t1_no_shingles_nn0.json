@@ -1,0 +1,858 @@
+{
+  "took": 600,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 44,
+    "max_score": 515.74786,
+    "hits": [
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vsUCaSziBxyoUnxdN",
+        "_score": 515.74786,
+        "_source": {
+          "name": "[Coursera] Neural Networks for Machine Learning (University of Toronto) (neuralnets)",
+          "url": "http://academictorrents.com/details/3e6f1876bbd46780602e72f4b122329fb668bd2c"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 93,
+              "max_score": 16.764135,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 48
+                  },
+                  "_score": 16.764135,
+                  "highlight": {
+                    "docs.name": [
+                      "02_What_are_<em>neural</em>_<em>networks</em>_8_min.txt"
+                    ],
+                    "docs.content": [
+                      """
+ the inspiration for the
+artificial <em>neural</em> network that we're gonna
+learn about in this course
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 62
+                  },
+                  "_score": 15.058101,
+                  "highlight": {
+                    "docs.name": [
+                      "02_Perceptrons-_The_first_generation_of_<em>neural</em>_<em>networks</em>_8_min.txt"
+                    ],
+                    "docs.content": [
+                      """
+ those limitations
+applied to all <em>neural</em> network models.
+And the general feeling within artificial
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 105
+                  },
+                  "_score": 13.272338,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Types_of_<em>neural</em>_network_architectures_7_min.pdf"
+                    ],
+                    "docs.content": [
+                      """
+<em>Neural</em> <em>Networks</em> for Machine Learning
+
+Lecture 2a
+
+An overview of the main types of <em>neural</em>
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vsxqZSziBxyoUnxd0",
+        "_score": 306.1587,
+        "_source": {
+          "name": "[Coursera] Computational Neuroscience (University of Washington) (compneuro)",
+          "url": "http://academictorrents.com/details/d180bcd510aeec3a20044a0946ac658b9ab30760"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 68,
+              "max_score": 12.138145,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 39
+                  },
+                  "_score": 12.138145,
+                  "highlight": {
+                    "docs.name": [
+                      "01_1-_What_is_the_<em>Neural</em>_Code_19-18.txt"
+                    ],
+                    "docs.content": [
+                      """
+ we're going to start on the subject
+of the
+first half of the course which is <em>neural</em>
+coding.
+As you
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 3
+                  },
+                  "_score": 10.653152,
+                  "highlight": {
+                    "docs.name": [
+                      "01_1-_What_is_the_<em>Neural</em>_Code_19-18.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ is the <em>neural</em> code?
+
+-- the biophysical basis of how the brain processes inputs and
+
+performs complex
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 9
+                  },
+                  "_score": 9.876531,
+                  "highlight": {
+                    "docs.name": [
+                      "03_3-_<em>Neural</em>_Encoding-_Feature_Selection_22-13.txt"
+                    ],
+                    "docs.content": [
+                      """
+In the last section we argued that a good
+basic coding
+model for many <em>neural</em> systems
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vs7hcSziBxyoUnxeG",
+        "_score": 286.16553,
+        "_source": {
+          "name": "[Coursera] Social Network Analysis (University of Michigan) (sna)",
+          "url": "http://academictorrents.com/details/066a55d231d3918ad3de994e6211bb99417bcdf0"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 83,
+              "max_score": 9.457209,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 32
+                  },
+                  "_score": 9.457209,
+                  "highlight": {
+                    "docs.name": [
+                      "<em>networks</em>-book-ch01.pdf"
+                    ],
+                    "docs.content": [
+                      """
+net
+
+Chapter 1
+
+Overview
+
+From the book <em>Networks</em>, Crowds, and Markets: Reasoning about a Highly
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 72
+                  },
+                  "_score": 9.373775,
+                  "highlight": {
+                    "docs.name": [
+                      "<em>networks</em>-book-ch20.pdf"
+                    ],
+                    "docs.content": [
+                      """
+net
+
+Chapter 20
+
+The Small-World Phenomenon
+
+From the book <em>Networks</em>, Crowds, and Markets: Reasoning
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 46
+                  },
+                  "_score": 9.308239,
+                  "highlight": {
+                    "docs.name": [
+                      "<em>networks</em>-book-ch19.pdf"
+                    ],
+                    "docs.content": [
+                      """
+net
+
+Chapter 19
+
+Cascading Behavior in <em>Networks</em>
+
+From the book <em>Networks</em>, Crowds, and Markets
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vtq9mSziBxyoUnxfT",
+        "_score": 279.62195,
+        "_source": {
+          "name": "[Coursera] Machine Learning (Stanford University) (ml)",
+          "url": "http://academictorrents.com/details/e8b1f9c5bf555fe58bc73addb83457dd6da69630"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 34,
+              "max_score": 13.343828,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 23
+                  },
+                  "_score": 13.343828,
+                  "highlight": {
+                    "docs.name": [
+                      "02_Neurons_and_the_Brain_8_min.txt"
+                    ],
+                    "docs.content": [
+                      """
+<em>Neural</em> <em>Networks</em> are a pretty old
+algorithm that was originally motivated
+by the goal of having
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 120
+                  },
+                  "_score": 13.192026,
+                  "highlight": {
+                    "docs.name": [
+                      "07_Deciding_What_to_Do_Next_Revisited_7_min.txt"
+                    ],
+                    "docs.content": [
+                      """
+ everything
+we have learned and relate it back
+to <em>neural</em> <em>networks</em> and so,
+here is some practical
+advice
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 110
+                  },
+                  "_score": 13.164047,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Cost_Function_7_min.pdf"
+                    ],
+                    "docs.content": [
+                      """
+<em>Neural</em>
+  <em>Networks</em>:
+
+Learning
+
+Cost
+  func5on
+
+Machine
+  Learning
+
+Andrew
+  Ng
+
+<em>Neural</em>
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vtNOrSziBxyoUnxel",
+        "_score": 257.3475,
+        "_source": {
+          "name": "[Coursera] Probabilistic Graphical Models",
+          "url": "http://academictorrents.com/details/e74f08f0fc699e84a9eb046309727d07d80171c5"
+        },
+        "inner_hits": {
+          "docs": {
+              "total": 48,
+              "max_score": 15.077154,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 30
+                  },
+                  "_score": 15.077154,
+                  "highlight": {
+                    "docs.name": [
+                      "04_Independencies_in_Markov_<em>Networks</em>_04-48.txt"
+                    ],
+                    "docs.content": [
+                      """
+ in the context of
+bayesian <em>networks</em>. Now we're going to
+show that, that same kind of connection
+holds also
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 84
+                  },
+                  "_score": 14.209439,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Pairwise_Markov_<em>Networks</em>_10-59.txt"
+                    ],
+                    "docs.content": [
+                      """
+ graphs. The undirected
+graphical models are typically called
+Markov <em>networks</em>. They're also called
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 75
+                  },
+                  "_score": 13.855639,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Independencies_in_Bayesian_<em>Networks</em>_18-18.txt"
+                    ],
+                    "docs.content": [
+                      """
+ of
+directed graphical models or Bayesian
+<em>networks</em>. So let's first remind ourselves
+about why
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vte_iSziBxyoUnxfB",
+        "_score": 155.63818,
+        "_source": {
+          "name": "[Coursera] Web Intelligence and Big Data (Indian Institute of Technology Delhi) (bigdata)",
+          "url": "http://academictorrents.com/details/8921ec4d2076e8a6e56a2387d5157aa7c0ef7f10"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 23,
+              "max_score": 13.431614,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 88
+                  },
+                  "_score": 13.431614,
+                  "highlight": {
+                    "docs.name": [
+                      "04_7-4_Nonlinear_Models_9-26.txt"
+                    ],
+                    "docs.content": [
+                      """
+ to mimic the brain,
+which essentially resulted in the field of
+<em>neural</em> <em>networks</em>.
+Where one tried
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 21
+                  },
+                  "_score": 13.182442,
+                  "highlight": {
+                    "docs.name": [
+                      "09_6-8-2_Bayesian_<em>Networks</em>_-_2_5-23.txt"
+                    ],
+                    "docs.content": [
+                      """
+ that is a
+feature of human reasoning and is also
+exhibited by Bayesian <em>networks</em>.
+And therefore
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 44
+                  },
+                  "_score": 11.561746,
+                  "highlight": {
+                    "docs.name": [
+                      "05_7-5_Learning_Parameters_12-35.txt"
+                    ],
+                    "docs.content": [
+                      """
+ they are
+regression with logistic function, support
+vector machines, <em>neural</em> <em>networks</em>, all
+learn the parameters
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vs0N2SziBxyoUnxd6",
+        "_score": 131.41843,
+        "_source": {
+          "name": "[Coursera] Artificial Intelligence Planning (The University of Edinburgh) (aiplan)",
+          "url": "http://academictorrents.com/details/560d07faaf09f640fea96b3650874e2903cbc639"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 21,
+              "max_score": 16.948263,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 3
+                  },
+                  "_score": 16.948263,
+                  "highlight": {
+                    "docs.name": [
+                      "11_3.8a_Task_<em>Networks</em>_9-18.pdf"
+                    ],
+                    "docs.content": [
+                      """
+(p1,p2,c3,pallet)take-and-put(…)
+
+take-and-put(…)
+
+3
+
+Overview
+
+• Tasks and Task <em>Networks</em>
+• Methods
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 37
+                  },
+                  "_score": 16.252193,
+                  "highlight": {
+                    "docs.name": [
+                      "11_3.8a_Task_<em>Networks</em>_9-18"
+                    ],
+                    "docs.content": [
+                      """
+ in the same state in
+which we started.
+So, we will now look at tasks and task
+<em>networks</em>, which
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 56
+                  },
+                  "_score": 16.037003,
+                  "highlight": {
+                    "docs.name": [
+                      "12_3.8b_Task_<em>Networks</em>_7-11"
+                    ],
+                    "docs.content": [
+                      """
+ <em>networks</em>.
+And such a task network is really just an
+acyclic directed graph.
+And this graph consists
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vs-6nSziBxyoUnxeO",
+        "_score": 109.60697,
+        "_source": {
+          "name": "[Coursera] Mining Massive Datasets (Stanford University) (mmds)",
+          "url": "http://academictorrents.com/details/91bc48e6c8341de198c970acccdc87199391ab46"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 31,
+              "max_score": 4.7426844,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 77
+                  },
+                  "_score": 4.7426844,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Link_Analysis_and_PageRank_9-39.txt"
+                    ],
+                    "docs.content": [
+                      """
+ that for example,
+social <em>networks</em> Facebook Twitter and
+things like that.
+Can very naturally
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 1
+                  },
+                  "_score": 4.718013,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Detecting_Communities_as_Clusters_8-39_Advanced.txt"
+                    ],
+                    "docs.content": [
+                      """
+We are talking about the analysis of large
+graphs and <em>networks</em>, And the topic we will
+look
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 119
+                  },
+                  "_score": 4.656526,
+                  "highlight": {
+                    "docs.name": [
+                      "02_The_Affiliation_Graph_Model_10-04.pdf"
+                    ],
+                    "docs.content": [
+                      """
+
+
+A
+
+B
+
+D E
+
+H
+
+F
+
+G
+
+C
+
+A
+
+B
+
+D E
+
+H
+
+F
+
+G
+
+Generative
+
+model for
+
+<em>networks</em>
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vtZyMSziBxyoUnxe3",
+        "_score": 82.43475,
+        "_source": {
+          "name": "Internet History, Technology, and Security by Charles Severance",
+          "url": "http://academictorrents.com/details/d666bf4b83066bcf7401e9c155fcd1b1c01cfb11"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 25,
+              "max_score": 4.63199,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 35
+                  },
+                  "_score": 4.63199,
+                  "highlight": {
+                    "docs.name": [
+                      "03_Van_Jacobson_-_Slow_Start_Algorithm.pdf"
+                    ],
+                    "docs.content": [
+                      """
+.25 data <em>networks</em> in Europe
+and elsewhere. Well-developed
+proprietary <em>networks</em> were already
+available
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 2
+                  },
+                  "_score": 4.2356644,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Introduction__The_Link_Layer_(25-58).ppt"
+                    ],
+                    "docs.content": [
+                      """
+ and Forward.
+
+Research <em>Networks</em>
+1960-1980’s
+How can we avoid having a direct connection between all pairs
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 22
+                  },
+                  "_score": 4.11262,
+                  "highlight": {
+                    "docs.name": [
+                      "01_High_Stakes_Research_in_Computing_and_Communication.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ <em>Networks</em> - 1960s - 1970’s
+• The First “Internet” -  Mid 1980’s
+• The Web Makes it Easy - Early 1990’s
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "no_shingles",
+        "_type": "course",
+        "_id": "AV-vtYTkSziBxyoUnxe0",
+        "_score": 80.64789,
+        "_source": {
+          "name": "[Coursera] Computer Architecture (Princeton University) (comparch)",
+          "url": "http://academictorrents.com/details/10d1bf7161a1b3ea70697cd61834ceea6c3d1f87"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 28,
+              "max_score": 8.607888,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 103
+                  },
+                  "_score": 8.607888,
+                  "highlight": {
+                    "docs.name": [
+                      "02_L19S2-_Introduction_to_Interconnection_<em>Networks</em>_8-29.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ELE 475 / COS 475  Computer Architecture Lecture 15: Interconnection <em>Networks</em>
+
+Computer
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 183
+                  },
+                  "_score": 8.545551,
+                  "highlight": {
+                    "docs.name": [
+                      "02_L19S2-_Introduction_to_Interconnection_<em>Networks</em>_8-29.txt"
+                    ],
+                    "docs.content": [
+                      """
+And I just wanted to say quick note about
+interconnection <em>networks</em>.
+if you guys are, get
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 228
+                  },
+                  "_score": 5.7376585,
+                  "highlight": {
+                    "docs.name": [
+                      "02_L19S2-_Introduction_to_Interconnection_<em>Networks</em>_8-29_0_quizzes.txt"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

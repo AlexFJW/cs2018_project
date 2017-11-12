@@ -1,0 +1,811 @@
+{
+  "took": 589,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 55,
+    "max_score": 734.3936,
+    "hits": [
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vw7d6SziBxyoUnxhu",
+        "_score": 734.3936,
+        "_source": {
+          "name": "[Coursera] Neural Networks for Machine Learning (University of Toronto) (neuralnets)",
+          "url": "http://academictorrents.com/details/3e6f1876bbd46780602e72f4b122329fb668bd2c"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 100,
+              "max_score": 23.197186,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 105
+                  },
+                  "_score": 23.197186,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Types_of_<em>neural</em>_<em>network</em>_architectures_7_min.pdf"
+                    ],
+                    "docs.content": [
+                      """
+<em>Neural</em> <em>Networks</em> for Machine Learning
+
+Lecture 2a
+
+An overview of the main types of <em>neural</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 41
+                  },
+                  "_score": 23.169315,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Types_of_<em>neural</em>_<em>network</em>_architectures_7_min.txt"
+                    ],
+                    "docs.content": [
+                      """
+In this video I'm going to describe
+various kinds of architectures for <em>neural</em>
+<em>networks</em>.
+What I mean
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 62
+                  },
+                  "_score": 21.290253,
+                  "highlight": {
+                    "docs.name": [
+                      "02_Perceptrons-_The_first_generation_of_<em>neural</em>_<em>networks</em>_8_min.txt"
+                    ],
+                    "docs.content": [
+                      """
+ those limitations
+applied to all <em>neural</em> <em>network</em> models.
+And the general feeling within artificial
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxbcASziBxyoUnxiN",
+        "_score": 531.2203,
+        "_source": {
+          "name": "[Coursera] Computational Neuroscience (University of Washington) (compneuro)",
+          "url": "http://academictorrents.com/details/d180bcd510aeec3a20044a0946ac658b9ab30760"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 73,
+              "max_score": 16.629364,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 81
+                  },
+                  "_score": 16.629364,
+                  "highlight": {
+                    "docs.name": [
+                      "02_2-_Introduction_to_<em>Network</em>_Models_21-47.txt"
+                    ],
+                    "docs.content": [
+                      """
+ of
+artificial <em>neural</em> <em>networks</em>, you should
+find this equation quite familiar.
+This is in fact, the equation
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 39
+                  },
+                  "_score": 16.566998,
+                  "highlight": {
+                    "docs.name": [
+                      "01_1-_What_is_the_<em>Neural</em>_Code_19-18.txt"
+                    ],
+                    "docs.content": [
+                      """
+ we're going to start on the subject
+of the
+first half of the course which is <em>neural</em>
+coding.
+As you
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 3
+                  },
+                  "_score": 14.465364,
+                  "highlight": {
+                    "docs.name": [
+                      "01_1-_What_is_the_<em>Neural</em>_Code_19-18.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ is the <em>neural</em> code?
+
+-- the biophysical basis of how the brain processes inputs and
+
+performs complex
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vxpk1SziBxyoUnxia",
+        "_score": 446.17917,
+        "_source": {
+          "name": "[Coursera] Social Network Analysis (University of Michigan) (sna)",
+          "url": "http://academictorrents.com/details/066a55d231d3918ad3de994e6211bb99417bcdf0"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 93,
+              "max_score": 15.076839,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 17
+                  },
+                  "_score": 15.076839,
+                  "highlight": {
+                    "docs.name": [
+                      "<em>network</em>_science_November_Ch1_2012.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ Research: Mapping <em>neural</em> <em>network</em>.
+
+The human brain, consisting of hundreds of billions
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 83
+                  },
+                  "_score": 11.744918,
+                  "highlight": {
+                    "docs.name": [
+                      "<em>network</em>_science_November_Ch2_2012.pdf"
+                    ],
+                    "docs.content": [
+                      """
+, the <em>neural</em> <em>network</em> of the worm
+C. elegans, the only fully mapped brain of a living organ-
+ism, has
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 32
+                  },
+                  "_score": 9.539519,
+                  "highlight": {
+                    "docs.name": [
+                      "<em>networks</em>-book-ch01.pdf"
+                    ],
+                    "docs.content": [
+                      """
+net
+
+Chapter 1
+
+Overview
+
+From the book <em>Networks</em>, Crowds, and Markets: Reasoning about a Highly
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vySB0SziBxyoUnxjD",
+        "_score": 251.64677,
+        "_source": {
+          "name": "[Coursera] Machine Learning (Stanford University) (ml)",
+          "url": "http://academictorrents.com/details/e8b1f9c5bf555fe58bc73addb83457dd6da69630"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 43,
+              "max_score": 8.876217,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 65
+                  },
+                  "_score": 8.876217,
+                  "highlight": {
+                    "docs.name": [
+                      "07_Putting_It_Together_14_min.txt"
+                    ],
+                    "docs.content": [
+                      """
+So, it's taken us a
+lot of videos to get through
+the <em>neural</em> <em>network</em> learning algorithm
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 120
+                  },
+                  "_score": 8.798293,
+                  "highlight": {
+                    "docs.name": [
+                      "07_Deciding_What_to_Do_Next_Revisited_7_min.txt"
+                    ],
+                    "docs.content": [
+                      """
+ everything
+we have learned and relate it back
+to <em>neural</em> <em>networks</em> and so,
+here is some practical
+advice
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 67
+                  },
+                  "_score": 8.743986,
+                  "highlight": {
+                    "docs.name": [
+                      "04_Model_Representation_II_12_min.txt"
+                    ],
+                    "docs.content": [
+                      """
+ the hypotheses used by <em>Neural</em> <em>Network</em>.
+In this video, I like
+show you how to actually
+carry out
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vx6U8SziBxyoUnxis",
+        "_score": 249.56009,
+        "_source": {
+          "name": "[Coursera] Probabilistic Graphical Models",
+          "url": "http://academictorrents.com/details/e74f08f0fc699e84a9eb046309727d07d80171c5"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 71,
+              "max_score": 10.055652,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 84
+                  },
+                  "_score": 10.055652,
+                  "highlight": {
+                    "docs.name": [
+                      "01_Pairwise_Markov_<em>Networks</em>_10-59.txt"
+                    ],
+                    "docs.content": [
+                      """
+ graphs. The undirected
+graphical models are typically called
+Markov <em>networks</em>. They're also called
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 73
+                  },
+                  "_score": 9.997484,
+                  "highlight": {
+                    "docs.name": [
+                      "05_Bayesian_Estimation_for_Bayesian_<em>Networks</em>_17-02.txt"
+                    ],
+                    "docs.content": [
+                      """
+ to the problem
+of estimating parameters in a Bayesian
+<em>network</em>. So let's draw again the
+probabilistic
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 30
+                  },
+                  "_score": 9.940821,
+                  "highlight": {
+                    "docs.name": [
+                      "04_Independencies_in_Markov_<em>Networks</em>_04-48.txt"
+                    ],
+                    "docs.content": [
+                      """
+ in the context of
+bayesian <em>networks</em>. Now we're going to
+show that, that same kind of connection
+holds also
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyWVPSziBxyoUnxjI",
+        "_score": 220.22131,
+        "_source": {
+          "name": "[Coursera] VLSI CAD: Logic to Layout (University of Illinois at Urbana-Champaign) (vlsicad)",
+          "url": "http://academictorrents.com/details/ec1c86afefda42f4b36c34ae7b235ef0bfd6b9d3"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 53,
+              "max_score": 12.820122,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 15
+                  },
+                  "_score": 12.820122,
+                  "highlight": {
+                    "docs.name": [
+                      "04_6.1_Multilevel_Logic_and_the_Boolean_<em>Network</em>_Model_13-57"
+                    ],
+                    "docs.content": [
+                      """
+ of
+the multilevel logic universe, which is we
+need a different representational model.
+A <em>network</em> of gates
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 96
+                  },
+                  "_score": 11.498029,
+                  "highlight": {
+                    "docs.name": [
+                      "04_Lecture_2.4_Computational_Boolean_Algebra-Application_to_Logic_<em>Network</em>_Repair_16-19"
+                    ],
+                    "docs.content": [
+                      """
+ application.
+This is a <em>network</em> repair application.
+So, suppose I, I, I gave you a
+specification
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 71
+                  },
+                  "_score": 4.770406,
+                  "highlight": {
+                    "docs.name": [
+                      "8-vlsicad-multilevel3.pdf"
+                    ],
+                    "docs.content": [
+                      " cares \n•  We run ESPRESSO-style  simplification on 2-level SOP form in each node of <em>network</em>"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyDgFSziBxyoUnxi0",
+        "_score": 215.46143,
+        "_source": {
+          "name": "[Coursera] Computer Architecture (Princeton University) (comparch)",
+          "url": "http://academictorrents.com/details/10d1bf7161a1b3ea70697cd61834ceea6c3d1f87"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 50,
+              "max_score": 12.920656,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 69
+                  },
+                  "_score": 12.920656,
+                  "highlight": {
+                    "docs.name": [
+                      "04_L20S4-_<em>Network</em>_Performance_15-35.txt"
+                    ],
+                    "docs.content": [
+                      """
+Okay, so now we start talking about
+performance of our <em>networks</em>, and there's
+two.
+Main thoughts
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 113
+                  },
+                  "_score": 12.845226,
+                  "highlight": {
+                    "docs.name": [
+                      "01_L20S1-_<em>Networking</em>_Review_7-56.txt"
+                    ],
+                    "docs.content": [
+                      """
+So, today we are going to be continuing
+our discussion of interconnection
+<em>networks</em>, and I wanted
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 244
+                  },
+                  "_score": 12.728952,
+                  "highlight": {
+                    "docs.name": [
+                      "01_L20S1-_<em>Networking</em>_Review_7-56.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ELE 475 / COS 475  Computer Architecture Lecture 15: Interconnection <em>Networks</em>
+
+Computer
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyI6DSziBxyoUnxi6",
+        "_score": 197.55414,
+        "_source": {
+          "name": "[Coursera] Web Intelligence and Big Data (Indian Institute of Technology Delhi) (bigdata)",
+          "url": "http://academictorrents.com/details/8921ec4d2076e8a6e56a2387d5157aa7c0ef7f10"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 34,
+              "max_score": 12.432793,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 21
+                  },
+                  "_score": 12.432793,
+                  "highlight": {
+                    "docs.name": [
+                      "09_6-8-2_Bayesian_<em>Networks</em>_-_2_5-23.txt"
+                    ],
+                    "docs.content": [
+                      """
+ belief gets revised because this
+belief propagates in the <em>network</em> changing
+our belief about R once
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 38
+                  },
+                  "_score": 12.128805,
+                  "highlight": {
+                    "docs.name": [
+                      "08_6-8-1_Bayesian_<em>Networks</em>_-_1_9-20.txt"
+                    ],
+                    "docs.content": [
+                      """
+ in this classifier.
+So, we have to actually combine these
+<em>networks</em> into one <em>network</em>, and what we get
+is called
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 88
+                  },
+                  "_score": 11.194979,
+                  "highlight": {
+                    "docs.name": [
+                      "04_7-4_Nonlinear_Models_9-26.txt"
+                    ],
+                    "docs.content": [
+                      """
+ to mimic the brain,
+which essentially resulted in the field of
+<em>neural</em> <em>networks</em>.
+Where one tried
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyrbFSziBxyoUnxjf",
+        "_score": 183.39114,
+        "_source": {
+          "name": "[Coursera] Bitcoin and Cryptocurrency Technologies (Princeton University) (bitcointech)",
+          "url": "http://academictorrents.com/details/412d52b0bfcf2a8bf3201a28c2ba04b6dff5b290"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 47,
+              "max_score": 13.188044,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 25
+                  },
+                  "_score": 13.188044,
+                  "highlight": {
+                    "docs.name": [
+                      "05_The_Bitcoin_<em>Network</em>.txt"
+                    ],
+                    "docs.content": [
+                      """
+,
+it happens through the Bitcoin <em>network</em>.
+So what is a Bitcoin <em>network</em>?
+It's a peer-to-peer <em>network</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 31
+                  },
+                  "_score": 4.696696,
+                  "highlight": {
+                    "docs.name": [
+                      "chapter_3.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ that
+
+transactions are well formed, that they aren’t already spent, and that the ledger and <em>network</em>
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 22
+                  },
+                  "_score": 4.6832724,
+                  "highlight": {
+                    "docs.name": [
+                      "chapter_2.pdf"
+                    ],
+                    "docs.content": [
+                      """
+ as centralized or
+
+decentralized. Finally there’s social <em>networking</em>: despite numerous concerted
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "stemming",
+        "_type": "course",
+        "_id": "AV-vyEwySziBxyoUnxi2",
+        "_score": 182.26863,
+        "_source": {
+          "name": "Internet History, Technology, and Security by Charles Severance",
+          "url": "http://academictorrents.com/details/d666bf4b83066bcf7401e9c155fcd1b1c01cfb11"
+        },
+        "inner_hits": {
+          "docs": {
+            "hits": {
+              "total": 41,
+              "max_score": 11.962192,
+              "hits": [
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 68
+                  },
+                  "_score": 11.962192,
+                  "highlight": {
+                    "docs.name": [
+                      "02_Van_Jacobson_-_Content_Centered_<em>Networking</em>.pdf"
+                    ],
+                    "docs.content": [
+                      """
+  JANUARY 2013 13
+
+Van Jacobson:
+Content-Centric
+<em>Networking</em>
+
+A s engineers, every once in a while, we
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 54
+                  },
+                  "_score": 11.692261,
+                  "highlight": {
+                    "docs.name": [
+                      "02_Van_Jacobson_-_Content_Centered_<em>Networking</em>.txt"
+                    ],
+                    "docs.content": [
+                      """
+.
+<em>Networks</em> that would handle different
+bandwidths they didn't require all of the
+global clock
+"""
+                    ]
+                  }
+                },
+                {
+                  "_nested": {
+                    "field": "docs",
+                    "offset": 23
+                  },
+                  "_score": 5.1468716,
+                  "highlight": {
+                    "docs.name": [
+                      "04_Vint_Cerf_-_A_Brief_History_of_Packets.pdf"
+                    ],
+                    "docs.content": [
+                      """
+, an earlier
+small-scale research <em>network</em>. I
+recently spoke about this technology’s
+emergence with Vint
+"""
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
