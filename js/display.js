@@ -1,17 +1,27 @@
-// getDataFromServer('nlp');
-console.log("test");
-// getDataFromServer("QR decomposition")
 processSearchFromIndex()
 
-$('.list-group-item').click(function(event) {
+$('#document-list').on('click', 'li', function(event) {
 	event.stopPropagation();
-	console.log(event.target);
     $(event.target).children('ul').slideToggle();
 });
 
+$(function() {
+	$('input').each(function() {
+		$(this).keypress(function(e) {
+			if (e.which == 10 || e.which == 13) {
+				processSearchBox();
+			}
+		})
+	})
+})
+
 function getDataFromServer(keyword) {
-	console.log("inside data");
 	document.getElementById("firstItem").innerHTML = "Searching in progress, it takes awhile as the documents are large";
+	var doc = document.getElementById("document-list")
+	while (doc.children.length > 1) {
+		doc.removeChild(doc.lastChild);
+	}
+
 	$.ajax({
 	    url: geturl(),
 	    beforeSend: function(xhr) { 
@@ -26,25 +36,35 @@ function getDataFromServer(keyword) {
 	    	console.log("data");
 	    	console.log(data);
 	    	// console.log(data);
-			var first_doc = document.getElementById("firstItem");
 			var data_hits = data.hits.hits.length;
-	    	for (var a=0; a<data_hits; a++) {
-	    		console.log("first doc");
-	    		first_doc.innerHTML = data.hits.hits[a]._source.name;
-	    		console.log(data.hits.hits[a]._source.name);
-		    	var child_group = document.createElement("ul");
-		    	child_group.setAttribute("class", "list-group");
-		    	first_doc.appendChild(child_group);
+			while (doc.firstChild) {
+				doc.removeChild(doc.firstChild);
+			}
 
-		    	var docs_length = data.hits.hits[a].inner_hits.docs.hits.hits.length;
-		    	for (var i=0;i<docs_length;i++) {
-		    		var highlight = data.hits.hits[a].inner_hits.docs.hits.hits[i].highlight;
+	    	for (var i=0; i<data_hits; i++) {
+	    		var course = document.createElement("li");
+	    		course.setAttribute("class", "list-group-item");
+	    		course.innerHTML = data.hits.hits[i]._source.name;
+	    		course.onclick = $(this).children('ul').slideToggle();
+	    		console.log(data.hits.hits[i]._source.name);
+	    		if (i==0) {
+	    			course.setAttribute("id", "firstItem");
+	    		}
+
+		    	var file_group = document.createElement("ul");
+		    	file_group.setAttribute("class", "list-group");
+		    	course.appendChild(file_group);
+		    	doc.appendChild(course);
+
+		    	var docs_length = data.hits.hits[i].inner_hits.docs.hits.hits.length;
+		    	for (var j=0; j<docs_length; j++) {
+		    		var highlight = data.hits.hits[i].inner_hits.docs.hits.hits[j].highlight;
 			    	var child_doc = highlight['docs.name'];
 
 			    	var child_li = document.createElement("li");
-	    			child_li.appendChild(document.createTextNode(child_doc));
+	    			child_li.innerHTML = child_doc;
 	    			child_li.setAttribute("class","list-group-item");
-	    			child_group.appendChild(child_li);
+	    			file_group.appendChild(child_li);
 
 	    			var doc_content = highlight['docs.content'];
 
@@ -61,61 +81,36 @@ function getDataFromServer(keyword) {
 			    		continue;
 			    	}
 
-	    			for (var j=0;j<doc_content.length;j++) {
-	    				var doc_content_text = doc_content[j];
+	    			for (var k=0; k<doc_content.length; k++) {
+	    				var doc_content_text = doc_content[k];
 
 				    	var content_li = document.createElement("li");
 				    	content_li.innerHTML = doc_content_text;
 		    			content_li.setAttribute("class","list-group-item");
 		    			content_group.appendChild(content_li);
 	    			}
-
 		    	}
-		    	$(document).ready(function () {
-				    $('.list-group').toggle();
-				});
 	    	}
 	    	if (data_hits == 0) {
-	    		first_doc.innerHTML = "Sorry, no results found";
+	    		var course = document.createElement("li");
+	    		course.setAttribute("class", "list-group-item");
+	    		course.innerHTML = "Sorry, no results found";
+
+	    		doc.appendChild(course);
 	    	}
-
-
-
-			// var ul = document.getElementById("document-list");
-
-	  //   	// course name
-	  //   	for (var i=1; i<1;i++) {
-  	// 			var li = document.createElement("li");
-  	// 			li.appendChild(document.createTextNode(data.hits.hits[i]._source.name));
-  	// 			console.log(data.hits.hits[i]._source.name);
-  	// 			li.setAttribute("class", "list-group-item");
-	  //   	// 	console.log("docs");
-
-	  //   	// documents in course
-	  //   		docs_length = data.hits.hits[i].inner_hits.docs.hits.total;
-	  //   		console.log(docs_length);
-	  //   		var child_ul = document.createElement("ul");
-	  //   		child_ul.setAttribute("class", "list-group");
-	  //   		for (var j=0;j<1;j++) {
-	  //   			var doc_name = data.hits.hits[i].inner_hits.docs.hits.hits[j].highlight['docs.name'];
-	  //   			console.log(doc_name);
-	  //   			var child_li = document.createElement("li");
-	  //   			child_li.appendChild(document.createTextNode(doc_name));
-	  //   			child_li.setAttribute("class","list-group-item");
-	  //   			child_ul.appendChild(child_li);
-	  //   			li.appendChild(child_ul);
-	  //   		}
-  	// 			ul.appendChild(li);
-	  //   	}
-
+			setTimeout(hideChild, 1);
 	    },
 	    error: function(error) {
 	    	console.log("error");
 	    	console.log(error);
 	    }
 	});
+}
 
-
+function hideChild() {
+	$(document).ready(function() {
+	    $('.list-group').toggle();
+	});
 }
 
 function processSearchFromIndex() {
