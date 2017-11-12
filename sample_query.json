@@ -15,7 +15,7 @@ GET moocs/course/_search/
         {
           "nested": {
             "path": "docs",
-            "score_mode": "sum",
+            "score_mode": "avg",
             "query": {
               "multi_match": {
                 "type": "most_fields",
