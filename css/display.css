@@ -21,7 +21,7 @@ body{
     float: left;
 }
 
-.input-container .search-box {
+.input-container #search-box {
     position: relative;
     display: inline-block;
     height: auto;

@@ -1,7 +1,7 @@
 // getDataFromServer('nlp');
 console.log("test");
-getDataFromServer("")
-
+// getDataFromServer("QR decomposition")
+processSearchFromIndex()
 
 $('.list-group-item').click(function(event) {
 	event.stopPropagation();
@@ -27,19 +27,18 @@ function getDataFromServer(keyword) {
 	    	console.log(data);
 	    	// console.log(data);
 			var first_doc = document.getElementById("firstItem");
-	    	if (data.hits.total > 0) {
+			var data_hits = data.hits.hits.length;
+	    	for (var a=0; a<data_hits; a++) {
 	    		console.log("first doc");
-	    		first_doc.innerHTML = data.hits.hits[0]._source.name;
-	    		console.log(data.hits.hits[0]._source.name);
+	    		first_doc.innerHTML = data.hits.hits[a]._source.name;
+	    		console.log(data.hits.hits[a]._source.name);
 		    	var child_group = document.createElement("ul");
 		    	child_group.setAttribute("class", "list-group");
 		    	first_doc.appendChild(child_group);
 
-		    	var docs_length = data.hits.hits[0].inner_hits.docs.hits.hits.length;
+		    	var docs_length = data.hits.hits[a].inner_hits.docs.hits.hits.length;
 		    	for (var i=0;i<docs_length;i++) {
-		    		console.log('highlight');
-		    		var highlight = data.hits.hits[0].inner_hits.docs.hits.hits[i].highlight;
-		    		console.log(highlight);
+		    		var highlight = data.hits.hits[a].inner_hits.docs.hits.hits[i].highlight;
 			    	var child_doc = highlight['docs.name'];
 
 			    	var child_li = document.createElement("li");
@@ -48,9 +47,19 @@ function getDataFromServer(keyword) {
 	    			child_group.appendChild(child_li);
 
 	    			var doc_content = highlight['docs.content'];
+
 			    	var content_group = document.createElement("ul");
 			    	content_group.setAttribute("class", "list-group");
 			    	child_li.appendChild(content_group);
+
+			    	if (doc_content == undefined) {
+				    	var content_li = document.createElement("li");
+				    	content_li.innerHTML = "search text only found in title";
+		    			content_li.setAttribute("class","list-group-item");
+		    			content_group.appendChild(content_li);
+
+			    		continue;
+			    	}
 
 	    			for (var j=0;j<doc_content.length;j++) {
 	    				var doc_content_text = doc_content[j];
@@ -65,7 +74,8 @@ function getDataFromServer(keyword) {
 		    	$(document).ready(function () {
 				    $('.list-group').toggle();
 				});
-	    	}else {
+	    	}
+	    	if (data_hits == 0) {
 	    		first_doc.innerHTML = "Sorry, no results found";
 	    	}
 
@@ -116,8 +126,12 @@ function processSearchFromIndex() {
 	getDataFromServer(search);
 }
 
-
-
+function processSearchBox() {
+	$(document).ready(function() {
+		var searchbox = document.getElementById("search-box");
+		getDataFromServer(searchbox.value);		
+	})
+}
 
 function getData(keyword) {
 	var json = {
@@ -130,7 +144,7 @@ function getData(keyword) {
       "should": [
         {
           "match": {
-            "name": "QR decomposition"
+            "name": keyword
           }
         },
         {
@@ -140,7 +154,7 @@ function getData(keyword) {
             "query": {
               "multi_match": {
                 "type": "most_fields",
-                "query": "QR decomposition",
+                "query": keyword,
                 "fields": ["docs.name", "docs.content"]
               }
             },
@@ -163,9 +177,6 @@ function getData(keyword) {
     }
   }
 }
-
-	var test = {"query": {"match": {"name": keyword}}}
-
 	return JSON.stringify(json);
 }
 
