@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title>MOOC query</title>
+</head>
+
+<body>
+    <div id="welcome">Welcome MOOC query!</div>
+    <div class="input-container">
+        <input type="text" id="search-box" placeholder="try machine learning..."/>
+        <a class="search-button" onclick="storeSearch()"></a>
+    </div>
+</body>
+</html>                            
+</body>
+
+<script type="text/javascript">
+function storeSearch() {
+	document.getElementById("search-box").value = "test"
+	var address = window.location.href;
+	address = address.slice(0, address.length-10);
+	address += "display.html?" + document.getElementById("search-box").value;
+	window.location.href = address;
+}
+</script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- stylesheet -->
+<style type="text/css">
+
+#welcome {
+	position: relative;
+	width: 500px;
+	left: 35%;
+	top: 35%;
+	font-size: 35px;
+}
+
+.input-container{
+	position: relative;
+	top: 40%;
+	left: 30%;
+	height: 45px;
+    width: 40%;
+    border: 1px solid #a9a9a9;
+    float: left;
+}
+
+.input-container #search-box {
+	height: 100%;
+    width: 90%;
+    float: left;
+    border: none;
+}
+
+.input-container .search-button {
+    float: right;
+    height: 100%;
+    width: 46px;
+	background: white url("pics/search-button.png") no-repeat;
+	background-size: 100%;
+}
+
+body {
+    margin: 0;     
+    color: #666;
+    font-size: 22px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+}
+.navbar-header {
+	min-height: 120px;
+}
+.nav1{
+    border-radius: 5px;
+    border: 2px solid;
+}
+
+</style>
+</html>
