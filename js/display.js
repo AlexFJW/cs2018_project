@@ -118,7 +118,9 @@ function processSearchFromIndex() {
 	var arr = address.split("?")
 
 	var search = arr[1];
-	getDataFromServer(search);
+	if (search != undefined) {
+		getDataFromServer(search);		
+	}
 }
 
 function processSearchBox() {
@@ -181,11 +183,3 @@ function geturl() {
 
 	return path
 }
-
-function make_base_auth(user, password) {
-    var tok = user + ':' + password;
-    var hash = btoa(tok);
-    return 'Basic ' + hash;
-}
-
-document.getElementById("firstItem").innerHTML
